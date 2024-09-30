@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="body">
+        <!-- Header Begin -->
+        <div class="header col-12">
+          <div class="img"></div>
+          <div class="header--menu">
+            <ul class="header--menu--list">
+              <li class="header--menu--item">Trang Chủ</li>
+              <li class="header--menu--item">Về chúng tôi</li>
+              <li class="header--menu--item">Đặt món</li>
+              <li class="header--menu--item">Blog</li>
+            </ul>
+          </div>
+          <div class="cart--icon"></div>
+          <div class="user--icon"></div>
+        </div>
+        <!-- Header End -->
+        <!-- Login Form Begin -->
+        <div class="content col-12">
+          <div class="titleWelcome col-6">CHÀO MỪNG BẠN ĐẾN VỚI WOWBOX</div>
+          <div class="form">
+            <form action="">
+              <div class="option content-12">
+                <button type="button" class="signIn btn--big"><span class="btn--name"> ĐĂNG NHẬP</span></button>
+                <button type="button" class="createAccount btn--big">
+                    <span class="btn--name"> TẠO TÀI KHOẢN</span>
+                  
+                </button>
+              </div>
+              <div class="create--acc-section content-12">
+                <span class="input--title-userName">Tên đăng nhập*:</span>
+                <input class="userName" type="text" name="userName" />
+                <br />
+                <span class="input--title-email">Email*:</span>
+                <input class="email" type="text" name="email" />
+                <br />
+                <span class="input--title-phoneNum">Số điện thoại*:</span>
+                <input class="phoneNum" type="text" name="phoneNum" />
+                <br />
+                <span class="input--title-password">Mật Khẩu*:</span>
+                <input class="password" type="password" name="password" />
+                <br />
+                <span class="input--title-password">Nhập lại mật khẩu*:</span>
+                <input class="password" type="password" name="password" />
+                <br />
+                <div class="checkBox">
+                    <input
+                    class="verify--checkBox"
+                    type="checkbox"
+                    name="verify"
+                    value="verify"
+                  />
+                  <span class="checkBox--des"> Tôi đồng ý điều khoản dịch vụ</span>
+                </div>
+                <button type="button" class="sendOTP btn--small">GỬI MÃ XÁC NHẬN</button>
+                <p class="des--top--sendOTP">
+                  Bạn sẽ nhận được mã xác nhận trong email đã điền.
+                </p>
+                <p class="des--mid--sendOTP">
+                  Kiểm tra email và nhập mã xác nhận vào ô bên dưới để hoàn tất
+                  đăng ký.
+                </p>
+                <input class="OTP" type="number" name="OTP" />
+                <p class="des--bot--sendOTP">
+                  Sau khi nhập mã nhấn ĐĂNG KÝ để hoàn tất!.
+                </p>
+                <button type="button" class="create--acc--btn btn--small">ĐĂNG KÝ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
