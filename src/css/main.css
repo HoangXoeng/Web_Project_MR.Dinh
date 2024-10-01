@@ -489,3 +489,102 @@ ul {
     width: 230px;
     left: 1500px;
 }
+
+
+.messText{  
+    display: none;
+    position: absolute;
+    width: 530px;
+    height: 750px;
+    top: 100px;
+    right: 0;
+}
+
+.chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 26px;
+}
+
+.chat-header::after {
+    content: "";
+    border-style: solid;
+    border-width: 0 25px 25px 25px; /* Tạo hình tam giác */
+    border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
+    position: absolute;
+    top: -23px;
+    left: 470px;
+    width: 0;
+    height: 0;
+}
+
+
+.chat-header,.chat-container{
+    background-color: #469100;
+}
+.chat-header img{
+    width: 62px;
+    height: 62px;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+}
+.chat-header div{
+    font-size: 45px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+.chat-container{
+    font-size: 18px;
+    font-family: var(--monteratText);
+    color: var(--whiteColor);
+    padding: 45px 0 21px 50px;
+}
+.chat-container-hello{
+    font-weight: bold;
+}
+
+.chat-body div{
+    margin: 30px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: var(--monteratText);
+}
+
+.chat-body{
+    padding:10px 10px 315px 10px;
+    background-color: var(--whiteColor);
+    border-bottom: 1px solid black;
+}
+
+.chat-footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteColor);
+    gap: 35px;
+}
+
+.chat-footer input{
+    width:400px;
+    padding: 40px 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: var(--monteratText);
+}
+
+.chat-footer button{
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondColor);
+    font-size: 18px;
+    font-family: var(--monteratText);
+    color:var(--whiteColor)
+}

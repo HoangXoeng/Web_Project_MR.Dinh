@@ -59,12 +59,32 @@
                     <div class="lemon4"><img srcset="src/img/lemon4.png 2x" alt=""></div>
                 </div>
                 <img class="imgdc" srcset="src/img/DiaCom.png 2x" alt="">
+            </div>
+            <div class="mess">
+                <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>
+                <div class="messText" id="hid" style="display: none;"> <!-- Ẩn phần chat ban đầu -->
+                    <header class="chat-header">
+                        <img srcset="src/img/Logo.png 2x">
+                        <div>WOWBOX SALAD</div>
+                    </header>
+                    <div class="chat-container">
+                        <div class="chat-contaoner-hello">WOWBOX XIN CHÀO!</div>
+                        <div>Rất vui khi được hỗ trợ bạn</div>
+                    </div>
+                    <div class="chat-body">
+                        <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn</div>
+                    </div>
+                    <footer class="chat-footer">
+                        <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
+                        <button>GỬI</button>
+                    </footer>
                 </div>
-            <div class="mess"><a href="#"><i class="fa-solid fa-message"></i></a></div>
+            </div>
+            
         </div>
         <div class="lemon5"><img src="src/img/lemon4.png" alt=""></div>
-        <div class="potato2"><img src="src/img/potato.png" alt=""></div>
-        <div class="potato"><img src="src/img/potato.png" alt=""></div>
+        <!-- <div class="potato2"><img src="src/img/potato.png" alt=""></div>
+        <div class="potato"><img src="src/img/potato.png" alt=""></div> -->
         
         <div class="secondContainer">
             <div class="salad">
@@ -177,5 +197,16 @@
             </div>
         </footer>
     </div>
+    <script>
+        function toggleChat() {
+        const chatBox = document.getElementById('hid');
+        // Kiểm tra trạng thái hiển thị của chatBox
+        if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+            chatBox.style.display = 'block'; // Hiển thị chatBox
+        } else {
+            chatBox.style.display = 'none'; // Ẩn chatBox
+        }
+    }
+    </script>
 </body>
 </html>
