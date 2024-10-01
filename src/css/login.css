@@ -126,7 +126,7 @@
     line-height: 24px;
     width: 100%;
 }
-.userName,.email,.password,.phoneNum,.OTP{
+.userName,.email,.password,.phoneNum,.OTP,.confirmPassword{
     width: 100%;
     padding: 15px;
     border-radius: 20px;
@@ -135,6 +135,9 @@
     box-shadow: 0px 4px 4px 0px #00000040;
     color:#469100;
     background-color: #FFFFFF;
+}
+.log--in--section{
+    display: none;
 }
 .checkBox{
     display: flex;
@@ -163,6 +166,7 @@
     font-size: 30px;
     margin: 7px 100px;
     margin-bottom: 7px;
+    cursor: pointer;
 }
 .des--top--sendOTP,.des--mid--sendOTP,.des--bot--sendOTP{
     text-align: center;;
@@ -170,6 +174,9 @@
 }
 .OTP{
     margin-top: 17px;
+}
+.reset--pass{
+    height: 20px;
 }
 .create--acc--btn{
     margin-bottom: 15px;
@@ -184,3 +191,34 @@
     border: none;
     margin-left:170px ;
 }
+.forgot--pass{
+    display: block;
+    position: absolute;
+    right: 122px;
+    line-height: 40px;
+    color: #004B00;
+    font-size: 20px;
+
+}
+.btn--big:hover{
+    cursor: pointer;
+    background-color: #469100;
+    color: white;
+}
+.error-message {
+    color: red;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.error {
+    border: 2px solid red;
+}
+.wrong--pass{
+    display: none;
+
+}
+.verify--checkBox,.checkBox--des,.forgot--pass{
+    margin-top: 20px;
+}
+
+

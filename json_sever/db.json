@@ -1,5 +1,32 @@
 {
-    "accounts" :[
-        
-    ]
+  "accounts": [
+    {
+      "id": "367a",
+      "userName": "admin123",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "admin123"
+    },
+    {
+      "id": "9ab1",
+      "userName": "asd123123",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "ad123123123"
+    },
+    {
+      "id": "a477",
+      "userName": "xuannguyen",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "ad123123"
+    },
+    {
+      "id": "3aa6",
+      "userName": "xuannguyen123123123",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "ad123123"
+    }
+  ]
 }
