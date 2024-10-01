@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --mainColor:  #FFF2AD;
+    --secondColor: #004B00;
+    --whiteColor:white;
+    --monteratText: "Montserrat", sans-serif;
+    --fredokaText: "Fredoka", sans-serif;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app{
+    width: 1921px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+}
+
+.logo img{
+    width: 99px;
+    height: 103px;
+}
+.logo{
+    margin: 17px 56px 5px 66px;
+}
+
+.header-menu{
+    margin: 32px 440px 19px 0;
+}
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 61.5px;
+    padding: 25px 0;
+}
+
+.header-menu ul li a{
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    margin: 22px 60px;
+}
+
+.header-acc {
+    display: flex;
+    align-items: center;
+    gap:0 80px; 
+    
+}
+
+.header-acc div {
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    padding: 20px 25px;
+    border-radius: 50px;
+    margin-left: 40px;
+}
+
+.header-acc div i{
+    font-size: 30px;
+}
+
+
+.container{
+    display: flex;
+    background-color: var(--mainColor);
+    position: relative;
+}
+
+.container-describe{
+    margin: 124px 0 0 227px;
+    
+}
+
+.container-describe div{
+    font-size: 80px;
+    font-family: var(--fredokaText);
+    margin-bottom: 30px;
+}
+
+.container-describe p{
+    font-size: 18px;
+    font-family: var(--monteratText);
+}
+
+.container-describe button{
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+
+.circle-container {
+    width: 1026px;    
+    height: 550px;   
+    overflow: hidden;
+    padding: 0 
+}
+
+.circle {
+    width: 1500px;   
+    height: 1500px;  
+    background-color: #EB8911;
+    border-radius: 50%; 
+    position: relative;
+    left: 200px; 
+    top: -970px; 
+}
+
+.imgdc{
+    width: 500px;
+    height: 540px;
+    position: absolute;
+    top: 200px;
+    right:350px
+}
+
+.lemon1 img{
+    height: 459px;
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    right: 1720px;
+}
+
+.lemon2 img{
+    position: absolute;
+    width: 235px;
+    height: 232.7px;
+    top: 550px;
+    right: 900px;
+    font-size: 200px;
+
+}
+
+.lemon3 img{
+    width: 478px;
+    height: 460.42px;
+    position: absolute;
+    top: 0px;
+    right: 450px
+
+}
+
+.lemon4 img{
+    width: 300px;
+    height: 275px;
+    position: absolute;
+    top: 40px;
+    right:900px
+}
+
+.mess{
+    position: absolute;
+    background-color: var(--secondColor);
+    border-radius: 50%;
+    padding: 20px;
+    right: 60px;
+    top: 750px
+    
+}
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+.secondContainer{
+    background-color: var(--mainColor);
+    padding: 225px 0 0 227px;
+}
+.salad{
+    display: flex;
+}
+
+.salad-img img{
+    width: 860px;
+    height: 548px;
+}
+
+
+.salad-des div{
+    font-family: var(--fredokaText);
+    text-align: right;
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--secondColor);
+    margin-left: 100px;
+    margin: 0 0 67px 100px 
+}
+
+.salad-des p{
+    margin: 20px 0 0 60px;
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--monteratText);
+}
+
+.text{
+    color: var(--secondColor);
+    font-family: var(--fredokaText);
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--mainColor);
+    padding: 73px 0;
+}
+
+.lemon5 img{
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top:1470px;
+    left: 160px;
+}
+
+.potato img{
+    position: absolute;
+    width: 98px;
+    height: 64px;
+    left: 1500px;
+    top:1600px
+}
+
+.potato2 img{
+    position: absolute;
+    width: 64px;
+    height: 40px;
+    left: 1600px;
+    top: 1550px
+}
+
+.foodOutstanding{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--mainColor);
+    gap: 95px;
+    padding-top: 90px;
+}
+
+.under{
+    display: flex;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    width: 334px; 
+    height: 318px;
+    border-radius: 20px;
+    background-color: var(--secondColor);
+
+}
+.firstFood{
+    position: relative;
+}
+.imgFoodOustand{
+    position: absolute;
+    left: 30px;
+    top: -130px
+}
+.under{
+    display: flex;
+}
+
+.buttonPrice div button{
+    margin-top: 7px;
+    border-radius: 20px;
+    width: 141px;
+    font-family: var(--monteratText);
+    color: var(--secondColor);
+    
+}
+.desFood{
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    color: rgb(242, 191, 22);
+    font-weight: bold;
+}
+.buttonPrice{
+    margin: 21px 0 21px 18px;
+}
+.tag img {
+    width: 45px;
+    height: 45px;
+    margin: 26px 0 0 100px;
+}
+
+.allMenu, .textMenu, .textBook {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--mainColor);
+}
+
+
+.allMenu button{
+    width: 519px;
+    height: 72px;
+    font-size: 45px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--secondColor);
+    color:white;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    margin-top: 100px;
+}
+.textMenu p{
+   font-size: 18px;
+   font-family: var(--monteratText);
+   margin-top: 10px;
+}
+
+.textBook{
+    font-size: 80px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--secondColor);
+    padding-top: 25px;
+}
+
+.imgDatTiec{
+    background-color:var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 42px;
+    gap: 112px
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    padding-bottom: 42px;
+}
+
+.contact div{
+    width: 402px;
+    height: 73px;
+    font-size: 30px;
+    font-family: var(--monteratText);
+    background-color:#B5DA92;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.map{
+    width: 100%;
+    background-color:#B5DA92 ;
+    text-align: center;
+    padding: 19px;
+}
+.map div iframe{
+    width: 934px;
+    height: 466px;
+    border-radius: 20px;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    height: 198px;
+    background-color: var(--secondColor);
+    padding: 0 50px; /* Thêm padding hai bên */
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+
+}
+
+.address, .personal-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.address div, .personal-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address img, .personal-contact img {
+    margin-right: 10px;
+}
+
+.time, .street, .phone, .email {
+    font-size: 16px;
+    padding: 10px;
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+}
+
+.time img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.street img {
+    text-align: center;
+    height: 40px;
+    padding-right: 30px;
+}
+
+.phone img {
+    height: 40px;
+    padding-right: 25px;
+}
+
+.email img {
+    height: 30px;
+    padding-right: 17px;
+}
+
+.phone {
+    margin-top: 10px;
+}
+
+.brand {
+    font-size: 75px;
+    font-family: var(--fredokaText);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 2; /* Cho phần chữ chiếm phần lớn không gian */
+    padding: 50px 0;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77px;
+    flex-grow: 1; /* Cho phần social chiếm một phần không gian */
+}
+
+.lemon6 img{
+    position: absolute;
+    left: 100px;
+    width: 200px;
+}
+
+.lemon7 img{
+    position: absolute;
+    width: 145px;
+    left: 130px;
+    top: 2300px
+}
+
+.lemon8 img{
+    position: absolute;
+    width: 230px;
+    left: 1500px;
+}
