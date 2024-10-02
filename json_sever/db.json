@@ -5,28 +5,47 @@
       "userName": "admin123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
-      "password": "admin123"
+      "password": "admin123",
+      "role": "admin"
     },
     {
       "id": "9ab1",
       "userName": "asd123123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
-      "password": "ad123123123"
+      "password": "ad123123123",
+      "role": "user"
     },
     {
       "id": "a477",
       "userName": "xuannguyen",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
-      "password": "ad123123"
+      "password": "ad123123",
+      "role": "user"
     },
     {
       "id": "3aa6",
       "userName": "xuannguyen123123123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
+      "password": "ad123123",
+      "role": "user"
+    },
+    {
+      "id": "02ba",
+      "userName": "ad1223123123123",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
       "password": "ad123123"
+    },
+    {
+      "id": "6b04",
+      "userName": "conco",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "ad123123",
+      "role": "user"
     }
   ]
 }

@@ -21,12 +21,25 @@ var isValid = true;
 var isHaveEmail = false;
 var isOTPTrue = false;
 var otpGen;
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const generateOTP = () => {
   return Math.floor(100000 + Math.random() * 900000); // Mã OTP 6 chữ số
 };
+document.querySelector(".email").onchange = function() {
+  var email = document.querySelector(".email").value;
+  if (!email.trim() === "") {
+    isHaveEmail = true;
+  }
+  if (emailRegex.test(email)) {
+    isHaveEmail = true;
+  }
+  console.log(isHaveEmail)
+  return isHaveEmail;
+};
 
-const senOTPbtn = () => {
+const sendOTPbtn = () => {
+  
   if (isHaveEmail) {
     var btn = document.querySelector(".sendOTP");
     btn.style.color = "#333";
@@ -108,6 +121,7 @@ function createAccount(){
         email: email,
         phoneNum: phoneNum,
         password: password,
+        role: 'user',
       },
     };
     axios(opt)

@@ -1,147 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="../css/login.css" />
-    <link rel="stylesheet" href="../css/base.css" />
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-      (function(){
-          emailjs.init("uw_JjxTMw48C0fqxD");
-      })();
-  </script>
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-
-  </head>
-  <body>
+        (function () {
+            emailjs.init("uw_JjxTMw48C0fqxD");
+        })();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
     <div class="container">
-      <div class="body">
-        <!-- Header Begin -->
-         <div class="grid">
-          <div class="header">
-            <div class="img"></div>
-            <div class="header--menu">
-              <ul class="header--menu--list">
-                <li class="header--menu--item">Trang Chủ</li>
-                <li class="header--menu--item">Về chúng tôi</li>
-                <li class="header--menu--item">Đặt món</li>
-                <li class="header--menu--item">Blog</li>
-              </ul>
-            </div>
-            <div class="cart--icon"></div>
-            <div class="user--icon"></div>
-          </div>
-        </div>
-        <!-- Header End -->
-        <!-- Login Form Begin -->
-        <div class="grid">
-          <div class="content">
-            <div class="grid__row">
-            <div class="col-6 title__welcome">
-              <div class="titleWelcome">CHÀO MỪNG BẠN ĐẾN VỚI WOWBOX</div>
-            </div>
-            <div class="col-6">
-              <div class="form">
-                <form action="">
-                  <div class="option content-12">
-                    <button type="button" class="signIn btn--big" onclick="signInSection()"><span class="btn--name"> ĐĂNG NHẬP</span></button>
-                    <button type="button" class="createAccount btn--big" onclick="createAccSection()">
-                        <span class="btn--name"> TẠO TÀI KHOẢN</span>
-                      
-                    </button>
-                  </div>
-                  <!-- create account form begin -->
-                  <div class="create--acc-section content-12">
-                    <span class="input--title-userName">Tên đăng nhập*:</span>
-                    <input class="userName" type="text" name="userName" id="userName-error" />
-                    <br />
-                    
-                    <span class="input--title-email">Email*:</span>
-                    <input class="email" type="text" name="email"id="email-error" />
-                    <br />
-                    
-                    <span class="input--title-phoneNum">Số điện thoại*:</span>
-                    <input class="phoneNum" type="text" name="phoneNum" id="phoneNum-error"/>
-    
-                    <br />
-                    
-                    <span class="input--title-password">Mật Khẩu*:</span>
-                    <input class="password" type="password" name="password"id="password-error"  />
-                    <br />
-                    
-                    <span class="input--title-password">Nhập lại mật khẩu*:</span>
-                    <input class="confirmPassword" type="password" name="confirmPassword" id="confirmPassword-error" />
-                    <br />
-                    
-                    <div class="checkBox">
-                        <input class="verify--checkBox" type="checkbox" name="verify" value="verify" />
-                        <span class="checkBox--des"> Tôi đồng ý điều khoản dịch vụ</span>
-                        <span class="error-message" id="checkbox-error"></span>
+        <div class="body">
+            <!-- Header Begin -->
+            <div class="grid">
+                <div class="header">
+                    <div class="wowbox-icon"></div>
+                    <div class="header--menu">
+                        <ul class="header--menu--list">
+                            <li class="header--menu--item">Trang Chủ</li>
+                            <li class="header--menu--item">Về chúng tôi</li>
+                            <li class="header--menu--item">Đặt món</li>
+                            <li class="header--menu--item">Blog</li>
+                        </ul>
                     </div>
-    
-                    <button type="button" class="sendOTP btn--small" onclick="senOTPbtn()">GỬI MÃ XÁC NHẬN</button>
-                                    <p class="des--top--sendOTP">
-                      Bạn sẽ nhận được mã xác nhận trong email đã điền.
-                      </p>
-                      <p class="des--mid--sendOTP">
-                      Kiểm tra email và nhập mã xác nhận vào ô bên dưới để hoàn tất
-                      đăng ký.
-                      </p>
-                    <input class="OTP" type="number" name="OTP" placeholder="Nhập mã OTP">
-                    <span class="error-message" id="otp-error"></span>
-                    <p class="des--bot--sendOTP">
-                      Sau khi nhập mã nhấn ĐĂNG KÝ để hoàn tất!.
-                      </p>
-                    <button type="button" class="create--acc--btn btn--small" onclick="validateForm()">ĐĂNG KÝ</button>
+                    <div class="cart--icon"></div>
+                    <div class="user--icon"></div>
                 </div>
-                  <!-- create account form end -->
-                  <!-- sign in form begin -->
-                
-                    <div class="log--in--section">
-                      <div class="content-12">
-                        <span class="input--title-userName">Tên đăng nhập*:</span>
-                      <input class="userName-login userName" type="text" name="userName" />
-                      <span class="input--title-password">Mật Khẩu*:</span>
-                      <input class="password-login password" type="password" name="password" />
-                      <span class="wrong--pass error-message">Tên đăng nhập hoặc mật khẩu sai, vui lòng nhập lại</span>
-                      <div class="check content">
-                        <div class="checkBox">
-                          <input
-                          class="verify--checkBox"
-                          type="checkbox"
-                          name="save--pass"
-                          value="save--pass"
-                        />
-                        <span class="checkBox--des"> Ghi nhớ mật khẩu</span>
-                        
-                      </div>
-                      <a href="" class="forgot--pass">Quên mật khẩu?</a>
-                      </div>
-                      
-                    </div>
-                    <div class="button_box">
-                      <button type="button" class="sign--in--btn btn--small" onclick="signIn()" style="margin-top: 34px;">ĐĂNG NHẬP</button>
-                    </div>
-                   
+            </div>
+            <!-- Header End -->
 
-                  <!-- sing in form end -->
-                </form>
-              </div>
+            <!-- Login Form Begin -->
+            <div class="grid">
+                <div class="content">
+                    <div class="grid__row">
+                        <div class="col-6 title__welcome">
+                            <div class="titleWelcome">CHÀO MỪNG BẠN ĐẾN VỚI WOWBOX</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form create-form">
+                                <form id="accountForm">
+                                    <div class="option content-12">
+                                        <button type="button" class="signIn btn--big" onclick="signInSection()">
+                                            <span class="btn--name">ĐĂNG NHẬP</span>
+                                        </button>
+                                        <button type="button" class="createAccount btn--big" onclick="createAccSection()">
+                                            <span class="btn--name">TẠO TÀI KHOẢN</span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Create account form begin -->
+                                     <div class="create--acc-section">
+                                        <div class="content-12">
+                                            <label for="userName" class="input--title-userName">Tên đăng nhập*:</label>
+                                            <input class="userName" type="text" name="userName" id="userName-error" required />
+                                            <br />
+    
+                                            <label for="email" class="input--title-email">Email*:</label>
+                                            <input class="email" type="email" name="email" id="email-error" required />
+                                            <br />
+    
+                                            <label for="phoneNum" class="input--title-phoneNum">Số điện thoại*:</label>
+                                            <input class="phoneNum" type="tel" name="phoneNum" id="phoneNum-error" required />
+                                            <br />
+    
+                                            <label for="password" class="input--title-password">Mật Khẩu*:</label>
+                                            <input class="password" type="password" name="password" id="password-error" required />
+                                            <br />
+    
+                                            <label for="confirmPassword" class="input--title-password">Nhập lại mật khẩu*:</label>
+                                            <input class="confirmPassword" type="password" name="confirmPassword" id="confirmPassword-error" required />
+                                            <br />
+    
+                                            <div class="checkBox">
+                                                <input class="verify--checkBox" type="checkbox" name="verify" id="verify" required />
+                                                <label for="verify" class="checkBox--des">Tôi đồng ý điều khoản dịch vụ</label>
+                                                <span class="error-message" id="checkbox-error"></span>
+                                            </div>
+    
+                                            <div class="button_box">
+                                                <button type="button" class="sendOTP btn--small" onclick="sendOTPbtn()">GỬI MÃ XÁC NHẬN</button>
+                                            </div>
+    
+                                            <p class="des--top--sendOTP">Bạn sẽ nhận được mã xác nhận trong email đã điền.</p>
+                                            <p class="des--mid--sendOTP">Kiểm tra email và nhập mã xác nhận vào ô bên dưới để hoàn tất đăng ký.</p>
+    
+                                            <input class="OTP" type="number" name="OTP" placeholder="Nhập mã OTP" required />
+                                            <span class="error-message" id="otp-error"></span>
+    
+                                            <p class="des--bot--sendOTP">Sau khi nhập mã nhấn ĐĂNG KÝ để hoàn tất!</p>
+    
+                                            <div class="button_box">
+                                                <button type="button" class="create--acc--btn btn--small" onclick="validateForm()">ĐĂNG KÝ</button>
+                                            </div>
+                                        </div>
+                                     </div>
+                                    
+                                    <!-- Create account form end -->
+
+                                    <!-- Sign in form begin -->
+                                    <div class="log--in--section">
+                                        <div class="content-12 ">
+                                            <label for="userName-login" class="input--title-userName">Tên đăng nhập*:</label>
+                                            <input class="userName-login userName" type="text" name="userName" id="userName-login" required />
+                                            <br />
+
+                                            <label for="password-login" class="input--title-password">Mật Khẩu*:</label>
+                                            <input class="password-login password" type="password" name="password" id="password-login" required />
+                                            <span class="wrong--pass error-message">Tên đăng nhập hoặc mật khẩu sai, vui lòng nhập lại</span>
+
+                                            <div class="check content">
+                                                <div class="checkBox">
+                                                    <input class="verify--checkBox" type="checkbox" name="save--pass" id="save--pass" />
+                                                    <label for="save--pass" class="checkBox--des">Ghi nhớ mật khẩu</label>
+                                                </div>
+                                                <a href="" class="forgot--pass">Quên mật khẩu?</a>
+                                            </div>
+                                        </div>
+                                        <div class="button_box">
+                                            <button type="button" class="sign--in--btn btn--small" onclick="signIn()" style="margin-top: 34px;">ĐĂNG NHẬP</button>
+                                        </div>
+                                    </div>
+                                    <!-- Sign in form end -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-            </div>
+            <!-- Login form end -->
         </div>
-          
-        <!-- Login form end -->
-      </div>
     </div>
     <script src="../js/loginForm.js"></script>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-
-  </body>
+</body>
 </html>
