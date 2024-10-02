@@ -4,7 +4,7 @@ const signInSection = () => {
   var form = document.querySelector(".form");
   createAccoutForm.style.display = "none";
   signInForm.style.display = "block";
-  form.style.top = "200px";
+  // form.style.marginTop = "80px";
   form.style.height = "500px";
 };
 const createAccSection = () => {
@@ -13,7 +13,7 @@ const createAccSection = () => {
   var form = document.querySelector(".form");
   createAccoutForm.style.display = "block";
   signInForm.style.display = "none";
-  form.style.top = "140px";
+  // form.style.marginTop = "20px";
   form.style.height = "892px";
 };
 

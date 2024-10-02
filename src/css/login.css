@@ -1,8 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
+html{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+box-sizing: border-box;}
 .container{
     display: flex;
     justify-content: center;
@@ -15,7 +18,7 @@
     width: 100%;
     height: 1080px;
     max-width: 1980px;
-    max-height: 100%;
+    /* max-height: 100%; */
     background-image: url('../img/sigInBackGr.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -75,17 +78,18 @@
     right: 0;
     background-size: contain;
 }
-.content{
+/* .content{
     margin-left: 217px;
     margin-top: 231px;
     display: flex;
-}
+} */
 .titleWelcome{
     font-weight: 700px;
     color: #FFFFFF;
     font-size: 100px;
     line-height: 132px;
     width: 670px;
+    max-height: 892px;
 }
 .form{
     width: 100%;
@@ -93,9 +97,11 @@
     background-color: #FFFFFF;
     border-radius: 20px;
     height: 892px;
-    position: absolute;
+    max-height: 100%;
+    /* position: absolute;
     left: 1005px;
-    top: 140px;
+    top: 140px; */
+ 
 }
 .content-12{
     width: 494px;
@@ -132,6 +138,10 @@
     font-size: 22px;
     line-height: 24px;
     width: 100%;
+}
+.title__welcome{
+  height: 890px;
+  max-height: 100%;
 }
 .userName,.email,.password,.phoneNum,.OTP,.confirmPassword{
     width: 100%;
@@ -198,10 +208,14 @@
     border: none;
     margin-left:170px ;
 }
+.button_box{
+  display: flex;
+  justify-content: center;
+}
 .forgot--pass{
     display: block;
-    position: absolute;
-    right: 122px;
+    /* position: absolute;
+    right: 122px; */
     line-height: 40px;
     color: #004B00;
     font-size: 20px;
@@ -227,7 +241,10 @@
 .verify--checkBox,.checkBox--des,.forgot--pass{
     margin-top: 20px;
 }
-
+.check{
+  display: flex;
+  justify-content: space-between
+}
 
 .col-6{
     width: 50%;
