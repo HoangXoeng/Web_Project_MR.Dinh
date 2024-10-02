@@ -59,21 +59,26 @@ ul {
 
 .header-acc {
     display: flex;
-    align-items: center;
-    gap:0 80px; 
+   
+    gap:10px; 
     
 }
 
 .header-acc div {
     background-color: var(--secondColor);
     color: var(--whiteColor);
-    padding: 20px 25px;
+    padding: 0px 15px 8px 15px;
     border-radius: 50px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    margin: 18px 80px 0 18px
 }
 
-.header-acc div i{
-    font-size: 30px;
+
+.acc img{
+    padding: 12px 10px 5px 10px;
+}
+.acc1 img{
+    padding: 12px 20px 5px 18px;
 }
 
 
