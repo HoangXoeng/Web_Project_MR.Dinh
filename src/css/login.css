@@ -5,11 +5,17 @@
 }
 .container{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
 }
 .body{
     margin: 0 auto;
-    width: 1980px;
+    width: 100%;
     height: 1080px;
+    max-width: 1980px;
+    max-height: 100%;
     background-image: url('../img/sigInBackGr.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -34,6 +40,7 @@
     position: absolute;
     background-color:#004B00;
     width: 876px;
+    max-width: 100%;
     height: 72px;
     margin-left: 144px;
     border-radius: 61.5px;
@@ -69,9 +76,6 @@
     background-size: contain;
 }
 .content{
-    width:541px;
-    height:378px;
-  
     margin-left: 217px;
     margin-top: 231px;
     display: flex;
@@ -81,9 +85,11 @@
     color: #FFFFFF;
     font-size: 100px;
     line-height: 132px;
+    width: 670px;
 }
 .form{
-    width: 695px;
+    width: 100%;
+    max-width: 695px;
     background-color: #FFFFFF;
     border-radius: 20px;
     height: 892px;
@@ -93,6 +99,7 @@
 }
 .content-12{
     width: 494px;
+    max-width: 100%;
     margin: auto;
 }
 .option{
@@ -222,3 +229,112 @@
 }
 
 
+.col-6{
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .grid {
+    width: 1710px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .grid__full-width {
+    width: 100%;
+  }
+  .grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+  }
+  .grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+  }
+  .grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+  }
+
+
+
+  
+/* Responsive Design for Mobile, Tablets and Laptops */
+@media (max-width: 1200px) {
+    .grid {
+      width: 100%; /* Adjust grid to take the full width */
+    }
+  
+    .form {
+      max-width: 90%;
+      left: 5%; /* Adjust position */
+      top: 10%; /* Add top margin for better display on smaller screens */
+    }
+  
+    .titleWelcome {
+      font-size: 80px; /* Reduce the title font size */
+      line-height: 100px;
+    }
+  
+    .header--menu--list {
+      font-size: 18px; /* Smaller menu font size */
+    }
+  
+    .btn--name {
+      font-size: 24px; /* Adjust button font size */
+    }
+  
+    .user--icon, .cart--icon {
+      width: 50px; /* Scale down icons */
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column; /* Stack columns vertically */
+      margin-left: 0; /* Adjust margin */
+      margin-top: 50px;
+    }
+  
+    .col-6 {
+      width: 100%; /* Make columns take full width on small screens */
+    }
+  
+    .form {
+      width: 90%;
+      left: 5%;
+      top: 5%; /* Adjust form positioning */
+    }
+  
+    .header--menu {
+      width: 100%; /* Make header menu full width */
+      height: auto; /* Adjust height to content */
+      margin-left: 0; /* Adjust margin */
+    }
+  
+    .header--menu--list {
+      font-size: 16px; /* Smaller menu font */
+      justify-content: space-between;
+    }
+  
+    .titleWelcome {
+      font-size: 60px; /* Reduce the title font size */
+      line-height: 80px;
+    }
+  
+    .btn--name {
+      font-size: 20px; /* Smaller button text */
+    }
+  }
+  
