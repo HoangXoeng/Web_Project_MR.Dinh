@@ -24,7 +24,7 @@
         z-index: -1;
     } */
     .background {
-        background-image: url(/Web_Project_MR.Dinh/src/img/background.png);
+        background-image: url(../img/background.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
