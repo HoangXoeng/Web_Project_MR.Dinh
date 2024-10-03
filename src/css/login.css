@@ -124,6 +124,7 @@ html{
   background-color: #FFFFFF;
   border-radius: 20px;
   max-height: 100%;
+  height: auto;
 }
 .content-12{
   width: 90%;

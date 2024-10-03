@@ -4,8 +4,6 @@ const signInSection = () => {
   var form = document.querySelector(".form");
   createAccoutForm.style.display = "none";
   signInForm.style.display = "block";
-  // form.style.marginTop = "80px";
-  form.style.height = "500px";
 };
 const createAccSection = () => {
   var createAccoutForm = document.querySelector(".create--acc-section");
@@ -13,8 +11,6 @@ const createAccSection = () => {
   var form = document.querySelector(".form");
   createAccoutForm.style.display = "block";
   signInForm.style.display = "none";
-  // form.style.marginTop = "20px";
-  form.style.height = "892px";
 };
 
 var isValid = true;
