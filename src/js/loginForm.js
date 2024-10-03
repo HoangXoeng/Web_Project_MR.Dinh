@@ -242,5 +242,4 @@ function signIn() {
         clearError("userName-error");
       }
     });
-
 }

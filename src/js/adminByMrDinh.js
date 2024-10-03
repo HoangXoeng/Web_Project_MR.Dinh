@@ -1,33 +1,53 @@
+var getListProductByType = (type) => {
+    return axios
+      .get(`http://localhost:3000/foods?type=${type}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          return response.data; 
+        } else {
+          console.error("User not found");
+          return null;
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching user:", error);
+      });
+  };
 var productAdmin = function(){																					
-    var listproduct1 ="";																					
-    for (var i in product)																					
-    {																					
-    var data = JSON.parse(JSON.stringify(product[i]))																					
-    var listproduct1 = '<tr>';																					
-    listproduct1+='<td>'+data.id+'</td>';																					
-    listproduct1+='<td>'+data.name+'</td>';																					
-    listproduct1+='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';																					
-    listproduct1+='<td>'+data.price+'</td>';																					
-    // listproduct1+='';																					
-    listproduct1+='<td><button onclick="updateProduct()" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>';'						
-    listproduct1+='<button onclick="deleteProduct()" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>';'																																		
-    listproduct1+='</tr>';																					
-                                                                                        
-    document.getElementById("product-admin").innerHTML += listproduct1;																					
-    }																					
-    // Save();																					
-    }																					
-    var addProduct = function(){																					
-    var Product = {																					
-    id :"SP"+parseInt(product.length+1),																					
-    name : document.getElementById("name").value,																					
-    img : document.getElementById("img").value,																					
-    price : document.getElementById("price").value																					
-    }																					
-    product.push(Product);																					
-    localStorage.setItem('listProduct',JSON.stringify(product));																					
-    // Save();																					
-    window.location.reload();																					
+    // for (var i in product)																					
+    // {																					
+    // var data = JSON.parse(JSON.stringify(product[i]))																					
+    // var listproduct1 = '<tr>';																					
+    // listproduct1+='<td>'+data.id+'</td>';																					
+    // listproduct1+='<td>'+data.name+'</td>';																					
+    // listproduct1+='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';																					
+    // listproduct1+='<td>'+data.price+'</td>';																					
+    // // listproduct1+='';																					
+    // listproduct1+='<td><button onclick="updateProduct()" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>;'						
+    // listproduct1+='<button onclick="deleteProduct()" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>;'																																		
+    // listproduct1+='</tr>';																					
+                                                                    
+    // document.getElementById("product-admin").innerHTML += listproduct1;																					
+    // }	
+    																				
+    // Save();	
+    getListProductByType('basicSalad').then((listproduct) =>console.log(listproduct))																				
+
+	}
+
+    var addProduct = function(){	
+        																				
+        // var Product = {																					
+        // id :"SP"+parseInt(product.length+1),																					
+        // name : document.getElementById("name").value,																					
+        // img : document.getElementById("img").value,																					
+        // price : document.getElementById("price").value																					
+        // }																					
+        // product.push(Product);																					
+        // localStorage.setItem('listProduct',JSON.stringify(product));																					
+                                                                                    
+        // window.location.reload();	
+
     }																					
                                                                                         
     // Xóa sản phẩm																					
@@ -67,9 +87,9 @@ var productAdmin = function(){
     // listproduct+='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';																					
     listproduct+='<td>'+data.email+'</td>';																					
     // listproduct1+='';																					
-    listproduct+='<td><button onclick="updateProduct()" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>';'																					
+    listproduct+='<td><button onclick="updateProduct()" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>;'																					
 																				
-    listproduct+='<button onclick="deleteProduct()" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>';'																					
+    listproduct+='<button onclick="deleteProduct()" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>;'																					
 																				
     listproduct+='</tr>';																					
     document.getElementById("user-admin").innerHTML += listproduct;																					
