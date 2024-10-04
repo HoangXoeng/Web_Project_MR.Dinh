@@ -14,23 +14,22 @@ a{
     --fredokaText: "Fredoka", sans-serif;
 }
 
-
-ul {
-    list-style: none;
+*{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-.app{
-    width: 1921px;
+ul{
+    list-style: none;
 }
 
-.header {
+/* --------------header------------ */
+.header{
     width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--mainColor);
-    position: relative;
 }
 
 .logo img{
@@ -38,151 +37,143 @@ ul {
     height: 103px;
 }
 .logo{
-    margin: 17px 56px 5px 66px;
-}
-
-.header-menu{
-    margin: 32px 440px 19px 0;
+    padding:0 30px 0 30px; 
+    margin: 0 15px 0 30px;
 }
 .header-menu ul {
     display: flex;
     align-items: center;
     background-color: var(--secondColor);
     border-radius: 61.5px;
-    padding: 25px 0;
+    padding: 15px;
 }
-
 .header-menu ul li a{
     color: var(--whiteColor);
     font-family: var(--monteratText);
-    margin: 20px 60px;
+    padding: 0 50px
 }
 
 .header-acc {
     display: flex;
-   
-    gap:10px; 
-    
+    align-items:center;
+    justify-content: center;
+    margin-left: 280px;
+    gap: 50px
 }
 
 .header-acc div {
     background-color: var(--secondColor);
     color: var(--whiteColor);
-    padding: 0px 15px 8px 15px;
     border-radius: 50px;
-    /* margin-left: 40px; */
-    margin: 18px 80px 0 18px
+    padding:10px 25px
 }
-
-
 .acc img{
-    padding: 12px 10px 5px 10px;
+    width: 30px;
+    height: 30px;
 }
 .acc1 img{
-    padding: 12px 20px 5px 18px;
+    width: 20px;
+    height: 30px;
 }
 
+/*-------------veChungToi--------- */
 .veChungToi{
-    display: flex;
+    padding: 30px 0 0 200px;
     background-color: var(--mainColor);
-    padding: 70px 0 0 220px
+    display: flex;
+    position: relative;
 }
 
 .veChungToi-img img{
-    width: 882px;
-    height: 669px;
+    width: 600px;
+    height: 450px;
 }
-
 .veChungToi-text div{
+    font-size: 70px;
     font-family: var(--fredokaText);
     font-weight: bold;
-    font-size: 80px;
     color: var(--secondColor)
 }
-
 .veChungToi-text p{
-    font-family: var(--monteratText);
     font-size: 18px;
-    margin: 10px;
+    font-family: var(--monteratText);
+    padding-top: 10px;
 }
-
 .f{
-    padding-top: 32px;
+    margin-top: 20px;
 }
 
+/* ------------suMenh------------ */
 .suMenh{
-    display: flex;
+    padding: 30px 0 0 200px;
     background-color: var(--mainColor);
-    padding: 70px 0 0 220px;
-    position: relative;
+    display: flex;
+    gap: 55px;
+    /* position: relative; */
 }
 
 .suMenh-img img{
-    width: 882px;
-    height: 669px;
+    width: 600px;
+    height: 450px;
 }
-.suMenh-text{
-    padding-left: 150px
-}
+
 .suMenh-text div{
+    font-size: 70px;
     font-family: var(--fredokaText);
     font-weight: bold;
-    font-size: 80px;
     color: var(--secondColor);
     text-align: right;
+    margin-left: 130px;
 }
-
 .suMenh-text p{
-    font-family: var(--monteratText);
     font-size: 18px;
-    margin: 10px;
+    font-family: var(--monteratText);
+    padding: 10px 20px;
+    text-align: left;
 }
-
 .g{
-    padding-top: 32px;
-}
-
-.danhGiaTuKH{
-    padding: 40px 0 0 220px;
-    font-size: 80px;
-    font-family: var(--fredokaText);
-    color: var(--secondColor);
-    font-weight: bold;
-    background-color: var(--mainColor);
-    
-}
-
-.danhGia{
-    display: flex;
-    background-color: var(--mainColor);
-    padding: 70px 0 50px 220px;
-    position: relative;
-}
-
-.danhGia-img img{
-    width: 882px;
-    height: 669px;
-    margin-left: 70px;
-    
-}
-
-.danhGia-text div{
-    font-family: var(--fredokaText);
-    font-weight: bold;
-    font-size: 30px;
-    color: var(--secondColor)
-}
-
-.danhGia-text p{
-    font-family: var(--monteratText);
-    font-size: 18px;
     margin-top: 10px;
 }
 
-.h{
-    padding-top: 32px;
+/* ---------danhGiaTuKH----------- */
+.danhGiaTuKH{
+    font-size: 70px;
+    font-weight: bold;
+    font-family: var(--fredokaText);
+    background-color: var(--mainColor);
+    color: var(--secondColor);
+    padding: 30px 0 30px 200px;
 }
 
+.danhGia{
+    padding: 30px 0 0 200px;
+    background-color: var(--mainColor);
+    display: flex;
+    gap: 55px;
+    position: relative;
+}
+.danhGia-img{
+    padding-bottom: 20px;
+}
+.danhGia-img img{
+    width: 600px;
+    height: 450px;
+}
+.danhGia-text div{
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--secondColor)
+}
+.danhGia-text p{
+    font-size: 18px;
+    font-family: var(--monteratText);
+    padding-top: 10px;
+}
+.h{
+    margin-top: 20px;
+}
+/* ------------footer----------- */
 .footer {
     width: 100%;
     display: flex;
@@ -195,15 +186,12 @@ ul {
 
 .footer-contact {
     display: flex;
-    justify-content: center;
-    padding-left: 0;
-
 }
 
 .address, .personal-contact {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    /* padding: 0 8px; */
 }
 
 .address div, .personal-contact div {
@@ -217,7 +205,7 @@ ul {
 }
 
 .time, .street, .phone, .email {
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px;
     color: var(--whiteColor);
     font-family: var(--monteratText);
@@ -253,9 +241,11 @@ ul {
     font-family: var(--fredokaText);
     color: white;
     font-weight: bold;
-    text-align: center;
-    flex-grow: 2; /* Cho phần chữ chiếm phần lớn không gian */
-    padding: 50px 0;
+    text-align: left;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 50px 0 ;
+    margin-right: 10px;
 }
 
 .social {
@@ -263,16 +253,69 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 77px;
-    flex-grow: 1; /* Cho phần social chiếm một phần không gian */
+    flex-grow: 1; 
+}
+
+
+.lemon1{
+    position: absolute;
+    left: 0;
+}
+.lemon2 img{
+    width: 200px;
+    position: absolute;
+    left: 10px;
+    top: 300px
+}
+.lemon3 img{
+    position: absolute;
+    left: 0;
+    width: 100px;
+}
+.lemon4 img{
+    position: absolute;
+    left: 800px;
+    width: 180px;
+}
+.lemon5 img{
+    position: absolute;
+    left: 10px;
+    width: 200px;
+    top: 100px
+}
+.lemon6 img{
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    top: 150px;
+    filter: grayscale(100%) brightness(0%);
+}
+
+.potato1 img{
+    position: absolute;
+    width: 50px;
+    left: 400px;
+    top: 450px
+}
+.potato2 img{
+    position: absolute;
+    width: 80px;
+    left: 450px;
+    top: 450px
+}
+.lemonT1{
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
 }
 
 .mess{
-    position: absolute;
     background-color: var(--secondColor);
     border-radius: 50%;
     padding: 20px;
-    right: 60px;
-    top: 880px
+    right: 20px;
+    top: 600px;
+    position: absolute;
     
 }
 
@@ -284,28 +327,28 @@ ul {
 .messText{  
     display: none;
     position: absolute;
-    width: 530px;
-    height: 750px;
+    width: 400px;
+    height: 500px;
     top: 100px;
     right: 0;
-}
+} 
 
 .chat-header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding-top: 26px;
+    gap: 7px;
+    padding-top: 13px;
 }
 
 .chat-header::after {
     content: "";
     border-style: solid;
-    border-width: 0 25px 25px 25px; /* Tạo hình tam giác */
+    border-width: 0 25px 25px 25px; 
     border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
     position: absolute;
-    top: -23px;
-    left: 470px;
+    bottom: 500px;
+    left: 338px;
     width: 0;
     height: 0;
 }
@@ -315,23 +358,23 @@ ul {
     background-color: #469100;
 }
 .chat-header img{
-    width: 62px;
-    height: 62px;
+    width: 40px;
+    height: 40px;
     background-color: var(--whiteColor);
     border-radius: 50%;
 }
 .chat-header div{
-    font-size: 45px;
+    font-size: 30px;
     font-family: var(--fredokaText);
     font-weight: bold;
     color: var(--whiteColor);
 }
 
 .chat-container{
-    font-size: 18px;
+    font-size: 10px;
     font-family: var(--monteratText);
     color: var(--whiteColor);
-    padding: 45px 0 21px 50px;
+    padding: 35px 0 10px 40px;
 }
 .chat-container-hello{
     font-weight: bold;
@@ -342,12 +385,12 @@ ul {
     padding: 10px;
     background-color: gainsboro;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 10px;
     font-family: var(--monteratText);
 }
 
 .chat-body{
-    padding:10px 10px 315px 10px;
+    padding:10px 10px 200px 10px;
     background-color: var(--whiteColor);
     border-bottom: 1px solid black;
 }
@@ -360,107 +403,21 @@ ul {
 }
 
 .chat-footer input{
-    width:400px;
-    padding: 40px 20px;
+    width: 300px;
+    padding: 20px 20px;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 10px;
     font-family: var(--monteratText);
 }
 
 .chat-footer button{
-    width: 53px;
-    height: 53px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: none;
     background-color: var(--secondColor);
-    font-size: 18px;
+    font-size: 10px;
     font-family: var(--monteratText);
     color:var(--whiteColor)
-}
-
-.lemon1{
-    position: absolute;
-    left: 0;
-}
-
-.lemon2{
-    position: absolute;
-    left: -50px;
-    top: 400px
-}
-
-.potato1{
-    position: absolute;
-    left: 600px;
-    top: 700px
-}
-
-.potato2 img{
-    position: absolute;
-    left: 700px;
-    top:750px;
-    width:150px;
-}
-
-.lemon3 img{
-    width: 220px;
-    filter: sepia(100%) hue-rotate(90deg) saturate(1500%) brightness(50%);
-    position: absolute;
-    left: 0;
-    top: 400px
-}
-
-.lemon4 img{
-    filter: grayscale(100%) brightness(0%);
-    width: 200px;
-    position: absolute;
-    top: 500px;
-    right: 0;
-}   
-
-.potato3 img{
-    width:150px;
-    position: absolute;
-    right: 300px;
-    top: 700px
-}
-
-.potato4{
-    position: absolute;
-    right: 200px;
-    top: 700px
-}
-
-.lemon5 img{
-    position: absolute;
-    width: 200px;
-    left: 80px;
-    bottom: 130px;
-
-}
-.lemon6 img {
-    position: absolute;
-    width: 200px;
-    left:30px;
-    bottom: 100px;
-    filter: grayscale(100%) brightness(0%);
-}
-.lemon7 img{
-    filter: grayscale(230%) brightness(42%);
-    position: absolute;
-    right: 0;
-    bottom: 230px;
-}
-.lemonT1 img {
-    position: absolute;
-    left: 220px;
-    bottom: 100px;
-}
-.lemonT2 img{
-    width: 400px;
-    position: absolute;
-    right: 10px;
-    bottom: 0;
-
 }
