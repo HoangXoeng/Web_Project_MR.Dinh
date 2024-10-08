@@ -106,50 +106,56 @@
         ];
 
         function displayMenu() {
-            const menuContainer = document.getElementById('menu-container');
-            menuContainer.innerHTML = "";  // Reset nội dung
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.innerHTML = "";  // Reset nội dung
 
-            data.forEach(item => {
-                const menuItemDiv = document.createElement('div');
-                menuItemDiv.classList.add("menu-item");
+    data.forEach(item => {
+        const menuItemDiv = document.createElement('div');
+        menuItemDiv.classList.add("menu-item");
 
-                menuItemDiv.innerHTML = `
-                    <div class="menu">
-                        <div class="menuTable">
-                            <div class="tich"><button class="tich">v</button></div>
-                            <div class="imge"><img src="${item.img}" alt="${item.name}"></div>
-                            <div class="des">
-                                <div>${item.name}</div>
-                                <div>${item.price}</div>
-                            </div>
-                            <div class="total">
-                                <div class="title-total">Tổng tiền</div>
-                                <div class="price">${item.price}</div>
-                                <button class="quantity-btn decrease-btn">-</button>
-                                <span class="quantity-display">0</span>
-                                <button class="quantity-btn increase-btn">+</button>
-                            </div>
-                            <div class="remove"><button>Xóa</button></div>
-                        </div>
-                        <div class="menuPay">
-                            <div class="menuPay-box">
-                                <div class="menuPay-box-title">TỔNG CỘNG</div>
-                                <div class="menuPay-box-content">
-                                    <div>Tổng món: 1</div>
-                                    <div>Tổng calo: 200</div>
-                                    <div>Tổng tiền: ${item.price}</div>
-                                </div>
-                            </div>
-                            
-                        </div>
+        menuItemDiv.innerHTML = `
+            <div class="menu">
+                <div class="menuTable">
+                    <div class="tich"><button class="tich">v</button></div>
+                    <div class="imge"><img src="${item.img}" alt="${item.name}"></div>
+                    <div class="des">
+                        <div>${item.name}</div>
+                        <div>${item.price}</div>
                     </div>
-                `;
+                    <div class="total">
+                        <div class="title-total">Tổng tiền</div>
+                        <div class="price">${item.price}</div>
+                        <button class="quantity-btn decrease-btn">-</button>
+                        <span class="quantity-display">0</span>
+                        <button class="quantity-btn increase-btn">+</button>
+                    </div>
+                    <div class="remove"><button>Xóa</button></div>
+                </div>
+            </div>
+        `;
 
-                menuContainer.appendChild(menuItemDiv);
-            });
-        }
+        menuContainer.appendChild(menuItemDiv);
+    });
 
-        displayMenu();
+    // Bảng tổng cộng chỉ tạo một lần
+    const totalBox = document.createElement('div');
+    totalBox.classList.add("menuPay");
+
+    totalBox.innerHTML = `
+        <div class="menuPay-box">
+            <div class="menuPay-box-title">TỔNG CỘNG</div>
+            <div class="menuPay-box-content">
+                <div>Tổng món: 1</div>
+                <div>Tổng calo: 200</div>
+                <div>Tổng tiền: 65.000 VND</div> <!-- Sửa giá trị tổng tiền theo logic của bạn -->
+            </div>
+        </div>
+    `;
+
+    menuContainer.appendChild(totalBox);  // Thêm bảng tổng cộng vào cuối danh sách
+}
+
+displayMenu();
     </script>
 </body>
 </html>
