@@ -5,7 +5,6 @@ const signInSection = () => {
   createAccoutForm.style.display = "none";
   signInForm.style.display = "block";
   // form.style.marginTop = "80px";
-  form.style.height = "500px";
 };
 const createAccSection = () => {
   var createAccoutForm = document.querySelector(".create--acc-section");
@@ -14,7 +13,6 @@ const createAccSection = () => {
   createAccoutForm.style.display = "block";
   signInForm.style.display = "none";
   // form.style.marginTop = "20px";
-  form.style.height = "892px";
 };
 
 var isValid = true;
@@ -26,7 +24,7 @@ var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const generateOTP = () => {
   return Math.floor(100000 + Math.random() * 900000); // Mã OTP 6 chữ số
 };
-document.querySelector(".email").onchange = function() {
+document.querySelector(".email").onchange = function () {
   var email = document.querySelector(".email").value;
   if (!email.trim() === "") {
     isHaveEmail = true;
@@ -34,41 +32,52 @@ document.querySelector(".email").onchange = function() {
   if (emailRegex.test(email)) {
     isHaveEmail = true;
   }
-  console.log(isHaveEmail)
+  console.log(isHaveEmail);
   return isHaveEmail;
 };
 
 const sendOTPbtn = () => {
-  
-  if (isHaveEmail) {
-    var btn = document.querySelector(".sendOTP");
-    btn.style.color = "#333";
-    btn.style.margin = "0px 130px 0px";
-    btn.innerHTML = "Đã gửi mã OTP";
-    var email = document.querySelector(".email").value;
-    var otp = generateOTP();
-    otpGen = otp;
-    var templateParams = {
-      to_name: "Guy",
-      from_name: "WowBox",
-      message_html: `Chào mừng bạn đến với WowBox! Mã OTP của bạn là: ${otp}`,
-      from_email: "wowbox@gmail.com",
-      subject: "Xác nhận đăng ký tài khoản WowBox",
-      reply_to: "wowbox@gmail.com",
-      to_email: email,
-      otp: otp,
-    };
-    emailjs.send("service_3q0nrq9", "template_9cu3h6o", templateParams).then(
-      function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Mã xác nhận đã được gửi!");
-      },
-      function (error) {
-        console.log("FAILED...", error);
-        alert("Gửi mã xác nhận thất bại!");
+  var userName = document.querySelector(".userName").value;
+  console.log(userName)
+  getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
+    if (!user) {
+      alert("ten tai khoan da toi tai");
+      setError("userName-error", "Tên đăng nhập đã tồn tại");
+      isValid = false;
+    } else {
+      clearError("userName-error");
+      if (isHaveEmail) {
+        var btn = document.querySelector(".sendOTP");
+        btn.style.color = "#333";
+        btn.style.margin = "0px 130px 0px";
+        btn.innerHTML = "Đã gửi mã OTP";
+        var email = document.querySelector(".email").value;
+        var otp = generateOTP();
+        otpGen = otp;
+        var templateParams = {
+          to_name: "Guy",
+          from_name: "WowBox",
+          message_html: `Chào mừng bạn đến với WowBox! Mã OTP của bạn là: ${otp}`,
+          from_email: "wowbox@gmail.com",
+          subject: "Xác nhận đăng ký tài khoản WowBox",
+          reply_to: "wowbox@gmail.com",
+          to_email: email,
+          otp: otp,
+        };
+        emailjs.send("service_3q0nrq9", "template_9cu3h6o", templateParams).then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Mã xác nhận đã được gửi!");
+          },
+          function (error) {
+            console.log("FAILED...", error);
+            alert("Gửi mã xác nhận thất bại!");
+          }
+        );
       }
-    );
-  }
+    }
+  });
+  
 };
 
 var getUserNameInJsonSeverAlreadyExist = (userName) => {
@@ -87,7 +96,7 @@ var getUserNameInJsonSeverAlreadyExist = (userName) => {
     });
 };
 
-const clearErrors = () => {
+var clearErrors = function() {
   var errorElements = document.querySelectorAll(".error-message");
   errorElements.forEach(function (element) {
     element.textContent = "";
@@ -98,43 +107,35 @@ const clearErrors = () => {
   });
 };
 
-getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
-  if (user) {
-    alert("ten tai khoan da toi tai");
-    setError("userName-error", "Tên đăng nhập đã tồn tại");
-    isValid = false;
-  } else {
-    clearError("userName-error");
-  }
-});
 
-function createAccount(){
-    var userName = document.querySelector(".userName").value;
-    var email = document.querySelector(".email").value;
-    var phoneNum = document.querySelector(".phoneNum").value;
-    var password = document.querySelector(".password").value;
-    opt = {
-      url: "http://localhost:3000/accounts",
-      method: "post",
-      data: {
-        userName: userName,
-        email: email,
-        phoneNum: phoneNum,
-        password: password,
-        role: 'user',
-      },
-    };
-    axios(opt)
-      .then(function (data_res) {
-        console.log(data_res);
-        if (data_res.status == 201) alert("Created successfully");
-        window.location.href = "http://localhost:3000/";
-      })
-      .catch(function (ex) {
-        console.log(ex);
-      });
-  };
+
+function createAccount() {
+  var userName = document.querySelector(".userName").value;
+  var email = document.querySelector(".email").value;
+  var phoneNum = document.querySelector(".phoneNum").value;
+  var password = document.querySelector(".password").value;
   
+  opt = {
+    url: "http://localhost:3000/accounts",
+    method: "post",
+    data: {
+      userName: userName,
+      email: email,
+      phoneNum: phoneNum,
+      password: password,
+      role: "user",
+    },
+  };
+  axios(opt)
+    .then(function (data_res) {
+      console.log(data_res);
+      if (data_res.status == 201) alert("Created successfully");
+      window.location.href = "http://localhost:3000/";
+    })
+    .catch(function (ex) {
+      console.log(ex);
+    });
+}
 
 function validateForm() {
   // Get form values
@@ -198,53 +199,60 @@ function validateForm() {
     if (isOTPTrue) {
       createAccount();
     } else {
-        console.log(otpGen)
-        console.log(otp)
+      console.log(otpGen);
+      console.log(otp);
       alert("Mã OTP không đúng");
     }
   }
-  const setError = (elementId, message) => {
-    var element = document.getElementById(elementId);
-    element.placeholder = message;
-    document
-      .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
-      .classList.add("error");
-  };
-  const setErrorCheckbox = (elementId, message) => {
-    var element = document.getElementById(elementId);
-    element.textContent = message;
-    document
-      .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
-      .classList.add("error");
-  };
 }
 
-function signIn() {
-    var userName = document.querySelector(".userName-login").value;
-    var password = document.querySelector(".password-login").value;
-    var rememberMe = document.querySelector(".verify--checkBox").checked;
-    getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
-      if (user) {
-          if (user.password == password) {
-            alert("Login successfully");
-            if (rememberMe) {
-              localStorage.setItem("email", user.email);
-              localStorage.setItem("password", user.password);
-            } else {
-              localStorage.removeItem("email");
-              localStorage.removeItem("password");
-            }
-            window.location.href = "http://localhost:3000/";
-            document.querySelector(".userName-login").value = "";
-            document.querySelector(".password-login").value = "";
-          } else {
-            document.querySelector('.wrong--pass').style.display = 'block';
-            console.log(user.password)
-            console.log("pass"+password)
-          }
-      } else {
-        clearError("userName-error");
-      }
-    });
 
+var setError = function(elementId, message){
+  var element = document.getElementById(elementId);
+  element.placeholder = message;
+  document
+    .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
+    .classList.add("error");
+};
+
+
+
+var setErrorCheckbox = function(elementId, message){
+  var element = document.getElementById(elementId);
+  element.textContent = message;
+  document
+    .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
+    .classList.add("error");
+}; 
+
+
+
+
+function signIn() {
+  var userName = document.querySelector(".userName-login").value;
+  var password = document.querySelector(".password-login").value;
+  var rememberMe = document.querySelector(".verify--checkBox").checked;
+  getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
+    if (user) {
+      if (user.password == password) {
+        alert("Login successfully");
+        if (rememberMe) {
+          localStorage.setItem("email", user.email);
+          localStorage.setItem("password", user.password);
+        } else {
+          localStorage.removeItem("email");
+          localStorage.removeItem("password");
+        }
+        window.location.href = "http://localhost:3000/";
+        document.querySelector(".userName-login").value = "";
+        document.querySelector(".password-login").value = "";
+      } else {
+        document.querySelector(".wrong--pass").style.display = "block";
+        console.log(user.password);
+        console.log("pass" + password);
+      }
+    } else {
+      clearError("userName-error");
+    }
+  });
 }
