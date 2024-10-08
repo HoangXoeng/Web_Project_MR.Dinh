@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --mainColor:  #FFF2AD;
+    --secondColor: #004B00;
+    --whiteColor:white;
+    --monteratText: "Montserrat", sans-serif;
+    --fredokaText: "Fredoka", sans-serif;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app{
+    width: 100%;
+}
+/* ------------------header-------------------- */
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+}
+.logo img{
+    width: 99px;
+    height: 103px;
+}
+.logo{
+    padding:0 30px 0 30px; 
+    margin: 0 15px 0 30px;
+}
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 61.5px;
+    padding: 15px;
+}
+.header-menu ul li a{
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    padding: 0 50px
+}
+
+.header-acc {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-left: 280px;
+    gap: 50px
+}
+
+.header-acc div {
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    border-radius: 50px;
+    padding:10px 25px
+}
+.acc img{
+    width: 30px;
+    height: 30px;
+}
+.acc1 img{
+    width: 20px;
+    height: 30px;
+}
+
+/* -----------------Chao Mung------------ */
+.chaoMung {
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+    padding: 50px 0 80px 200px;
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ẩn các phần tử vượt ra ngoài */
+}
+.chaoMungToi p{
+    font-size: 18px;
+    font-family: var(--monteratText);
+    margin-bottom: 30px;
+}
+.chaoMungToi div{
+    font-size: 70px;
+    font-family: var(--fredokaText);
+    margin-bottom: 30px;
+    color: var(--secondColor)
+}
+.chaoMungToi button{
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    font-weight: bold;
+    font-size: 30px;
+}
+.chaoMungImg{
+    position: relative;
+}  
+.hinhTronLon {
+    width: 1500px;
+    height: 1500px;
+    background-color: #EB8911;
+    position: absolute;
+    right: -1600px;
+    top: -1300px;
+    border-radius: 50%;
+}
+.diaCom {
+    position: absolute;
+    top: -150px;
+    right: -600px
+}
+.diaCom img {
+    width: 400px;
+    height: 400px;
+}
+
+/* ---------Bua an dinh duong--------- */
+.buaAnLon{
+    padding: 80px 80px 30px 200px;
+    background-color: var(--mainColor); 
+    position: relative;
+}
+.buaAn{
+    display: flex;
+}
+.buaAnImg img{
+    width: 600px;
+    height: 400px;
+}
+
+.buaAnText div{
+    font-family: var(--fredokaText);
+    text-align: right;
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--secondColor);
+}
+.buaAnText p{
+    margin: 20px 0 0 60px;
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--monteratText);
+}
+
+/* --------Mon an noi bat------ */
+.text{
+    color: var(--secondColor);
+    font-family: var(--fredokaText);
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--mainColor);
+    padding: 73px 0;
+}
+
+.monAnNoiBat{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--mainColor);
+    gap: 95px;
+    padding-top: 90px;
+}
+
+.under{
+    display: flex;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    width: 334px; 
+    height: 318px;
+    border-radius: 20px;
+    background-color: var(--secondColor);
+
+}
+.doAn{
+    position: relative;
+}
+.anhDoAn{
+    position: absolute;
+    left: 27px;
+    top: -130px
+}
+.anhDoAn1{
+    position: absolute;
+    left:17px;
+    top: -130px
+}
+.under{
+    display: flex;
+}
+
+.buttonPrice div button{
+    margin-top: 7px;
+    border-radius: 20px;
+    width: 141px;
+    font-family: var(--monteratText);
+    color: var(--secondColor);
+    
+}
+.nameDoAn{
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    color: rgb(242, 191, 22);
+    font-weight: bold;
+}
+.buttonPrice{
+    margin: 21px 0 21px 18px;
+}
+.tag img {
+    width: 45px;
+    height: 45px;
+    margin: 26px 0 0 100px;
+}
+/* -------Xem tat va Menu------ */
+.allMenu, .textMenu, .textBook {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--mainColor);
+}
+
+
+.allMenu button{
+    width: 519px;
+    height: 72px;
+    font-size: 45px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--secondColor);
+    color:white;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    margin-top: 100px;
+    position: relative;
+}
+.textMenu p{
+   font-size: 18px;
+   font-family: var(--monteratText);
+   margin-top: 10px;
+}
+
+.textBook{
+    font-size: 80px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--secondColor);
+    padding-top: 25px;
+}
+
+/* ----lien he dat tiec--- */
+.imgDatTiec{
+    background-color:var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 42px;
+    gap: 75px
+}
+.imgDatTiec img{
+    width: 348px;
+    height: 250px;
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    padding-bottom: 42px;
+}
+
+.contact div{
+    width: 402px;
+    height: 73px;
+    font-size: 30px;
+    font-family: var(--monteratText);
+    background-color:#B5DA92;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.map{
+    width: 100%;
+    background-color:#B5DA92 ;
+    text-align: center;
+    padding: 19px;
+}
+.map div iframe{
+    width: 934px;
+    height: 466px;
+    border-radius: 20px;
+} 
+
+
+/* --------------footer-------------- */
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    height: 198px;
+    background-color: var(--secondColor);
+    padding: 0 50px; /* Thêm padding hai bên */
+}
+
+.footer-contact {
+    display: flex;
+}
+
+.address, .personal-contact {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 8px; */
+}
+
+.address div, .personal-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address img, .personal-contact img {
+    margin-right: 10px;
+}
+
+.time, .street, .phone, .email {
+    font-size: 15px;
+    padding: 10px;
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+}
+
+.time img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.street img {
+    text-align: center;
+    height: 40px;
+    padding-right: 30px;
+}
+
+.phone img {
+    height: 40px;
+    padding-right: 25px;
+}
+
+.email img {
+    height: 30px;
+    padding-right: 17px;
+}
+
+.phone {
+    margin-top: 10px;
+}
+
+.brand {
+    font-size: 75px;
+    font-family: var(--fredokaText);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 50px 0 ;
+    margin-right: 10px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77px;
+    flex-grow: 1; 
+}
+.messText{  
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    top: 100px;
+    right: 0;
+} 
+
+.chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding-top: 13px;
+}
+
+.chat-header::after {
+    content: "";
+    border-style: solid;
+    border-width: 0 25px 25px 25px; 
+    border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
+    position: absolute;
+    bottom: 500px;
+    left: 338px;
+    width: 0;
+    height: 0;
+}
+
+
+.chat-header,.chat-container{
+    background-color: #469100;
+}
+.chat-header img{
+    width: 40px;
+    height: 40px;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+}
+.chat-header div{
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+.chat-container{
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color: var(--whiteColor);
+    padding: 35px 0 10px 40px;
+}
+.chat-container-hello{
+    font-weight: bold;
+}
+
+.chat-body div{
+    margin: 30px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-body{
+    padding:10px 10px 200px 10px;
+    background-color: var(--whiteColor);
+    border-bottom: 1px solid black;
+}
+
+.chat-footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteColor);
+    gap: 35px;
+}
+
+.chat-footer input{
+    width: 300px;
+    padding: 20px 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-footer button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondColor);
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color:var(--whiteColor)
+}
+/* -----------chat---------- */
+.mess{
+    position: absolute;
+    background-color: var(--secondColor);
+    border-radius: 50%;
+    padding: 20px;
+    right: 60px;
+    top: -80px
+    
+}
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+.lemon1{
+    position: absolute;
+    top: 100px;
+    left: 0px;   
+}
+.lemon2 img{
+    position: absolute;
+    top: -40px;
+    right: 550px;
+    width: 250px;
+}
+.lemon3{
+    position: absolute;
+    top: 370px;
+    right: 750px
+}
+.lemon4 img{
+    position: absolute;
+    width: 200px;
+    top:40px;
+    left: 700px;
+}
+
+.lemon5 img {
+    position: absolute;
+    width: 100px;
+    filter: grayscale(100%) brightness(0%);
+    left: 100px;
+}
+
+.lemon6 img{
+    position: absolute;
+    left: 100px;
+    width: 100px;
+}
+.lemon7 img{
+    position: absolute;
+    filter: grayscale(100%) brightness(0%);
+    width: 100px;
+    left: 110px;
+}
+.lemon8 img{
+    position: absolute;
+    right: 60px;
+    bottom: -1400px;
+    width: 120px;
+}
+.lemon9 img{
+    position: absolute;
+    width: 90px;
+    left: 140px;
+    bottom: -135 0px;
+    filter: grayscale(0%) brightness(100%);
+}
