@@ -55,7 +55,7 @@ const sendOTPbtn = () => {
         var otp = generateOTP();
         otpGen = otp;
         var templateParams = {
-          to_name: "Guy",
+          to_name: "Bro",
           from_name: "WowBox",
           message_html: `Chào mừng bạn đến với WowBox! Mã OTP của bạn là: ${otp}`,
           from_email: "wowbox@gmail.com",
