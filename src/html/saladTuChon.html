@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALAD TỰ CHỌN</title>
+    <link rel="stylesheet" href="../css/saladTuChon.css">
+    <script src="https://kit.fontawesome.com/4e7f123d15.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="logo">
+                <img srcset="../img/Logo.png 2x" alt="LOGO">
+            </div>
+            <div class="header-menu">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Đặt món</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="header-acc">
+                <div class="acc"><img srcset="../img/cart.png 2x" alt="cart"></div>
+                <div class="acc1"><img srcset="../img/user.png 2x" alt="user"></div>
+            </div>
+            <div class="mess">
+                <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>
+                <div class="messText" id="hid">
+                    <header class="chat-header">
+                        <img srcset="../img/Logo.png 2x">
+                        <div>WOWBOX SALAD</div>
+                    </header>
+                    <div class="chat-container">
+                        <div class="chat-contaoner-hello">WOWBOX XIN CHÀO!</div>
+                        <div>Rất vui khi được hỗ trợ bạn</div>
+                    </div>
+                    <div class="chat-body">
+                        <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn?</div>
+                    </div>
+                    <footer class="chat-footer">
+                        <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
+                        <button>GỬI</button>
+                    </footer>
+                </div>
+            </div>
+        </header>
+
+        <div class="title">SALAD TỰ CHỌN</div>
+        
+        <div class="title-img">
+            <img srcset="../img/saladTuChon.png 2x" alt="Salad">
+        </div>
+        
+        <div class="danhsach">DANH SÁCH NGUYÊN LIỆU TỰ CHỌN</div>
+
+        <div id="menu-container">
+            <div class="ngLieu">NGUYÊN LIỆU</div>
+            
+        </div>
+        <div class="pay"><button>THANH TOÁN</button></div>   
+
+
+        <footer class="footer">
+            <div class="footer-contact">
+                <div class="address">
+                    <div class="time">
+                        <img srcset="../img/Frame.png 2x" alt="">Thứ Hai - Chủ Nhật <br> 8:30 - 20:45
+                    </div>
+                    <div class="phone">
+                        <img srcset="../img/FramePhone.png 2x" alt="">0399199324
+                    </div>
+                </div>
+                <div class="personal-contact">
+                    <div class="street">
+                        <img srcset="../img/FrameAdress.png 2x" alt="">99 Tô Hiến Thành <br> Phước Mỹ, Sơn Trà <br> TP.Đà Nẵng
+                    </div>
+                    <div class="email">
+                        <img srcset="../img/FrameEmail.png 2x" alt="">hoang.doan26@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="brand">WOW BOX</div>
+            <div class="social">
+                <div class="frame"><img srcset="../img/logoFB.png 2x" alt="Facebook"></div>
+                <div class="frame"><img srcset="../img/logoLZ.png 2x" alt="Zalo"></div>
+                <div class="frame"><img srcset="../img/logoFd.png 2x" alt="Food Delivery"></div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatBox = document.getElementById('hid');
+            chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
+        }
+
+        const data = [
+            { name: 'ĐẬU CHICKPEA', price: '20.000 VND', img: 'https://cdn.tgdd.vn/Files/2019/03/07/1153472/chinese-new-year_600x800.jpg' },
+            { name: 'BÁNH MÌ BƠ TỎI', price: '40.000 VND', img: 'https://cdn.tgdd.vn/Files/2019/03/07/1153472/chinese-new-year_600x800.jpg' },
+            { name: 'BẮP NGỌT', price: "5.000 VND", img: 'https://cdn.tgdd.vn/Files/2019/03/07/1153472/chinese-new-year_600x800.jpg' }
+        ];
+
+        function displayMenu() {
+            const menuContainer = document.getElementById('menu-container');
+            menuContainer.innerHTML = "";  // Reset nội dung
+
+            data.forEach(item => {
+                const menuItemDiv = document.createElement('div');
+                menuItemDiv.classList.add("menu-item");
+
+                menuItemDiv.innerHTML = `
+                    <div class="menu">
+                        <div class="menuTable">
+                            <div class="tich"><button class="tich">v</button></div>
+                            <div class="imge"><img src="${item.img}" alt="${item.name}"></div>
+                            <div class="des">
+                                <div>${item.name}</div>
+                                <div>${item.price}</div>
+                            </div>
+                            <div class="total">
+                                <div class="title-total">Tổng tiền</div>
+                                <div class="price">${item.price}</div>
+                                <button class="quantity-btn decrease-btn">-</button>
+                                <span class="quantity-display">0</span>
+                                <button class="quantity-btn increase-btn">+</button>
+                            </div>
+                            <div class="remove"><button>Xóa</button></div>
+                        </div>
+                        <div class="menuPay">
+                            <div class="menuPay-box">
+                                <div class="menuPay-box-title">TỔNG CỘNG</div>
+                                <div class="menuPay-box-content">
+                                    <div>Tổng món: 1</div>
+                                    <div>Tổng calo: 200</div>
+                                    <div>Tổng tiền: ${item.price}</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                `;
+
+                menuContainer.appendChild(menuItemDiv);
+            });
+        }
+
+        displayMenu();
+    </script>
+</body>
+</html>
