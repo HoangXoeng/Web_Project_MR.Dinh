@@ -213,13 +213,12 @@ h1{
     background-color: #004B00;
     border-radius: 20px;
     position: absolute;
-    width: 296.49px;
+    width: 350px;
     height: 313.28px;
 }
 
 .drink img {
     position: relative;
-    margin-left: 25px;
 }
 
 .quantity {
@@ -240,11 +239,11 @@ h1{
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    width: 250px;
+    width: 350px;
 }
 
 .drink h2 {
-    color: #FFF2AD;
+    color: #004B00;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
@@ -266,12 +265,21 @@ h1{
     font-weight: bold;
     padding: 10px;
     margin-bottom: 10px;
+    width: 100px;
+    margin-left: 30px;
 }
 
 .quantity {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-selection {
+    display: flex;
+    justify-content: left;
+    align-items: left;
     margin-bottom: 10px;
 }
 
@@ -285,6 +293,23 @@ h1{
 }
 
 .quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-selection button {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #1f7a1f;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.quantity-selection input {
     width: 40px;
     text-align: center;
     margin: 0 5px;
