@@ -17,7 +17,7 @@
 <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"													
 crossorigin="anonymous" />													
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"													
-crossorigin="anonymous"></script>													
+crossorigin=100px;mous"></script>													
 </head>													
 													
 <body class="sb-nav-fixed">													
@@ -56,7 +56,7 @@ aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>													
 Quản lí sản phẩm													
 </a>													
-<a class="nav-link" href="index-user.html">													
+<a class="nav-link" href="#">													
 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>													
 Quản lí người dùng													
 </a>													
@@ -90,7 +90,7 @@ aria-controls="pagesCollapseAuth">Authentication
 data-parent="#sidenavAccordionPages">													
 <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"													
 href="login.html">Login</a><a class="nav-link"													
-href="login.html">Register</a><a class="nav-link"													
+href="register.html">Register</a><a class="nav-link"													
 href="password.html">Forgot Password</a></nav>													
 </div>													
 <a class="nav-link collapsed" href="#" data-toggle="collapse"													
@@ -121,117 +121,167 @@ Admin
 </div>													
 </nav>													
 </div>													
-<div id="layoutSidenav_content">													
-													
-<div class="product">													
-<div class="title">Quản lý salad</div>																						
-<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class=" fas fa-plus mr-2"></i>Create</button>													
-<table class="table ">													
-<thead class="thead-light text-center">													
-<tr>													
-<th>ID</th>													
-<th>Name</th>													
-<th>Img</th>													
-<th>Price</th>	
-<th>type</th>													
-<th>Action</th>													
-</tr>													
-</thead>													
-<tbody class="text-center" id="product-admin">													
-</tbody>													
-													
-</table>													
-													
-</div>													
-</div>													
-<!-- Button trigger modal -->													
-													
-													
-<!-- Modal -->													
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"													
-aria-hidden="true">													
-<div class="modal-dialog">													
-<div class="modal-content">													
-<div class="modal-header">													
-<h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm</h5>													
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">													
-<span aria-hidden="true">&times;</span>													
-</button>													
-</div>													
-<div class="modal-body">													
-<form action="" class="form-row">													
-<!-- <div class="col-12">													
-<input class="form-control" type="text" id="id" placeholder="id">													
-</div> -->													
-<div class="col-12 mt-3">													
-<input class="form-control" type="text" id="name" placeholder="name">													
-</div>													
-<div class="col-12 mt-3">													
-<input class="form-control" type="text" id="img" placeholder="img">													
-</div>													
-<div class="col-12 mt-3">													
-<input class="form-control" type="number" id="price" placeholder="giá">													
-</div>													
-<a class="btn btn-outline-danger mt-3" href="" onclick="addProduct()">Thêm</a>													
-</form>													
-													
-</div>													
-<div class="modal-footer">													
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>													
-<!-- <button type="button" class="btn btn-primary">Save changes</button> -->													
-</div>													
-</div>													
-</div>													
-</div>													
-<div class="modal fade" id="updateProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"													
-aria-hidden="true">													
-<div class="modal-dialog">													
-<div class="modal-content">													
-<div class="modal-header">													
-<h5 class="modal-title" id="exampleModalLabel">Cập nhật</h5>													
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">													
-<span aria-hidden="true">&times;</span>													
-</button>													
-</div>													
-<div class="modal-body">													
-<form class="form-row">													
-<div class="col-12">													
-<input class="form-control" type="text" id="idd" placeholder="id">													
-</div>													
-<div class="col-12 mt-3">													
-<input class="form-control" type="text" id="named" placeholder="name">													
-</div>													
-<div class="col-12 mt-3">													
-<input class="form-control" type="text" id="imgd" placeholder="img">													
-</div>													
-<div class="col-12 mt-3">													
-<input class="form-control" type="number" id="priced" placeholder="giá">													
-</div>													
-<div id="submitUpdate" >Cập nhật</div>													
-</form>													
-													
-</div>													
-<div class="modal-footer">													
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>													
-<!-- <button type="button" class="btn btn-primary">Save changes</button> -->													
-</div>													
-</div>													
-</div>													
-</div>													
+<div id="layoutSidenav_content">																									
+    <div class="product">													
+        <div class="title">Quản lý Salad</div>																										
+        <button onclick="showForm('salad')" class="btn btn-primary">  <i class=" fas fa-plus mr-2"></i> Create</button>													
+        <table class="table ">													
+            <thead class="thead-light text-center">													
+                <tr>													
+                    <th>ID</th>													
+                    <th>Name</th>													
+                    <th>Img</th>
+                    <th>type</th>
+                    <th>enegy_1</th>
+                    <th>price_1</th>
+                    <th>enegy_2</th>
+                    <th>price_2</th>																									
+                    <th>Action</th>													
+                </tr>													
+            </thead>													
+            <tbody class="text-center" id="product-salad-admin" onload="productSaladAdmin()">													
+            </tbody>																										
+        </table>													
+    </div>
+
+    <div class="formAddSalad" style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="text-center">Product Form</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Name</label>
+                    <input type="text" class="form-control" id="productName" name="productName" placeholder="Enter Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="productImg">Img</label>
+                    <input type="text" class="form-control" id="productImg" name="productImg" placeholder="Enter Image Path">
+                </div>
+                <div class="form-group">
+                    <label for="productType">Type</label>
+                    <!-- Thẻ select với các tùy chọn -->
+                    <select id="productType" name="productType">
+                        <option value="basicSalad">Basic Salad</option>
+                        <option value="dailySalad">Daily Salad</option>
+                        <option value="featureSalad">Feature Salad</option>
+                        <option value="vipSalad">Vip Salad</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ingredients">Ingredients</label>
+                    <!-- Thêm input cho nguyên liệu -->
+                    <input type="text" id="ingredients" class="form-control" name="ingredients" placeholder="Enter ingredients separated by commas">
+                </div>
+                <div class="form-group">
+                    <label for="energy1">Energy 1</label>
+                    <input type="number" class="form-control" id="energy1" name="energy1" placeholder="Enter Energy 1 (kcal)">
+                </div>
+                <div class="form-group">
+                    <label for="price1">Price 1</label>
+                    <input type="number" class="form-control" id="price1" name="price1" placeholder="Enter Price 1 (USD)">
+                </div>
+                <div class="form-group">
+                    <label for="energy2">Energy 2</label>
+                    <input type="number" class="form-control" id="energy2" name="energy2" placeholder="Enter Energy 2 (kcal)">
+                </div>
+                <div class="form-group">
+                    <label for="price2">Price 2</label>
+                    <input type="number" class="form-control" id="price2" name="price2" placeholder="Enter Price 2 (USD)">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addNewProduct('salad')">Add</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <div class="product">													
+        <div class="title">Quản lý Đồ ăn thêm</div>																										
+        <button class="btn btn-primary" onclick="showForm('fastFood')"><i class=" fas fa-plus mr-2"></i>Create</button>													
+        <table class="table ">													
+            <thead class="thead-light text-center">													
+                <tr>													
+                    <th>ID</th>													
+                    <th>Name</th>													
+                    <th>Img</th>
+                    <th>Type</th>	
+                    <th>enegy</th>												
+                    <th>Price</th>													
+                    <th>Action</th>													
+                </tr>													
+            </thead>													
+            <tbody class="text-center" id="product-fastFood-admin">													
+            </tbody>																										
+        </table>													
+    </div>	
+
+
+
+    
+    <div class="product">													
+        <div class="title">Quản lý Thức uống</div>																										
+        <button class="btn btn-primary" onclick="showForm('drinks')"><i class=" fas fa-plus mr-2"></i>Create</button>													
+        <table class="table ">													
+            <thead class="thead-light text-center">													
+                <tr>													
+                    <th>ID</th>													
+                    <th>Name</th>													
+                    <th>Img</th>
+                    <th>type</th>
+                    <th>enegy_1</th>
+                    <th>price_1</th>
+                    <th>enegy_2</th>
+                    <th>price_2</th>																									
+                    <th>Action</th>												
+                </tr>													
+            </thead>													
+            <tbody class="text-center" id="product-drinks-admin">													
+            </tbody>																										
+        </table>													
+    </div>	
+
+
+    <div class="product">													
+        <div class="title">Quản lý Nguyên liệu</div>																										
+        <button class="btn btn-primary" onclick="showForm('ingredients')"><i class=" fas fa-plus mr-2"></i>Create</button>													
+        <table class="table ">													
+            <thead class="thead-light text-center">													
+                <tr>													
+                    <th>ID</th>													
+                    <th>Name</th>													
+                    <th>Img</th>
+                    <th>type</th>
+                    <th>Unit</th>													
+                    <th>Price</th>													
+                    <th>Action</th>													
+                </tr>													
+            </thead>													
+            <tbody class="text-center" id="product-ingredients-admin">													
+            </tbody>																										
+        </table>													
+    </div>	
+
+
+
+
+
+
+
+
+</div>	
+
+<div class="blackBack"><h1>blabla</h1></div>
+
+
+
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>												
 </body>													
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>													
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"													
 crossorigin="anonymous"></script>													
-<!-- <script src="../js/scripts.js"></script>													
-<script src="../js/product.js"></script>													
-<script src="../js/user.js"></script>													
-<script src="../js/admin.js"></script>													 -->
-													
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>													
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>													
-<!-- <script src="assets/demo/datatables-demo.js"></script>		 -->
-<script src="../js/adminByMrDinh.js"></script>	
-<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>										
+			
+<script src="../js/adminByMrDinh.js"></script>											
 													
 </html>													
 													

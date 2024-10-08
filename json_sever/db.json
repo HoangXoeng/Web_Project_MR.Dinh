@@ -132,7 +132,12 @@
     {
       "id": "5",
       "name": "Salad Gà Xé",
-      "ingredient": ["xà lách", "dưa leo", "cà chua bi", "Gà Xé"],
+      "ingredient": [
+        "xà lách",
+        "dưa leo",
+        "cà chua bi",
+        "Gà Xé"
+      ],
       "description": "",
       "type": "basicSalad",
       "enegy_1": "189",
@@ -870,4 +875,4 @@
       "img_url": "img.jpg"
     }
   ]
-} 
+}
