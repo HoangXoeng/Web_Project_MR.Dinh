@@ -13,7 +13,9 @@ a{
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
 }
-
+body{
+    background-color: var(--mainColor);
+}
 
 ul {
     list-style: none;
@@ -116,6 +118,7 @@ ul {
     right: -1600px;
     top: -1300px;
     border-radius: 50%;
+
 }
 .diaCom {
     position: absolute;
@@ -563,4 +566,11 @@ ul {
     left: 140px;
     bottom: -135 0px;
     filter: grayscale(0%) brightness(100%);
+}
+
+.buaAnLon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100px;
 }
