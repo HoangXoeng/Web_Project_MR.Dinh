@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div class="header-acc">
-                <div class="acc"><img srcset="../img/cart.png 2x" alt="cart"></div>
+                <div class="acc"><img srcset="../img/cart1.png 2x" alt="cart"></div>
                 <div class="acc1"><img srcset="../img/user.png 2x" alt="user"></div>
             </div>
             <div class="mess">
@@ -55,14 +55,27 @@
         <div class="title-img">
             <img srcset="../img/saladTuChon.png 2x" alt="Salad">
         </div>
-        
-        <div class="danhsach">DANH SÁCH NGUYÊN LIỆU TỰ CHỌN</div>
 
-        <div id="menu-container">
-            <div class="ngLieu">NGUYÊN LIỆU</div>
+
+        <div class="ngLieu">NGUYÊN LIỆU</div>
+        <div id="menu-container" class="menu-container">
             
+            <div id="ingredients-list"></div> <!-- Nơi chứa danh sách nguyên liệu -->
+        
+            <div class="menuPay">
+                <div class="menuPay-box">
+                    <div class="menuPay-box-title"><div>TỔNG CỘNG</div></div>
+                    <div class="menuPay-box-content">
+                        <div>Tổng món:</div>
+                        <div>Tổng calo:</div>
+                        <div>Tổng tiền:</div> 
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="pay"><button>THANH TOÁN</button></div>   
+
+        <div class="pay"><button>TRỘN NGAY  </button></div>
+         
 
 
         <footer class="footer">
@@ -106,8 +119,8 @@
         ];
 
         function displayMenu() {
-    const menuContainer = document.getElementById('menu-container');
-    menuContainer.innerHTML = "";  // Reset nội dung
+    const ingredientsList = document.getElementById('ingredients-list');
+    ingredientsList.innerHTML = "";  // Reset nội dung
 
     data.forEach(item => {
         const menuItemDiv = document.createElement('div');
@@ -116,7 +129,6 @@
         menuItemDiv.innerHTML = `
             <div class="menu">
                 <div class="menuTable">
-                    <div class="tich"><button class="tich">v</button></div>
                     <div class="imge"><img src="${item.img}" alt="${item.name}"></div>
                     <div class="des">
                         <div>${item.name}</div>
@@ -134,28 +146,12 @@
             </div>
         `;
 
-        menuContainer.appendChild(menuItemDiv);
+        ingredientsList.appendChild(menuItemDiv);
     });
-
-    // Bảng tổng cộng chỉ tạo một lần
-    const totalBox = document.createElement('div');
-    totalBox.classList.add("menuPay");
-
-    totalBox.innerHTML = `
-        <div class="menuPay-box">
-            <div class="menuPay-box-title">TỔNG CỘNG</div>
-            <div class="menuPay-box-content">
-                <div>Tổng món: 1</div>
-                <div>Tổng calo: 200</div>
-                <div>Tổng tiền: 65.000 VND</div> <!-- Sửa giá trị tổng tiền theo logic của bạn -->
-            </div>
-        </div>
-    `;
-
-    menuContainer.appendChild(totalBox);  // Thêm bảng tổng cộng vào cuối danh sách
 }
 
 displayMenu();
+
     </script>
 </body>
 </html>

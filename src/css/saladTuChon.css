@@ -305,7 +305,12 @@ ul{
 
 .ngLieu{
     padding-left: 200px;
-    font-size: 30px ;
+    font-size: 40px;
+    background-color: var(--mainColor);
+    padding-bottom: 20px;
+    font-family: var(--monteratText);
+    color: var(--secondColor);
+    font-weight: bold;
 }
 .menu{
     display: grid;
@@ -313,34 +318,45 @@ ul{
     /* gap: 200px; */   
     background-color: var(--mainColor);
     font-size: 30px;
+    font-family: var(--monteratText);
 }
 .imge img{
     width: 100px;
     height: 100px;
+    border-radius: 50px;
 }
 .menuTable{
     display: grid;
-    grid-template-columns: 10px 100px 200px 200px 100px;
+    grid-template-columns: 100px 400px 300px 100px;
     gap: 50px;
     align-items: center;
     justify-content: center;
-    /* padding-left: 200px; */
+    padding-left: 200px;
 }
 .menuPay-box{
-    border: 1px solid black;
     padding: 10px;
+
 }
 .menuPay-box-title{
-    padding: 20px 20px 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-bottom: 1px solid black;
+}
+.menuPay-box-title div{
+    padding: 10px;
+    flex: 1;
+    text-align: left;
 }
 .menuPay-box-content div{
     padding: 2px 0
 }
-.total{
-    padding-left: 30px;
-    gap: 20px
+.total div{
+    padding: 10px;
+    gap: 20px;
 }
+
+
 .des div{
     font-size: 30px;
     
@@ -351,10 +367,17 @@ ul{
 .title-total{
     font-size: 18px;
 }
+.menuPay{
+
+}
+.menu-container{
+    background-color: var(--mainColor);
+}
 
 .pay{
-    text-align: right;
-    padding: 20px 50px;
+
+    text-align: center;
+    padding: 50px 20px;
     background-color: var(--mainColor);
 }
 .pay button{
@@ -367,24 +390,37 @@ ul{
     font-family: var(--monteratText);
     
 }
-/* Bố trí menu-container thành hàng ngang */
 .menu-container {
     display: flex;
-     /* Tạo khoảng cách giữa các phần */
-    align-items: flex-start; /* Đặt tất cả phần tử theo chiều dọc trên cùng */
+    align-items: flex-start;
 }
 
-/* Danh sách nguyên liệu */
+
 #ingredients-list {
-    flex: 4; /* Chiếm 2 phần không gian */
- /* Khoảng cách giữa danh sách và bảng tổng cộng */
+    flex: 8; 
+
 }
 
-/* Bảng tổng cộng */
+
 .menuPay {
-    flex: 1; /* Chiếm 1 phần không gian */
-    padding: 10px;
-    border: 1px solid #ddd; /* Đường viền để phân biệt rõ */
-    border-radius: 8px; /* Bo tròn góc */
-    background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+    flex: 1;
+    border-radius: 8px;
+    margin-right: 100px;
+    background-color: var(--whiteColor);
+    border: 1px solid --mainColor;
+    font-family: var(--monteratText);
+    font-weight: bold;
+}
+
+.quantity-btn{
+    padding: 0 10px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.remove button{
+    padding: 0 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: var(--monteratText)
 }
