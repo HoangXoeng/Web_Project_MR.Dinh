@@ -235,7 +235,13 @@ function signIn() {
   getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
     if (user) {
       if (user.password == password) {
+        var role = user.role;
         alert("Login successfully");
+        localStorage.setItem('isLogin', 'true');
+        localStorage.setItem('role', role);
+
+       
+
         if (rememberMe) {
           localStorage.setItem("email", user.email);
           localStorage.setItem("password", user.password);
@@ -243,9 +249,16 @@ function signIn() {
           localStorage.removeItem("email");
           localStorage.removeItem("password");
         }
-        window.location.href = "http://localhost:3000/";
+
+        if (role == "admin") {
+          window.location.href = "http://localhost:3000/admin";
+        } else {
+          window.location.href = "http://localhost:3000/user";
+        }
+
         document.querySelector(".userName-login").value = "";
         document.querySelector(".password-login").value = "";
+        
       } else {
         document.querySelector(".wrong--pass").style.display = "block";
         console.log(user.password);
