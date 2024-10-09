@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --mainColor:  #FFF2AD;
+    --secondColor: #004B00;
+    --whiteColor:white;
+    --monteratText: "Montserrat", sans-serif;
+    --fredokaText: "Fredoka", sans-serif;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app{
+    width: 100%;
+}
+/* ------------------header-------------------- */
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+}
+.logo img{
+    width: 99px;
+    height: 103px;
+}
+.logo{
+    padding:0 30px 0 30px; 
+    margin: 0 15px 0 30px;
+}
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 61.5px;
+    padding: 15px;
+}
+.header-menu ul li a{
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    padding: 0 50px
+}
+
+.header-acc {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-left: 280px;
+    gap: 50px
+}
+
+.header-acc div {
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    border-radius: 50px;
+    padding:10px 25px
+}
+.acc img{
+    width: 30px;
+    height: 30px;
+}
+.acc1 img{
+    width: 20px;
+    height: 30px;
+}
+
+body {
+    background-color: #FFF2AD;
+    color: #004B00;
+    width: 1440px;
+    height: 963px;
+    top: 491.25px;
+    display: flex;
+    margin: auto;
+}
+
+
+
+.icon img {
+    width: 85px;
+    height: 72px;
+    margin-right: 1%;
+    padding: 5px;
+}
+
+main {
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1 {
+    color: #004B00;
+    font-family: var(--monteratText);
+    font-size: 80px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+.menu {
+    gap: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-item {
+    width: 187.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item img {
+    width: 335.25px;
+    height: 335.25px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.menu-item .box {
+    background-color: #004B00;
+    border-radius: 20px;
+    position: absolute;
+    width: 390.6px;
+    height: 262.5px;
+    margin-top: 97.5px;
+}
+
+.menu-item h2 {
+    display: flex;
+    color: #004B00;
+    font-family: 'Phudu', cursive;
+    font-size: 44px;
+    text-align: center;
+}
+
+.menu-item button {
+    background-color: #004B00; 
+    color: #FFFF; 
+    width: 156px;
+    height: 72px;
+    gap: 0px;
+    border-radius: 20px;
+    font-family: var(--monteratText);
+    font-size: 30px;
+    font-weight: 500px;
+    text-align: center;
+}
+
+
+.chat{
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    margin-left: 95%;
+    margin-top: -120px;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    height: 198px;
+    background-color: var(--secondColor);
+    padding: 0 50px; /* Thêm padding hai bên */
+}
+
+.footer-contact {
+    display: flex;
+}
+
+.address, .personal-contact {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 8px; */
+}
+
+.address div, .personal-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address img, .personal-contact img {
+    margin-right: 10px;
+}
+
+.time, .street, .phone, .email {
+    font-size: 15px;
+    padding: 10px;
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+}
+
+.time img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.street img {
+    text-align: center;
+    height: 40px;
+    padding-right: 30px;
+}
+
+.phone img {
+    height: 40px;
+    padding-right: 25px;
+}
+
+.email img {
+    height: 30px;
+    padding-right: 17px;
+}
+
+.phone {
+    margin-top: 10px;
+}
+
+.brand {
+    font-size: 75px;
+    font-family: var(--fredokaText);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 50px 0 ;
+    margin-right: 10px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77px;
+    flex-grow: 1; 
+}
