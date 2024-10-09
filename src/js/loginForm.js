@@ -40,11 +40,12 @@ const sendOTPbtn = () => {
   var userName = document.querySelector(".userName").value;
   console.log(userName)
   getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
-    if (!user) {
+    if (user) {
       alert("ten tai khoan da toi tai");
       setError("userName-error", "Tên đăng nhập đã tồn tại");
       isValid = false;
     } else {
+      isValid = true;
       clearError("userName-error");
       if (isHaveEmail) {
         var btn = document.querySelector(".sendOTP");
@@ -96,7 +97,7 @@ var getUserNameInJsonSeverAlreadyExist = (userName) => {
     });
 };
 
-var clearErrors = function() {
+var clearError = function() {
   var errorElements = document.querySelectorAll(".error-message");
   errorElements.forEach(function (element) {
     element.textContent = "";
@@ -151,7 +152,7 @@ function validateForm() {
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var phoneRegex = /^[0-9]{10}$/;
   // Clear previous errors
-  clearErrors();
+  clearError();
   // Validate each field
   if (userName.trim() === "") {
     setError("userName-error", "Tên đăng nhập không được để trống");
@@ -194,6 +195,7 @@ function validateForm() {
   }
   if (otp == otpGen) {
     isOTPTrue = true;
+ 
   }
   if (isValid) {
     if (isOTPTrue) {
