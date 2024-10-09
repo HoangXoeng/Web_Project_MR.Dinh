@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../Project_Ơn"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web_Project_MR.Dinh"
+	}
+}
