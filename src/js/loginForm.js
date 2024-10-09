@@ -251,9 +251,9 @@ function signIn() {
         }
 
         if (role == "admin") {
-          window.location.href = "http://localhost:3000/admin";
+          window.location.href = "http://127.0.0.1:5500/src/html/admin.html";
         } else {
-          window.location.href = "http://localhost:3000/user";
+          window.location.href = "../index.html";
         }
 
         document.querySelector(".userName-login").value = "";
