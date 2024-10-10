@@ -1,3 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+:root{
+  --mainColor:  #FFF2AD;
+  --secondColor: #004B00;
+  --whiteColor:white;
+  --monteratText: "Montserrat", sans-serif;
+  --fredokaText: "Fredoka", sans-serif;
+}
+body{
+  background-color: var(--mainColor);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app{
+  width: 100%;
+}
 .col-6 {
   width: 45%;
   padding-left: 5px;
@@ -52,58 +80,60 @@ html {
   width: 100%;
   height: 140vh;
 }
+
 .header {
-  height: 80px;
-  display: flex;
   width: 100%;
-  position: relative;
-}
-.wowbox-icon {
-  width: 80px;
-  height: 80px;
-  background-image: url(../img/logo.png);
-  background-size: cover;
-}
-.header--menu {
-  width: 40%;
-  height: 62px;
-  background-color: #004b00;
-  margin-left: 20px;
-  border-radius: 60px;
-  margin-top: 20px;
-}
-.header--menu--list {
   display: flex;
-  justify-content: space-around;
-  list-style-type: none;
   align-items: center;
-  line-height: 62px;
 }
-.cart--icon,
-.user--icon {
-  width: 70px;
-  height: 70px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 20px;
-  position: absolute;
+.logo img {
+  width: 99px;
+  height: 103px;
 }
-.signIn-form {
-  display: none;
+.logo {
+  padding: 0 30px 0 30px;
+  margin: 0 15px 0 30px;
 }
-.cart--icon {
-  background-image: url(../img/cartIcon.png);
-  right: 10%;
+.header-menu ul {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondColor);
+  border-radius: 61.5px;
+  padding: 15px;
 }
-.user--icon {
-  background-image: url(../img/userIcon.png);
-  right: 0;
+.header-menu ul li a {
+  color: var(--whiteColor);
+  font-family: var(--monteratText);
+  padding: 0 50px;
 }
-.header--menu--item {
-  color: #ffffff;
-  font-weight: 400px;
-  font-size: 16px;
+
+.header-acc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 280px;
+  gap: 50px;
 }
+
+.header-acc div {
+  background-color: var(--secondColor);
+  color: var(--whiteColor);
+  border-radius: 50px;
+  padding: 10px 25px;
+}
+
+.acc img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.acc1 img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+
 .title__welcome {
   height: 90vh;
   display: flex;

@@ -38,7 +38,7 @@ document.querySelector(".email").onchange = function () {
 
 const sendOTPbtn = () => {
   var userName = document.querySelector(".userName").value;
-  console.log(userName)
+  console.log(userName);
   getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
     if (user) {
       alert("ten tai khoan da toi tai");
@@ -65,20 +65,21 @@ const sendOTPbtn = () => {
           to_email: email,
           otp: otp,
         };
-        emailjs.send("service_3q0nrq9", "template_9cu3h6o", templateParams).then(
-          function (response) {
-            console.log("SUCCESS!", response.status, response.text);
-            alert("Mã xác nhận đã được gửi!");
-          },
-          function (error) {
-            console.log("FAILED...", error);
-            alert("Gửi mã xác nhận thất bại!");
-          }
-        );
+        emailjs
+          .send("service_3q0nrq9", "template_9cu3h6o", templateParams)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("Mã xác nhận đã được gửi!");
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              alert("Gửi mã xác nhận thất bại!");
+            }
+          );
       }
     }
   });
-  
 };
 
 var getUserNameInJsonSeverAlreadyExist = (userName) => {
@@ -97,7 +98,7 @@ var getUserNameInJsonSeverAlreadyExist = (userName) => {
     });
 };
 
-var clearError = function() {
+var clearError = function () {
   var errorElements = document.querySelectorAll(".error-message");
   errorElements.forEach(function (element) {
     element.textContent = "";
@@ -108,14 +109,12 @@ var clearError = function() {
   });
 };
 
-
-
 function createAccount() {
   var userName = document.querySelector(".userName").value;
   var email = document.querySelector(".email").value;
   var phoneNum = document.querySelector(".phoneNum").value;
   var password = document.querySelector(".password").value;
-  
+
   opt = {
     url: "http://localhost:3000/accounts",
     method: "post",
@@ -131,7 +130,7 @@ function createAccount() {
     .then(function (data_res) {
       console.log(data_res);
       if (data_res.status == 201) alert("Created successfully");
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "../src/html/signUp.html";
     })
     .catch(function (ex) {
       console.log(ex);
@@ -195,7 +194,6 @@ function validateForm() {
   }
   if (otp == otpGen) {
     isOTPTrue = true;
- 
   }
   if (isValid) {
     if (isOTPTrue) {
@@ -208,8 +206,7 @@ function validateForm() {
   }
 }
 
-
-var setError = function(elementId, message){
+var setError = function (elementId, message) {
   var element = document.getElementById(elementId);
   element.placeholder = message;
   document
@@ -217,18 +214,13 @@ var setError = function(elementId, message){
     .classList.add("error");
 };
 
-
-
-var setErrorCheckbox = function(elementId, message){
+var setErrorCheckbox = function (elementId, message) {
   var element = document.getElementById(elementId);
   element.textContent = message;
   document
     .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
     .classList.add("error");
-}; 
-
-
-
+};
 
 function signIn() {
   var userName = document.querySelector(".userName-login").value;
@@ -239,10 +231,8 @@ function signIn() {
       if (user.password == password) {
         var role = user.role;
         alert("Login successfully");
-        localStorage.setItem('isLogin', 'true');
-        localStorage.setItem('role', role);
-
-       
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", role);
 
         if (rememberMe) {
           localStorage.setItem("email", user.email);
@@ -260,7 +250,6 @@ function signIn() {
 
         document.querySelector(".userName-login").value = "";
         document.querySelector(".password-login").value = "";
-        
       } else {
         document.querySelector(".wrong--pass").style.display = "block";
         console.log(user.password);
