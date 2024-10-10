@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0;   
     padding: 0;
     box-sizing: border-box;
 }
@@ -13,7 +13,9 @@ a{
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
 }
-
+body{
+    background-color: var(--mainColor);
+}
 
 ul {
     list-style: none;
@@ -75,98 +77,29 @@ ul {
     height: 30px;
 }
 
-body {
-    background-color: #FFF2AD;
-    color: #004B00;
-    width: 1440px;
-    height: 963px;
-    top: 491.25px;
-    display: flex;
-    margin: auto;
-}
 
 
 
-.icon img {
-    width: 85px;
-    height: 72px;
-    margin-right: 1%;
-    padding: 5px;
-}
-
-main {
-    text-align: center;
-    padding: 50px 0;
-}
-
-h1 {
-    color: #004B00;
-    font-family: var(--monteratText);
-    font-size: 80px;
-    font-weight: 700px;
-    text-align: center;
-}
-
-.menu {
-    gap: 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.menu-item {
-    width: 187.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.menu-item img {
-    width: 335.25px;
-    height: 335.25px;
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.menu-item .box {
-    background-color: #004B00;
-    border-radius: 20px;
-    position: absolute;
-    width: 390.6px;
-    height: 262.5px;
-    margin-top: 97.5px;
-}
-
-.menu-item h2 {
-    display: flex;
-    color: #004B00;
-    font-family: 'Phudu', cursive;
-    font-size: 44px;
-    text-align: center;
-}
-
-.menu-item button {
-    background-color: #004B00; 
-    color: #FFFF; 
-    width: 156px;
-    height: 72px;
-    gap: 0px;
-    border-radius: 20px;
-    font-family: var(--monteratText);
-    font-size: 30px;
-    font-weight: 500px;
-    text-align: center;
-}
 
 
-.chat{
-    width: 100px; 
-    height: 100px;
-    border-radius: 50%; 
-    margin-left: 95%;
-    margin-top: -120px;
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------footer-------------- */
 .footer {
     width: 100%;
     display: flex;
@@ -247,4 +180,178 @@ h1 {
     justify-content: center;
     gap: 77px;
     flex-grow: 1; 
+}
+.messText{  
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    top: 100px;
+    right: 0;
+} 
+
+.chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding-top: 13px;
+}
+
+.chat-header::after {
+    content: "";
+    border-style: solid;
+    border-width: 0 25px 25px 25px; 
+    border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
+    position: absolute;
+    bottom: 500px;
+    left: 338px;
+    width: 0;
+    height: 0;
+}
+
+
+.chat-header,.chat-container{
+    background-color: #469100;
+}
+.chat-header img{
+    width: 40px;
+    height: 40px;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+}
+.chat-header div{
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+.chat-container{
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color: var(--whiteColor);
+    padding: 35px 0 10px 40px;
+}
+.chat-container-hello{
+    font-weight: bold;
+}
+
+.chat-body div{
+    margin: 30px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-body{
+    padding:10px 10px 200px 10px;
+    background-color: var(--whiteColor);
+    border-bottom: 1px solid black;
+}
+
+.chat-footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteColor);
+    gap: 35px;
+}
+
+.chat-footer input{
+    width: 300px;
+    padding: 20px 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-footer button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondColor);
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color:var(--whiteColor)
+}
+/* -----------chat---------- */
+.mess{
+    position: absolute;
+    background-color: var(--secondColor);
+    border-radius: 50%;
+    padding: 20px;
+    right: 60px;
+    top: -80px
+    
+}
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+.lemon1{
+    position: absolute;
+    top: 100px;
+    left: 0px;   
+}
+.lemon2 img{
+    position: absolute;
+    top: -40px;
+    right: 550px;
+    width: 250px;
+}
+.lemon3{
+    position: absolute;
+    top: 370px;
+    right: 750px
+}
+.lemon4 img{
+    position: absolute;
+    width: 200px;
+    top:40px;
+    left: 700px;
+}
+
+.lemon5 img {
+    position: absolute;
+    width: 100px;
+    filter: grayscale(100%) brightness(0%);
+    left: 100px;
+}
+
+.lemon6 img{
+    position: absolute;
+    left: 100px;
+    width: 100px;
+}
+.lemon7 img{
+    position: absolute;
+    filter: grayscale(100%) brightness(0%);
+    width: 100px;
+    left: 110px;
+}
+.lemon8 img{
+    position: absolute;
+    right: 60px;
+    bottom: -1400px;
+    width: 120px;
+}
+.lemon9 img{
+    position: absolute;
+    width: 90px;
+    left: 140px;
+    bottom: -135 0px;
+    filter: grayscale(0%) brightness(100%);
+}
+
+.buaAnLon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100px;
 }
