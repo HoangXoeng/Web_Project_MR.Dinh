@@ -176,33 +176,39 @@ var productFastFoodAdmin = function () {
 var productDrinksAdmin = function () {
   var htmlInDrinks;
   getListProductByType("drinks", "juice").then((listproduct) => {
+    
     // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
-    htmlInDrinks = listproduct
-      .map((data) => {
+    console.log(listproduct); 
+
+
+    var htmlInDrinks = listproduct.map((data) => {
         return `<tr>
-                  <td>${data.id}</td>
-                  <td>${data.name}</td>
-                  <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
-                  <td>${data.type}</td>
-                  <td>${data.enegy_1} kcal</td>
-                  <td>${data.price_1} đ</td>
-                  <td>${data.enegy_2} kcal</td>
-                  <td>${data.price_2} đ</td>
-                      <td>
-                          <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
-                              <i class="fas fa-cogs"></i>
-                          </button>                       
-                          <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
-                              <i class="fas fa-trash"></i>
-                          </button>
-                           <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
-                              <i class="fas fa-dots"></i>
-                          </button>
-                      </td>
-                  </tr>`;
-      })
-      .join("");
-  });
+                <td>${data.id}</td>
+                <td>${data.name}</td>
+                <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                <td>${data.type}</td>
+                <td>${data.enegy_1} kcal</td>
+                <td>${data.price_1} đ</td>
+                <td>${data.enegy_2} kcal</td>
+                <td>${data.price_2} đ</td>
+                    <td>
+                        <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                            <i class="fas fa-cogs"></i>
+                        </button>                       
+                        <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                         <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                            <i class="fas fa-dots"></i>
+                        </button>
+                    </td>
+                </tr>`;
+    }).join("");
+}).catch((error) => {
+    console.error("Error fetching product list:", error);
+});
+
+
   getListProductByType("drinks", "smoothie").then((listproduct) => {
     // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
     htmlInDrinks1 = listproduct
