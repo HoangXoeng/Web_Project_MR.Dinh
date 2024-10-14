@@ -1,0 +1,12 @@
+.changePassForm{
+    display: none;
+    position: fixed;
+    border: 1px solid #333;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal{
+    background-color: black;
+}
