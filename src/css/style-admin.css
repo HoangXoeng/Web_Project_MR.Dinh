@@ -3,6 +3,10 @@ body{
 
     
 }
+.bottom{
+    position: absolute;
+    bottom: 0;
+}
 .product .title{
    color: black;
    font-weight: 500;

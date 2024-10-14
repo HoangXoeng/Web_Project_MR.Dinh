@@ -22,6 +22,14 @@
       "phoneNum": "0373989884",
       "password": "ad123123",
       "role": "user"
+    },
+    {
+      "userName": "baky123",
+      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "phoneNum": "0373989884",
+      "password": "ad123123123",
+      "role": "user",
+      "id": "6a5b"
     }
   ],
   "foods": [
@@ -108,12 +116,7 @@
     {
       "id": "5",
       "name": "Salad Gà Xé",
-      "ingredient": [
-        "xà lách",
-        "dưa leo",
-        "cà chua bi",
-        "Gà Xé"
-      ],
+      "ingredient": ["xà lách", "dưa leo", "cà chua bi", "Gà Xé"],
       "description": "",
       "type": "basicSalad",
       "enegy_1": "189",

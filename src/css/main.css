@@ -26,12 +26,17 @@ ul {
 .app{
     width: 100%;
 }
+.body{
+    padding-top: 54px;
+}
 /* ------------------header-------------------- */
 .header{
     width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--mainColor);
+    position: fixed;
+    z-index: 1;
 }
 .logo img{
     width: 99px;
@@ -59,7 +64,8 @@ ul {
     align-items:center;
     justify-content: center;
     margin-left: 280px;
-    gap: 50px
+    gap: 50px;
+    cursor: pointer;
 }
 
 .header-acc div {
@@ -77,8 +83,29 @@ ul {
     height: 30px;
 }
 
+.user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 9%;
+    border-radius: 4px;
+    display: none;
+}
+.user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+}
+.user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+}
+
 /* -----------------Chao Mung------------ */
 .chaoMung {
+    /* margin-top: 50px; */
     display: flex;
     align-items: center;
     background-color: var(--mainColor);

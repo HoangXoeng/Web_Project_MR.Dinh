@@ -221,39 +221,52 @@ var setErrorCheckbox = function (elementId, message) {
     .querySelector(`input[name="${elementId.replace("-error", "")}"]`)
     .classList.add("error");
 };
-
 function signIn() {
+  // Get input values
   var userName = document.querySelector(".userName-login").value;
   var password = document.querySelector(".password-login").value;
   var rememberMe = document.querySelector(".verify--checkBox").checked;
+
+  // Check if username is not empty
+  if (!userName) {
+    alert("Please enter your username.");
+    return;
+  }
+
+  // Fetch user from server
   getUserNameInJsonSeverAlreadyExist(userName).then((user) => {
     if (user) {
-      if (user.password == password) {
+      // Check password
+      if (user.password === password) {
         var role = user.role;
         alert("Login successfully");
-        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("isLogin", 'true');
         localStorage.setItem("role", role);
+        localStorage.setItem("userName", userName);
 
+        // Handle remember me functionality
         if (rememberMe) {
           localStorage.setItem("email", user.email);
-          localStorage.setItem("password", user.password);
+          localStorage.setItem("password", user.password); // Storing password in localStorage is not secure
         } else {
           localStorage.removeItem("email");
           localStorage.removeItem("password");
         }
 
-        if (role == "admin") {
+        // Redirect based on role
+        if (role === "admin") {
           window.location.href = "http://127.0.0.1:5500/src/html/admin.html";
         } else {
-          window.location.href = "../index.html";
+          console.log("Invalid role");
+          window.location.href = "/index.html"; 
         }
 
+        // Clear input fields
         document.querySelector(".userName-login").value = "";
         document.querySelector(".password-login").value = "";
       } else {
         document.querySelector(".wrong--pass").style.display = "block";
-        console.log(user.password);
-        console.log("pass" + password);
+        console.log("Incorrect password:", user.password); // For debugging, avoid logging passwords in production
       }
     } else {
       clearError("userName-error");
