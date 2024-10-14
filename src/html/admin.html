@@ -22,7 +22,7 @@ crossorigin=100px;mous"></script>
 													
 <body class="sb-nav-fixed">													
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">													
-<a class="navbar-brand" href="../index.html">WOWBOX</a><button class="btn btn-link btn-sm order-1 order-lg-0"													
+<a class="navbar-brand" href="http://127.0.0.1:5500/">WOWBOX</a><button class="btn btn-link btn-sm order-1 order-lg-0"													
 id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button><!-- Navbar Search-->													
 <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">													
 <div class="input-group">													
@@ -39,7 +39,7 @@ aria-describedby="basic-addon2" />
 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"													
 aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>													
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">													
-<a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>													
+<a class="dropdown-item" href="http://127.0.0.1:5500/">Back to home</a>													
 <div class="dropdown-divider"></div>													
 <a class="dropdown-item" href="../html/login.html">Logout</a>													
 </div>													
@@ -122,7 +122,7 @@ Admin
 </nav>													
 </div>													
 <div id="layoutSidenav_content">																									
-    <div class="product">													
+    <div class="product product--salad">													
         <div class="title">Quản lý Salad</div>																										
         <button onclick="showForm('salad')" class="btn btn-primary">  <i class=" fas fa-plus mr-2"></i> Create</button>													
         <table class="table ">													
@@ -144,7 +144,7 @@ Admin
         </table>													
     </div>
 
-    <div class="formAddSalad" style="width: 45%;">
+    <div class="formAddSalad"  style="width: 45%;">
         <div class="container mt-5">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="text-center">Product Form</h2>
@@ -196,7 +196,7 @@ Admin
     
 
 
-    <div class="product">													
+    <div class="product product--fastFood">													
         <div class="title">Quản lý Đồ ăn thêm</div>																										
         <button class="btn btn-primary" onclick="showForm('fastFood')"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -214,12 +214,43 @@ Admin
             <tbody class="text-center" id="product-fastFood-admin">													
             </tbody>																										
         </table>													
-    </div>	
+    </div>
 
+    <div class="formAddFastFood" style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="text-center">Add fast food form</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="fastFoodName">Name</label>
+                    <input type="text" class="form-control" id="fastFoodName" name="fastFoodName" placeholder="Enter Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="fastFoodImg">Img</label>
+                    <input type="text" class="form-control" id="fastFoodImg" name="fastFoodImg" placeholder="Enter Image Path">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <!-- Thêm input cho nguyên liệu -->
+                    <input type="text" id="description" class="form-control" name="description" placeholder="Enter ingredients separated by commas">
+                </div>
+                <div class="form-group">
+                    <label for="energy">Energy</label>
+                    <input type="number" class="form-control" id="energy" name="energy" placeholder="Enter Energy (kcal)">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price (USD)">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addNewProduct('fastFood')">Add</button>
+            </form>
+        </div>
+    </div>
 
 
     
-    <div class="product">													
+    <div class="product product--drink">													
         <div class="title">Quản lý Thức uống</div>																										
         <button class="btn btn-primary" onclick="showForm('drinks')"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -241,8 +272,63 @@ Admin
         </table>													
     </div>	
 
+    <div class="formAddDrink"  style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="text-center">Product Form</h2>
 
-    <div class="product">													
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="drinkName">Name</label>
+                    <input type="text" class="form-control" id="drinkName" name="drinkName" placeholder="Enter Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="drinkImg">Img</label>
+                    <input type="text" class="form-control" id="drinkImg" name="drinkImg" placeholder="Enter Image Path">
+                </div>
+                <div class="form-group">
+                    <label for="drinkType">Type</label>
+                   
+                    <select id="drinkType" name="drinkType" onchange="updateForm()">
+                        <option value="juice">Juice</option>
+                        <option value="smoothie">Smoothie</option>
+                        <option value="coke">Coke</option>
+                    </select>
+                </div>
+                
+
+                <div id="dynamic-form">
+                    <div class="form-group">
+                        <label for="energy-drink-1">Energy 1</label>
+                        <input type="number" class="form-control" id="energy-drink-1" name="energy-drink-1" placeholder="Enter Energy 1 (kcal)">
+                    </div>
+                    <div class="form-group">
+                        <label for="price-drink-1">Price 1</label>
+                        <input type="number" class="form-control" id="price-drink-1" name="price-drink-1" placeholder="Enter Price 1 (USD)">
+                    </div>
+                    <div class="form-group">
+                        <label for="energy-drink-2">Energy 2</label>
+                        <input type="number" class="form-control" id="energy-drink-2" name="energy-drink-2" placeholder="Enter Energy 2 (kcal)">
+                    </div>
+                    <div class="form-group">
+                        <label for="price-drink-2">Price 2</label>
+                        <input type="number" class="form-control" id="price-drink-2" name="price-drink-2" placeholder="Enter Price 2 (USD)">
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="addNewProduct('drinks')">Add</button>
+            </form>
+            
+           
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="product product--ingredient">													
         <div class="title">Quản lý Nguyên liệu</div>																										
         <button class="btn btn-primary" onclick="showForm('ingredients')"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -262,6 +348,52 @@ Admin
         </table>													
     </div>	
 
+    <div class="formAddIngredient"  style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="text-center">Product Form</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="ingredientName">Name</label>
+                    <input type="text" class="form-control" id="ingredientName" name="ingredientName" placeholder="Enter Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="ingredientName">Img</label>
+                    <input type="text" class="form-control" id="ingredientImg" name="ingredientImg" placeholder="Enter Image Path">
+                </div>
+                <div class="form-group">
+                    <label for="ingredientType">Type</label>
+                    <!-- Thẻ select với các tùy chọn -->
+                    <select id="ingredientType" name="ingredientType">
+                        <option value="Cereal">Cereal</option>
+                        <option value="Starch">Starch</option>
+                        <option value="cheese">Cheese</option>
+                        <option value="protein">Protein</option>
+                        <option value="vegestable">Vegestable</option>
+                        <option value="sauce">Sauce</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <!-- Thêm input cho nguyên liệu -->
+                    <input type="text" id="unit" class="form-control" name="unit" placeholder="Enter unit">
+                </div>
+                <div class="form-group">
+                    <label for="ingredient--energy">Energy</label>
+                    <input type="number" class="form-control" id="ingredient--energy" name="ingredient--energy" placeholder="Enter Energy  (kcal)">
+                </div>
+                <div class="form-group">
+                    <label for="ingredient--price">Price </label>
+                    <input type="number" class="form-control" id="ingredient--price" name="ingredient--price" placeholder="Enter Price  (USD)">
+                </div>
+                
+                <button type="button" class="btn btn-primary" onclick="addNewProduct('ingredient')">Add</button>
+            </form>
+        </div>
+    </div>
+    
 
 
 

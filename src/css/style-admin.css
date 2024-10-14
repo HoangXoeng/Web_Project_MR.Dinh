@@ -28,11 +28,41 @@ body{
 .formAddSalad{
     position: absolute;
     padding: 20px 0;
-    top: 7%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: white;
     z-index: 11;
+    display: none;
+}
+.formAddFastFood{
+    position: absolute;
+    padding: 20px 0;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
+    display: none;
+}
+.formAddDrink{
+    position: absolute;
+    padding: 20px 0;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
+    display: none;
+}
+.formAddIngredient{
+    position: absolute;
+    padding: 20px 0;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
     display: none;
 }
 .close {

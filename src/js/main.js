@@ -27,5 +27,11 @@ const logOut = () => {
 
 const userInformation = () => {
     document.querySelector('.user--option').style.display = 'none';
+    var role = localStorage.getItem('role');
+    if (role =='user'){
     window.location.href = 'http://127.0.0.1:5500/src/html/userInformation.html';
+    }
+    else if (role == 'admin'){
+        window.location.href = 'http://127.0.0.1:5500/src/html/admin.html'
+    }
 }
