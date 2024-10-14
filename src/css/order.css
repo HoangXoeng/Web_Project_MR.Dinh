@@ -26,6 +26,8 @@ ul {
 .app{
     width: 100%;
 }
+
+
 /* ------------------header-------------------- */
 .header{
        
@@ -80,12 +82,90 @@ ul {
     width: 30px;
     height: 30px;
 }
+.user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 9%;
+    border-radius: 4px;
+    display: none;
+}
+.user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+}
+.user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+}
+/* header end */
 
+main{
+    padding-top: 54px;
+}
+main>h1{
+    text-align: center;
+    color: var(--secondColor);
+    font-size: 48px;
+    padding-top: 70px;
+    font-weight: 700;
+}
 
+.menu{
+    text-align: center;
+    align-items: center;
+    /* justify-content: space-around; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
+}
 
-
-
+.box{
+    /* position: relative; */
+    display: inline-block;
+    width: 400px;
+    height: 250px;
+    background-color: var(--secondColor);
+    border-radius: 20px;
+}
+.menu-item{
+    margin-top: 50px;
+    position: relative;
+}
+.menu-item > img {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: -125px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.menu-item2{
+    margin-top: 170px;
+}
+.menu-item>h2{
+    font-size: 24px;
+    /* font-weight: 200px; */
+    color: var(--secondColor);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.menu-item>button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    font-weight: bold;
+    font-size: 20px;
+}
+.menu-item>button:hover{
+    cursor: pointer;
+    opacity: 80%;
+}
 
 
 

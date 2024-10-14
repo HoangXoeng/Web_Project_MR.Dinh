@@ -82,6 +82,25 @@ ul {
 .body{
     padding-top: 54px;
 }
+.user--option{
+  background-color: var(--mainColor);
+  /* border: 1px solid var(--secondColor); */
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 9%;
+  border-radius: 4px;
+  display: none;
+}
+.user--option--menu--item{
+  padding: 5px;
+  border: 1px solid var(--secondColor);
+  cursor: pointer;
+}
+.user--option--menu--item:hover{
+  background-color: var(--secondColor);
+  color: var(--whiteColor);
+  opacity: 0.7;
+}
 /*-------------veChungToi--------- */
 .veChungToi {
   padding: 30px 0 0 200px;

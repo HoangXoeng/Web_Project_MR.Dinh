@@ -10,7 +10,7 @@ const goToLoginPage = () => {
         }
     }else if (isLogin == 'false'){
         alert('log in')
-        window.location.href = '../src/html/login.html';
+        window.location.href = 'http://127.0.0.1:5500/src/html/login.html';
     }
 }
 
@@ -27,5 +27,5 @@ const logOut = () => {
 
 const userInformation = () => {
     document.querySelector('.user--option').style.display = 'none';
-    window.location.href = '../src/html/userInformation.html';
+    window.location.href = 'http://127.0.0.1:5500/src/html/userInformation.html';
 }
