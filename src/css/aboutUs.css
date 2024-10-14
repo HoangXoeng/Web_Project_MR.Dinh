@@ -339,30 +339,16 @@ ul {
   bottom: 20px;
 }
 
-.mess {
-  background-color: var(--secondColor);
-  border-radius: 50%;
-  padding: 20px;
-  right: 20px;
-  top: 600px;
-  position: absolute;
-}
-
-.mess a i {
-  color: var(--whiteColor);
-  font-size: 35px;
-}
-
-.messText {
+.messText{  
   display: none;
-  position: absolute;
+  position: fixed;
   width: 400px;
   height: 500px;
-  top: 100px;
-  right: 0;
-}
+  bottom: 0;
+  right: 10px;
+} 
 
-.chat-header {
+.chat-header{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -370,46 +356,35 @@ ul {
   padding-top: 13px;
 }
 
-.chat-header::after {
-  content: "";
-  border-style: solid;
-  border-width: 0 25px 25px 25px;
-  border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
-  position: absolute;
-  bottom: 500px;
-  left: 338px;
-  width: 0;
-  height: 0;
-}
 
-.chat-header,
-.chat-container {
+
+.chat-header,.chat-container{
   background-color: #469100;
 }
-.chat-header img {
+.chat-header img{
   width: 40px;
   height: 40px;
   background-color: var(--whiteColor);
   border-radius: 50%;
 }
-.chat-header div {
+.chat-header div{
   font-size: 30px;
   font-family: var(--fredokaText);
   font-weight: bold;
   color: var(--whiteColor);
 }
 
-.chat-container {
+.chat-container{
   font-size: 10px;
   font-family: var(--monteratText);
   color: var(--whiteColor);
   padding: 35px 0 10px 40px;
 }
-.chat-container-hello {
+.chat-container-hello{
   font-weight: bold;
 }
 
-.chat-body div {
+.chat-body div{
   margin: 30px;
   padding: 10px;
   background-color: gainsboro;
@@ -418,20 +393,20 @@ ul {
   font-family: var(--monteratText);
 }
 
-.chat-body {
-  padding: 10px 10px 200px 10px;
+.chat-body{
+  padding:10px 10px 200px 10px;
   background-color: var(--whiteColor);
   border-bottom: 1px solid black;
 }
 
-.chat-footer {
+.chat-footer{
   display: flex;
   align-items: center;
   background-color: var(--whiteColor);
   gap: 35px;
 }
 
-.chat-footer input {
+.chat-footer input{
   width: 300px;
   padding: 20px 20px;
   border: none;
@@ -440,7 +415,7 @@ ul {
   font-family: var(--monteratText);
 }
 
-.chat-footer button {
+.chat-footer button{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -448,5 +423,19 @@ ul {
   background-color: var(--secondColor);
   font-size: 10px;
   font-family: var(--monteratText);
+  color:var(--whiteColor)
+}
+/* -----------chat---------- */
+.mess{
+  position: fixed;
+  background-color: var(--secondColor);
+  border-radius: 50%; 
+  padding: 20px;
+  right: 10px;
+  bottom: 12px;
+}
+
+.mess a i{
   color: var(--whiteColor);
+  font-size: 35px;
 }

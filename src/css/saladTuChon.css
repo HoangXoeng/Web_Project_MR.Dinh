@@ -191,27 +191,13 @@ ul{
 }
 
 /* -----------chat---------- */
-.mess{
-    position: absolute;
-    background-color: var(--secondColor);
-    border-radius: 50%;
-    padding: 20px;
-    right: 60px;
-    top: 300px
-}
-
-.mess a i{
-    color: var(--whiteColor);
-    font-size: 35px;
-}
-
 .messText{  
     display: none;
-    position: absolute;
+    position: fixed;
     width: 400px;
     height: 500px;
-    top: 100px;
-    right: 0;
+    bottom: 0;
+    right: 10px;
 } 
 
 .chat-header{
@@ -222,17 +208,6 @@ ul{
     padding-top: 13px;
 }
 
-.chat-header::after {
-    content: "";
-    border-style: solid;
-    border-width: 0 25px 25px 25px; 
-    border-color: transparent transparent #469100 transparent;
-    position: absolute;
-    bottom: 500px;
-    left: 338px;
-    width: 0;
-    height: 0;
-}
 
 
 .chat-header,.chat-container{
@@ -302,7 +277,20 @@ ul{
     font-family: var(--monteratText);
     color:var(--whiteColor)
 }
+/* -----------chat---------- */
+.mess{
+    position: fixed;
+    background-color: var(--secondColor);
+    border-radius: 50%; 
+    padding: 20px;
+    right: 10px;
+    bottom: 12px;
+}
 
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
 .ngLieu{
     padding-left: 200px;
     font-size: 30px ;
@@ -372,7 +360,7 @@ ul{
     display: flex;
      /* Tạo khoảng cách giữa các phần */
     align-items: flex-start; /* Đặt tất cả phần tử theo chiều dọc trên cùng */
-}
+} 
 
 /* Danh sách nguyên liệu */
 #ingredients-list {

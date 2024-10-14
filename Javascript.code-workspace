@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Javascript"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web_Project_MR.Dinh"
+	}
+}
