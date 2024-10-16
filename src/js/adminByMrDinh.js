@@ -14,18 +14,35 @@ var getListProductByType = (link, type) => {
     });
 };
 
+var getProductById = (link, id) => {
+  return axios
+    .get(`http://localhost:3000/${link}/${id}`)
+    .then((response) => {
+      if (response.data) {
+        // Kiểm tra nếu có dữ liệu
+        return response.data;
+      } else {
+        console.error("Product not found");
+        return null;
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching product:", error);
+      throw error; // Ném lại lỗi nếu cần
+    });
+};
+
 var getId = (link) => {
   return axios
     .get(`http://localhost:3000/${link}`)
     .then((response) => {
       if (response.data.length > 0) {
-       console.log(response.data.length);
-       console.log(typeof response.data.length);
+        //  console.log(response.data.length);
+        //  console.log(typeof response.data.length);
 
-        return response.data.length;
+        return String(response.data.length + 1);
       } else {
         console.error("No data found");
-        return 1;
       }
     })
     .catch((error) => {
@@ -33,11 +50,7 @@ var getId = (link) => {
       return null;
     });
 };
-var getIDofProduct  = function(link) {
-  getId(link).then((id) => {
-    return id
-  });
-}
+
 // getListProductByType('basicSalad').then((listproduct) =>console.log(listproduct))
 
 var productSaladAdmin = function () {
@@ -49,14 +62,14 @@ var productSaladAdmin = function () {
         return `<tr>
                         <td>${data.id}</td>
                         <td>${data.name}</td>
-                        <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                        <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                         <td>${data.type}</td>
                         <td>${data.enegy_1} kcal</td>
                         <td>${data.price_1} đ</td>
                         <td>${data.enegy_2} kcal</td>
                         <td>${data.price_2} đ</td>
                         <td>
-                            <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                            <button onclick="updateProduct('salad',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                                 <i class="fas fa-cogs"></i>
                             </button>                       
                             <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
@@ -78,7 +91,7 @@ var productSaladAdmin = function () {
         return `<tr>
                       <td>${data.id}</td>
                       <td>${data.name}</td>
-                      <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                      <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                       <td>${data.type}</td>
                       <td>${data.enegy_1} kcal</td>
                       <td>${data.price_1} đ</td>
@@ -109,7 +122,7 @@ var productSaladAdmin = function () {
         return `<tr>
                     <td>${data.id}</td>
                     <td>${data.name}</td>
-                    <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                    <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                     <td>${data.type}</td>
                     <td>${data.enegy_1} kcal</td>
                     <td>${data.price_1} đ</td>
@@ -140,7 +153,7 @@ var productSaladAdmin = function () {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
-                  <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                  <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                   <td>${data.type}</td>
                   <td>${data.enegy_1} kcal</td>
                   <td>${data.price_1} đ</td>
@@ -175,18 +188,18 @@ var productFastFoodAdmin = function () {
         return `<tr>
                       <td>${data.id}</td>
                       <td>${data.name}</td>
-                      <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                      <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                       <td>${data.type}</td>
                       <td>${data.enegy} kcal</td>
                       <td>${data.price} đ</td>
                       <td>
-                          <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                          <button onclick="updateProduct('fastFood',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                               <i class="fas fa-cogs"></i>
                           </button>                       
                           <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                               <i class="fas fa-trash"></i>
                           </button>
-                           <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
+                           <button onclick="detailProduct('fastFood',${data.id})" class="btn ml-1 btn-outline-success">
                               <i class="fas fa-dots"></i>
                           </button>
                       </td>
@@ -207,7 +220,7 @@ var productDrinksAdmin = function () {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
-                  <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                  <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                   <td>${data.type}</td>
                   <td>${data.enegy_1} kcal</td>
                   <td>${data.price_1} đ</td>
@@ -235,14 +248,14 @@ var productDrinksAdmin = function () {
         return `<tr>
                 <td>${data.id}</td>
                 <td>${data.name}</td>
-                <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+                <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
                 <td>${data.type}</td>
                 <td>${data.enegy_1} kcal</td>
                 <td>${data.price_1} đ</td>
                 <td>${data.enegy_2} kcal</td>
                 <td>${data.price_2} đ</td>
                     <td>
-                        <button onclick="updateProduct('drink',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                        <button onclick="updateProduct('drinks',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                             <i class="fas fa-cogs"></i>
                         </button>                       
                         <button onclick="deleteProduct('drink',${data.id})" class="btn ml-1 btn-outline-warning">
@@ -264,14 +277,14 @@ var productDrinksAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.enegy_1} kcal</td>
               <td>${data.price} đ</td>
               <td>${data.enegy_2} kcal</td>
               <td>${data.price_2} đ</td>
                   <td>
-                      <button onclick="updateProduct('drink',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('drinks',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
                       <button onclick="deleteProduct('drink',${data.id})" class="btn ml-1 btn-outline-warning">
@@ -298,7 +311,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -324,7 +337,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -351,7 +364,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -378,7 +391,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -405,7 +418,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit} kcal</td>
               <td>${data.price} đ</td>
@@ -432,7 +445,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="../img/${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src=" " alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit} kcal</td>
               <td>${data.price} đ</td>
@@ -456,7 +469,7 @@ var productIngredientsAdmin = function () {
   });
 };
 
-const showForm = (type) => {
+const showForm = (type, idToUpdate) => {
   var span = document.querySelectorAll("#closeModal");
   var product__salad = document.querySelector(".product--salad");
   var saladForm = document.querySelector(".formAddSalad");
@@ -466,7 +479,53 @@ const showForm = (type) => {
   var drinkForm = document.querySelector(".formAddDrink");
   var product__drink = document.querySelector(".product--drink");
   var product__ingredient = document.querySelector(".product--ingredient");
-  var formAddIngredient =document.querySelector(".formAddIngredient");
+  var formAddIngredient = document.querySelector(".formAddIngredient");
+
+  if (idToUpdate == null && type == "salad") {
+    const addButton = document.querySelector(".addSaladBtn");
+    addButton.innerHTML = "Add";
+    addButton.setAttribute("onclick", 'addNewProduct("salad", null)');
+  } else {
+    const addButton = document.querySelector(".addSaladBtn");
+    addButton.innerHTML = "Update";
+    addButton.setAttribute("onclick", `addNewProduct("salad", ${idToUpdate})`);
+  }
+
+  if (idToUpdate == null && type == "fastFood") {
+    const addButton = document.querySelector(".addFastFoodBtn");
+    addButton.innerHTML = "Add";
+    addButton.setAttribute("onclick", 'addNewProduct("fastFood", null)');
+  } else {
+    const addButton = document.querySelector(".addFastFoodBtn");
+    addButton.innerHTML = "Update";
+    addButton.setAttribute(
+      "onclick",
+      `addNewProduct("fastFood", ${idToUpdate})`
+    );
+  }
+
+  if (idToUpdate == null && type == "drinks") {
+    const addButton = document.querySelector(".addDrinkBtn");
+    addButton.innerHTML = "Add";
+    addButton.setAttribute("onclick", 'addNewProduct("drinks", null)');
+  } else {
+    const addButton = document.querySelector(".addDrinkBtn");
+    addButton.innerHTML = "Update";
+    addButton.setAttribute("onclick", `addNewProduct("drinks", ${idToUpdate})`);
+  }
+
+  if (idToUpdate == null && type == "ingredient") {
+    const addButton = document.querySelector(".addIngredientBtn");
+    addButton.innerHTML = "Add";
+    addButton.setAttribute("onclick", 'addNewProduct("ingredient", null)');
+  } else {
+    const addButton = document.querySelector(".addIngredientBtn");
+    addButton.innerHTML = "Update";
+    addButton.setAttribute(
+      "onclick",
+      `addNewProduct("ingredient", ${idToUpdate})`
+    );
+  }
 
   window.onclick = function (event) {
     if (event.target == modal) {
@@ -474,7 +533,7 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
-    formAddIngredient.style.display = "none";
+      formAddIngredient.style.display = "none";
 
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
@@ -493,7 +552,7 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
-    formAddIngredient.style.display = "none";
+      formAddIngredient.style.display = "none";
 
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
@@ -501,7 +560,7 @@ const showForm = (type) => {
         product__fastFood.scrollIntoView({ behavior: "smooth" });
       } else if (type === "drinks") {
         product__drink.scrollIntoView({ behavior: "smooth" });
-      }else {
+      } else {
         product__ingredient.scrollIntoView({ behavior: "smooth" });
       }
     };
@@ -513,7 +572,7 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
-    formAddIngredient.style.display = "none";
+      formAddIngredient.style.display = "none";
 
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
@@ -521,7 +580,7 @@ const showForm = (type) => {
         product__fastFood.scrollIntoView({ behavior: "smooth" });
       } else if (type === "drinks") {
         product__drink.scrollIntoView({ behavior: "smooth" });
-      }else {
+      } else {
         product__ingredient.scrollIntoView({ behavior: "smooth" });
       }
     }
@@ -538,13 +597,14 @@ const showForm = (type) => {
     drinkForm.style.display = "block";
     modal.style.display = "block";
     product__salad.scrollIntoView({ behavior: "smooth" });
-  } else{
+  } else {
     formAddIngredient.style.display = "block";
     modal.style.display = "block";
     product__salad.scrollIntoView({ behavior: "smooth" });
   }
 };
-var addNewProduct = function (type) {
+
+var addNewProduct = function (type, idToUpdate) {
   var apiFoods = "http://localhost:3000/foods";
   var apiDrinks = "http://localhost:3000/drinks";
   var apiIngredients = "http://localhost:3000/ingredients";
@@ -602,32 +662,51 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
+      getId("foods")
+        .then((id) => {
+          var method;
+          var idInFunc;
+          var urlInFunc;
+          if (idToUpdate == null) {
+            method = "post";
+            idInFunc = id;
+            urlInFunc = apiFoods;
+          } else {
+            method = "put";
+            idInFunc = String(idToUpdate);
+            urlInFunc = `${apiFoods}/${idInFunc}`;
+          }
 
-      opt = {
-        url: apiFoods,
-        method: "post",
-        data: {
-          id : getIDofProduct('foods'),
-          name: saladName,
-          ingredient: ingredients,
-          description: "",
-          type: saladType,
-          enegy_1: energy1,
-          price_1: price1,
-          enegy_2: energy2,
-          price_2: price2,
-          img: img,
-        },
-      };
+          const opt = {
+            url: urlInFunc,
+            method: method,
+            data: {
+              id: idInFunc,
+              name: saladName,
+              ingredient: ingredients,
+              description: "",
+              type: saladType,
+              enegy_1: energy1,
+              price_1: price1,
+              enegy_2: energy2,
+              price_2: price2,
+              img: img,
+            },
+          };
+
+          axios(opt)
+            .then(function (data_res) {
+              console.log(data_res);
+              if (data_res.status == 201) alert("Created successfully");
+            })
+            .catch(function (ex) {
+              console.log(ex);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-    axios(opt)
-      .then(function (data_res) {
-        console.log(data_res);
-        if (data_res.status == 201) alert("Created successfully");
-      })
-      .catch(function (ex) {
-        console.log(ex);
-      });
   } else if (type == "fastFood") {
     const saladName = document.getElementById("fastFoodName").value;
     const img = document.getElementById("fastFoodImg").value;
@@ -648,31 +727,58 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
+      getId("foods")
+        .then((id) => {
+          var method;
+          var idInFunc;
+          var urlInFunc;
+          if (idToUpdate == null) {
+            method = "post";
+            idInFunc = id;
+            urlInFunc = apiFoods;
+          } else {
+            method = "put";
+            idInFunc = String(idToUpdate);
+            urlInFunc = `${apiFoods}/${idInFunc}`;
+          }
 
-      opt = {
-        url: apiFoods,
-        method: "post",
-        data: {
-          id : getIDofProduct('foods'),
-          name: saladName,
-          ingredient: "",
-          description: description,
-          type: "fastFood",
-          enegy: energy,
-          price: price,
-          img: img,
-        },
-      };
+          const opt = {
+            url: urlInFunc,
+            method: method,
+            data: {
+              id: idInFunc,
+              name: saladName,
+              ingredient: "",
+              description: description,
+              type: "fastFood",
+              enegy: energy,
+              price: price,
+              img: img,
+            },
+          };
+
+          // Kiểm tra dữ liệu trước khi gửi yêu cầu
+          if (!saladName || !description || !energy || !price) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          axios(opt)
+            .then(function (data_res) {
+              console.log(data_res);
+              if (data_res.status === 201 || data_res.status === 200) {
+                alert("Operation successful!");
+              }
+            })
+            .catch(function (ex) {
+              console.error("Error during API call:", ex);
+            });
+        })
+        .catch((error) => {
+          console.error("Error getting ID:", error);
+        });
     }
-    axios(opt)
-      .then(function (data_res) {
-        console.log(data_res);
-        if (data_res.status == 201) alert("Created successfully");
-      })
-      .catch(function (ex) {
-        console.log(ex);
-      });
-  }else if (type == "drinks") {
+  } else if (type == "drinks") {
     const drinkName = document.getElementById("drinkName").value;
     const drinkImg = document.getElementById("drinkImg").value;
     const drinkType = document.getElementById("drinkType").value;
@@ -723,46 +829,48 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
-      if (drinkType == "juice" || drinkType == "smoothie") {
-        opt = {
-          url: apiDrinks,
-          method: "post",
-          data: {
-            id:getIDofProduct('drinks'),
-            name: drinkName,
-            description: description,
-            type: drinkType,
-            enegy_1: energy1,
-            price_1: price1,
-            enegy_2: energy2,
-            price_2: price2,
-            img: drinkImg,
-          },
-        };
-      } else {
-        opt = {
-          url: apiDrinks,
-          method: "post",
-          data: {
-            name: drinkName,
-            description: "",
-            type: "coke",
-            price: price,
-            img: drinkImg,
-          },
-        };
-      }
+      getId("drinks")
+        .then((id) => {
+          var method;
+          var idInFunc;
+          var urlInFunc;
+          if (idToUpdate == null) {
+            method = "post";
+            idInFunc = id;
+            urlInFunc = apiDrinks;
+          } else {
+            method = "put";
+            idInFunc = String(idToUpdate);
+            urlInFunc = `${apiDrinks}/${idInFunc}`;
+          }
+
+          const opt = {
+            url: urlInFunc,
+            method: method,
+            data: {
+              id: idInFunc,
+              name: drinkName,
+              description: "",
+              type: "coke",
+              price_1: price,
+              img: drinkImg,
+            },
+          };
+
+          axios(opt)
+            .then(function (data_res) {
+              console.log(data_res);
+              if (data_res.status == 201) alert("Created successfully");
+            })
+            .catch(function (ex) {
+              console.log(ex);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-    axios(opt)
-      .then(function (data_res) {
-        console.log(data_res);
-        if (data_res.status == 201) alert("Created successfully");
-      })
-      .catch(function (ex) {
-        console.log(ex);
-      });
-  }
-  else{
+  } else {
     const name = document.getElementById("ingredientName").value;
     const img = document.getElementById("ingredientName").value;
     const type = document.getElementById("ingredientType").value;
@@ -770,7 +878,6 @@ var addNewProduct = function (type) {
     const energy = document.getElementById("ingredient--energy").value;
     const price = document.getElementById("ingredient--price").value;
     const isTrue = true;
-
 
     // Kiểm tra giá trị năng lượng và giá tiền
     if (isNaN(energy) || energy <= 0) {
@@ -783,30 +890,47 @@ var addNewProduct = function (type) {
       isTrue = false;
     }
 
-
     if (isTrue) {
-      opt = {
-        url: apiIngredients,
-        method: "post",
-        data: {
-          id : getIDofProduct('ingredients'),
-          name: name,
-          type: type,
-          unit: unit,
-          enegy: energy,
-          price: price,
-          img: img,
-        },
-      };
+      getId("ingredients")
+        .then((id) => {
+          var method;
+          var idInFunc;
+          var urlInFunc;
+          if (idToUpdate == null) {
+            method = "post";
+            idInFunc = id;
+            urlInFunc = apiIngredients;
+          } else {
+            method = "put";
+            idInFunc = String(idToUpdate);
+            urlInFunc = `${apiIngredients}/${idInFunc}`;
+          }
+          const opt = {
+            url: urlInFunc,
+            method: method,
+            data: {
+              id: idInFunc,
+              name: name,
+              type: type,
+              unit: unit,
+              enegy: energy,
+              price: price,
+              img: img,
+            },
+          };
+          axios(opt)
+            .then(function (data_res) {
+              console.log(data_res);
+              if (data_res.status == 201) alert("Created successfully");
+            })
+            .catch(function (ex) {
+              console.log(ex);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-    axios(opt)
-      .then(function (data_res) {
-        console.log(data_res);
-        if (data_res.status == 201) alert("Created successfully");
-      })
-      .catch(function (ex) {
-        console.log(ex);
-      });
   }
 };
 
@@ -872,30 +996,318 @@ const updateForm = () => {
   formContainer.innerHTML = formHTML;
 };
 // Xóa sản phẩm
-var deleteProduct = function (type,id) {
-  var apiFoods = "http://localhost:3000/foods";
-  var apiDrinks = "http://localhost:3000/drinks";
-  var apiIngredients = "http://localhost:3000/ingredients";
-  id = "`${id}`"
-  if (type === 'food') {
-    alert(id)
-    axios.delete(`http://localhost:3000/foods/${id}`)
-    .then(response => {
-      console.log('Deleted:', response.data);
-    })
-    .catch(error => {
-      console.error('There was an error deleting the item!', error);
-    });
-  }else if (type === 'drink'){
-    alert("")
-  }else{
-    alert("ingredient");
+var deleteProduct = function (type, id) {
+  if (type === "food") {
+    axios
+      .delete(`http://localhost:3000/foods/${id}`)
+      .then((response) => {
+        console.log("Deleted:", response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error deleting the item!", error);
+      });
+  } else if (type === "drink") {
+    axios
+      .delete(`http://localhost:3000/drinks/${id}`)
+      .then((response) => {
+        console.log("Deleted:", response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error deleting the item!", error);
+      });
+  } else {
+    axios
+      .delete(`http://localhost:3000/ingredients/${id}`)
+      .then((response) => {
+        console.log("Deleted:", response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error deleting the item!", error);
+      });
   }
 };
 
 // Sửa sản phẩm
-var updateProduct = function (i) {};
-var submitUpdate = function (i) {};
+var updateProduct = function (type, id) {
+  if (type == "salad") {
+    showForm(type, id);
+  } else if (type == "fastFood") {
+    showForm(type, id);
+  } else if (type == "drinks") {
+    showForm(type, id);
+  } else {
+    showForm(type, id);
+  }
+};
+
+var closeDetailForm = function() {
+  document.querySelector(".detail__form").style.display = "none";
+}
+var detailProduct = function (type, id) {
+  id = String(id);
+  if (type === "food") {
+    getProductById("foods", id)
+      .then((data) => {
+        if (data) {
+          // Kiểm tra xem dữ liệu có hợp lệ không
+          const htmlDetails = `
+        
+    <div class="formDetail"  style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal" onclick = "closeDetailForm()">&times;</span>
+            <h2 class="text-center">Detail form</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Name</label>
+                    <input type="text" class="form-control" id="productName" name="productName" value="${data.name}">
+                </div>
+                <div class="form-group">
+                    <label for="productImg">Img</label>
+                <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+                </div>
+                <div class="form-group">
+                    <label for="productType">Type</label>
+                      <input type="text" class="form-control" id="productType" name="productType" value="${data.type}" >
+                </div>
+                <div class="form-group">
+                 <label for="ingredients">Ingredients</label>
+
+                  <textarea id="ingredients" class="form-control" rows="2">${data.ingredient}</textarea>
+                </div>
+
+                <div class="form-group">
+                 <label for="description">Description</label>
+
+                  <textarea id="description" class="form-control" rows="2">${data.description}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="energy1">Energy 1</label>
+                    <input type="number" class="form-control" id="energy1" name="energy1"  value="${data.enegy_1}>
+                </div>
+                <div class="form-group">
+                    <label for="price1">Price 1</label>
+                    <input type="number" class="form-control" id="price1" name="price1" value="${data.price_1}>
+                </div>
+                <div class="form-group">
+                    <label for="energy2">Energy 2</label>
+                    <input type="number" class="form-control" id="energy2" name="energy2" value="${data.enegy_2}">
+                </div>
+                <div class="form-group">
+                    <label for="price2">Price 2</label>
+                    <input type="number" class="form-control" id="price2" name="price2" value="${data.price_2}">
+                </div>
+
+            </form>
+        </div>
+    </div>
+        `;
+
+          document.querySelector(".detail__form").innerHTML = htmlDetails;
+          document.querySelector(".detail__form").style.display = "block";
+          document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+
+          // Thêm sự kiện cho nút Edit
+
+        } else {
+          console.error("Product not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
+  }else if (type =='fastFood'){
+     getProductById("foods", id)
+      .then((data) => {
+        if (data) {
+          // Kiểm tra xem dữ liệu có hợp lệ không
+          const htmlDetails = `
+        
+    <div class="formDetail"  style="width: 45%;">
+        <div class="container mt-5">
+            <span class="close" id="closeModal" onclick = "closeDetailForm()">&times;</span>
+            <h2 class="text-center">Detail form</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Name</label>
+                    <input type="text" class="form-control" id="productName" name="productName" value="${data.name}">
+                </div>
+                <div class="form-group">
+                    <label for="productImg">Img</label>
+                <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+                </div>
+                <div class="form-group">
+                    <label for="productType">Type</label>
+                      <input type="text" class="form-control" id="productType" name="productType" value="${data.type}" >
+                </div>
+          
+
+                <div class="form-group">
+                 <label for="description">Description</label>
+
+                  <textarea id="description" class="form-control" rows="2">${data.description}</textarea>
+                </div>
+
+               
+                <div class="form-group">
+                    <label for="energy2">Energy</label>
+                    <input type="number" class="form-control" id="energy2" name="energy2" value="${data.enegy}">
+                </div>
+                <div class="form-group">
+                    <label for="price2">Price</label>
+                    <input type="number" class="form-control" id="price2" name="price2" value="${data.price}">
+                </div>
+
+            </form>
+        </div>
+    </div>
+        `;
+
+          document.querySelector(".detail__form").innerHTML = htmlDetails;
+          document.querySelector(".detail__form").style.display = "block";
+          document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+
+          // Thêm sự kiện cho nút Edit
+
+        } else {
+          console.error("Product not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
+
+  }else if (type =='drink'){
+    getProductById("drinks", id)
+    .then((data) => {
+      if (data) {
+        // Kiểm tra xem dữ liệu có hợp lệ không
+        const htmlDetails = `
+      
+  <div class="formDetail"  style="width: 45%;">
+      <div class="container mt-5">
+          <span class="close" id="closeModal" onclick = "closeDetailForm()">&times;</span>
+          <h2 class="text-center">Detail form</h2>
+
+          <form id="productForm">
+              <div class="form-group">
+                  <label for="productName">Name</label>
+                  <input type="text" class="form-control" id="productName" name="productName" value="${data.name}">
+              </div>
+              <div class="form-group">
+                  <label for="productImg">Img</label>
+              <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+              </div>
+              <div class="form-group">
+                  <label for="productType">Type</label>
+                    <input type="text" class="form-control" id="productType" name="productType" value="${data.type}" >
+              </div>
+        
+
+              <div class="form-group">
+               <label for="description">Description</label>
+
+                <textarea id="description" class="form-control" rows="2">${data.description}</textarea>
+              </div>
+                <div class="form-group">
+                  <label for="energy2">Energy</label>
+                  <input type="number" class="form-control" id="energy2" name="energy2" value="${data.enegy_1}">
+              </div>
+              <div class="form-group">
+                  <label for="price2">Price</label>
+                  <input type="number" class="form-control" id="price2" name="price2" value="${data.price_1}">
+              </div>
+             
+              <div class="form-group">
+                  <label for="energy2">Energy</label>
+                  <input type="number" class="form-control" id="energy2" name="energy2" value="${data.enegy_2}_2">
+              </div>
+              <div class="form-group">
+                  <label for="price2">Price</label>
+                  <input type="number" class="form-control" id="price2" name="price2" value="${data.price_2}">
+              </div>
+
+          </form>
+      </div>
+  </div>
+      `;
+
+        document.querySelector(".detail__form").innerHTML = htmlDetails;
+        document.querySelector(".detail__form").style.display = "block";
+        document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+
+        // Thêm sự kiện cho nút Edit
+
+      } else {
+        console.error("Product not found");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching product details:", error);
+    });
+  }else{
+    getProductById("ingredients", id)
+    .then((data) => {
+      if (data) {
+        // Kiểm tra xem dữ liệu có hợp lệ không
+        const htmlDetails = `
+      
+  <div class="formDetail"  style="width: 45%;">
+      <div class="container mt-5">
+          <span class="close" id="closeModal" onclick = "closeDetailForm()">&times;</span>
+          <h2 class="text-center">Detail form</h2>
+
+          <form id="productForm">
+              <div class="form-group">
+                  <label for="productName">Name</label>
+                  <input type="text" class="form-control" id="productName" name="productName" value="${data.name}">
+              </div>
+              <div class="form-group">
+                  <label for="productImg">Img</label>
+              <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+              </div>
+              <div class="form-group">
+                  <label for="productType">Type</label>
+                    <input type="text" class="form-control" id="productType" name="productType" value="${data.type}" >
+              </div>
+              <div class="form-group">
+                  <label for="price2">Price</label>
+                  <input type="number" class="form-control" id="price2" name="price2" value="${data.price}">
+              </div>
+             
+              <div class="form-group">
+                  <label for="unit">Unit</label>
+                  <input type="text" class="form-control" id="unit" name="unit" value="${data.unit}">
+              </div>
+
+              <div class="form-group">
+                  <label for="price2">energy</label>
+                  <input type="number" class="form-control" id="price2" name="price2" value="${data.enegy}">
+              </div>
+
+          </form>
+      </div>
+  </div>
+      `;
+
+        document.querySelector(".detail__form").innerHTML = htmlDetails;
+        document.querySelector(".detail__form").style.display = "block";
+        document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+
+        // Thêm sự kiện cho nút Edit
+
+      } else {
+        console.error("Product not found");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching product details:", error);
+    });
+  }
+
+};
 
 var userAdmin = function () {
   var listproduct = "";

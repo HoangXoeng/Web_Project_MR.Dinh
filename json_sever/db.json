@@ -52,7 +52,7 @@
       "price_1": "92.000",
       "enegy_2": "30",
       "price_2": "129.000",
-      "img_url": "salad_bo_tam_tieu.jpg"
+      "img_url": "https://i.imgur.com/CRiplR5.png"
     },
     {
       "id": "2",
@@ -439,84 +439,14 @@
       "img_url": "img.jpg"
     },
     {
-      "id": {},
-      "name": "123",
-      "ingredient": [
-        "123"
-      ],
-      "description": "",
-      "type": "basicSalad",
-      "enegy_1": "123",
-      "price_1": "123",
-      "enegy_2": "123",
-      "price_2": "123",
-      "img": "123"
-    },
-    {
-      "id": {},
-      "name": "123",
-      "ingredient": [
-        "123213"
-      ],
-      "description": "",
-      "type": "basicSalad",
-      "enegy_1": "123",
-      "price_1": "124",
-      "enegy_2": "123",
-      "price_2": "223",
-      "img": "123"
-    },
-    {
-      "id": {},
-      "name": "123",
-      "ingredient": [
-        "23"
-      ],
-      "description": "",
-      "type": "vipSalad",
-      "enegy_1": "23",
-      "price_1": "12",
-      "enegy_2": "12",
-      "price_2": "12",
-      "img": "22"
-    },
-    {
-      "id": {},
-      "name": "123",
-      "ingredient": [
-        "123"
-      ],
-      "description": "",
-      "type": "basicSalad",
-      "enegy_1": "123232",
-      "price_1": "2323",
-      "enegy_2": "23",
-      "price_2": "23",
-      "img": "123"
-    },
-    {
-      "id": "[object Promise]1",
-      "name": "123",
+      "id": "26",
+      "name": "gagaga",
       "ingredient": "",
-      "description": "23123",
+      "description": "123123",
       "type": "fastFood",
-      "enegy": "123123",
+      "enegy": "123123123",
       "price": "123",
-      "img": "123"
-    },
-    {
-      "id": "8900",
-      "name": "23",
-      "ingredient": [
-        "213"
-      ],
-      "description": "",
-      "type": "basicSalad",
-      "enegy_1": "123",
-      "price_1": "23",
-      "enegy_2": "123",
-      "price_2": "",
-      "img": "23"
+      "img": "123123"
     }
   ],
   "drinks": [
@@ -629,7 +559,7 @@
       "name": "Coca Light",
       "type": "coke",
       "description": "",
-      "price": "35.000",
+      "price_1": "35.000",
       "img_url": "img.jpg"
     },
     {
@@ -637,7 +567,7 @@
       "name": "Trà đào cam Sả",
       "type": "coke",
       "description": "",
-      "price": "45.000",
+      "price_1": "45.000",
       "img_url": "img.jpg"
     },
     {
@@ -645,37 +575,8 @@
       "name": "Nước Khoáng ",
       "type": "coke",
       "description": "",
-      "price": "10.000",
+      "price_1": "10.000",
       "img_url": "img.jpg"
-    },
-    {
-      "id": "7098",
-      "name": "123",
-      "type": "juice",
-      "enegy_1": "123",
-      "price_1": "123",
-      "enegy_2": "123",
-      "price_2": "123",
-      "img": "123"
-    },
-    {
-      "id": "620e",
-      "name": "123",
-      "description": "123",
-      "type": "smoothie",
-      "enegy_1": "123",
-      "price_1": "122",
-      "enegy_2": "123",
-      "price_2": "123",
-      "img": "123"
-    },
-    {
-      "id": "a6bb",
-      "name": "123",
-      "description": "",
-      "type": "coke",
-      "price": "123123",
-      "img": "123"
     }
   ],
   "ingredients": [
@@ -966,15 +867,6 @@
       "price": "20.000",
       "enegy": "32",
       "img_url": "img.jpg"
-    },
-    {
-      "id": "026f",
-      "name": "nuoc man",
-      "type": "sauce",
-      "unit": "1l",
-      "enegy": "122",
-      "price": "23",
-      "img": "nuoc man"
     }
   ]
 }
