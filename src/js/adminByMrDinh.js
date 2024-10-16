@@ -33,7 +33,11 @@ var getId = (link) => {
       return null;
     });
 };
-
+var getIDofProduct  = function(link) {
+  getId(link).then((id) => {
+    return id
+  });
+}
 // getListProductByType('basicSalad').then((listproduct) =>console.log(listproduct))
 
 var productSaladAdmin = function () {
@@ -598,12 +602,12 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
-      var id = getId('foods')
+
       opt = {
         url: apiFoods,
         method: "post",
         data: {
-          id : id,
+          id : getIDofProduct('foods'),
           name: saladName,
           ingredient: ingredients,
           description: "",
@@ -644,13 +648,12 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
-      var id = getId('foods')
 
       opt = {
         url: apiFoods,
         method: "post",
         data: {
-          id : id+1,
+          id : getIDofProduct('foods'),
           name: saladName,
           ingredient: "",
           description: description,
@@ -725,7 +728,7 @@ var addNewProduct = function (type) {
           url: apiDrinks,
           method: "post",
           data: {
-            id:getId('drinks'),
+            id:getIDofProduct('drinks'),
             name: drinkName,
             description: description,
             type: drinkType,
@@ -786,7 +789,7 @@ var addNewProduct = function (type) {
         url: apiIngredients,
         method: "post",
         data: {
-          id : getId('ingredients'),
+          id : getIDofProduct('ingredients'),
           name: name,
           type: type,
           unit: unit,
