@@ -52,17 +52,17 @@ aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
 <div class="sb-sidenav-menu">													
 <div class="nav">													
 <div class="sb-sidenav-menu-heading">Core</div>													
-<a class="nav-link" href="#">													
-<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>													
+<a class="nav-link" href="#"  onclick="showSession('product')">						
+<div class="sb-nav-link-icon " ><i class="fas fa-tachometer-alt"></i></div>													
 Quản lí sản phẩm													
 </a>	
 
-<a class="nav-link" href="#">													
-<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>													
+<a class="nav-link" href="#" onclick="showSession('user')">													
+<div class="sb-nav-link-icon" ><i class="fas fa-tachometer-alt"></i></div>													
 Quản lí người dùng													
 </a>	
 
-<a class="nav-link" href="#">													
+<a class="nav-link" href="#"  onclick="showSession('bill')">													
     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>													
     Quản lí đơn hàng													
     </a>	
@@ -78,11 +78,12 @@ Admin
 </div>
 
 
-<div class="detail__form"></div>
+    <div class="detail__form"></div>
 
 
-<div id="layoutSidenav_content">																									
-    <div class="product product--salad">													
+<div id="layoutSidenav_content">			
+    <div  class="product__session">																						
+        <div class="product product--salad">													
         <div class="title">Quản lý Salad</div>																										
         <button onclick="showForm('salad',null)" class="btn btn-primary">  <i class=" fas fa-plus mr-2"></i> Create</button>													
         <table class="table ">													
@@ -102,10 +103,9 @@ Admin
             <tbody class="text-center" id="product-salad-admin" onload="productSaladAdmin()">													
             </tbody>																										
         </table>													
-    </div>
+        </div>
   
-
-    <div class="formAddSalad"  style="width: 45%;">
+        <div class="formAddSalad"  style="width: 45%;">
         <div class="container mt-5">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="text-center">Product Form</h2>
@@ -155,11 +155,9 @@ Admin
 
             </form>
         </div>
-    </div>
+        </div>
     
-
-
-    <div class="product product--fastFood">													
+        <div class="product product--fastFood">													
         <div class="title">Quản lý Đồ ăn thêm</div>																										
         <button class="btn btn-primary" onclick="showForm('fastFood',null)"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -177,9 +175,9 @@ Admin
             <tbody class="text-center" id="product-fastFood-admin">													
             </tbody>																										
         </table>													
-    </div>
+        </div>
 
-    <div class="formAddFastFood" style="width: 45%;">
+        <div class="formAddFastFood" style="width: 45%;">
         <div class="container mt-5">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="text-center">Add fast food form</h2>
@@ -210,11 +208,9 @@ Admin
                 <!-- onclick="addNewProduct('fastFood',null)" -->
             </form>
         </div>
-    </div>
-
-
-    
-    <div class="product product--drink">													
+        </div>
+ 
+        <div class="product product--drink">													
         <div class="title">Quản lý Thức uống</div>																										
         <button class="btn btn-primary" onclick="showForm('drinks',null)"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -234,9 +230,9 @@ Admin
             <tbody class="text-center" id="product-drinks-admin">													
             </tbody>																										
         </table>													
-    </div>	
+        </div>	
 
-    <div class="formAddDrink"  style="width: 45%;">
+        <div class="formAddDrink"  style="width: 45%;">
         <div class="container mt-5">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="text-center">Product Form</h2>
@@ -286,14 +282,9 @@ Admin
             
            
         </div>
-    </div>
+        </div>
 
-
-
-
-
-
-    <div class="product product--ingredient">													
+        <div class="product product--ingredient">													
         <div class="title">Quản lý Nguyên liệu</div>																										
         <button class="btn btn-primary" onclick="showForm('ingredients',null)"><i class=" fas fa-plus mr-2"></i>Create</button>													
         <table class="table ">													
@@ -311,9 +302,9 @@ Admin
             <tbody class="text-center" id="product-ingredients-admin">													
             </tbody>																										
         </table>													
-    </div>	
+        </div>	
 
-    <div class="formAddIngredient"  style="width: 45%;">
+        <div class="formAddIngredient"  style="width: 45%;">
         <div class="container mt-5">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="text-center">Product Form</h2>
@@ -358,18 +349,23 @@ Admin
                 <!-- onclick="addNewProduct('ingredient',null)" -->
             </form>
         </div>
+        </div>
+
     </div>
-    
 
+    <div class="user__session" >
+    <h1>blabla</h1>
+    <h1>blabla</h1>
+    <h1>blabla</h1>
+    <h1>blabla</h1>
+    <h1>blabla</h1>
+    </div>
 
+    <div class="bill__session">
+    <h1>blili</h1>
+    </div>
 
-
-
-
-
-</div>	
-
-<div class="blackBack"><h1>blabla</h1></div>
+</div>
 
 
 

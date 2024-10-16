@@ -1,3 +1,24 @@
+
+var showSession = function(page) {
+  var productPage = document.querySelector('.product__session');
+  var userPage = document.querySelector('.user__session');
+  var billPage = document.querySelector('.bill__session');
+
+  // Ẩn tất cả các trang
+  productPage.style.display = "none";
+  userPage.style.display = "none";
+  billPage.style.display = "none";
+
+  // Hiện trang tương ứng
+  if (page === 'product') {
+    productPage.style.display = "block";
+  } else if (page === 'user') {
+    userPage.style.display = "block";
+  } else if (page === 'bill') {
+    billPage.style.display = "block";
+  }
+}
+
 var getListProductByType = (link, type) => {
   return axios
     .get(`http://localhost:3000/${link}?type=${type}`)
@@ -50,8 +71,6 @@ var getId = (link) => {
       return null;
     });
 };
-
-// getListProductByType('basicSalad').then((listproduct) =>console.log(listproduct))
 
 var productSaladAdmin = function () {
   var htmlInSalad;
@@ -1330,6 +1349,12 @@ var userAdmin = function () {
   }
   // Save();
 };
+
+
+
+
+
+
 productSaladAdmin();
 productFastFoodAdmin();
 productDrinksAdmin();
