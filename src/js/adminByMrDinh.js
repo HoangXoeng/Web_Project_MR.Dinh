@@ -13,6 +13,27 @@ var getListProductByType = (link, type) => {
       console.error("Error fetching user:", error);
     });
 };
+
+var getId = (link) => {
+  return axios
+    .get(`http://localhost:3000/${link}`)
+    .then((response) => {
+      if (response.data.length > 0) {
+       console.log(response.data.length);
+       console.log(typeof response.data.length);
+
+        return response.data.length;
+      } else {
+        console.error("No data found");
+        return 1;
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      return null;
+    });
+};
+
 // getListProductByType('basicSalad').then((listproduct) =>console.log(listproduct))
 
 var productSaladAdmin = function () {
@@ -31,13 +52,13 @@ var productSaladAdmin = function () {
                         <td>${data.enegy_2} kcal</td>
                         <td>${data.price_2} đ</td>
                         <td>
-                            <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                            <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                                 <i class="fas fa-cogs"></i>
                             </button>                       
-                            <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                            <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                                 <i class="fas fa-trash"></i>
                             </button>
-                             <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                             <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
                                 <i class="fas fa-dots"></i>
                             </button>
                         </td>
@@ -60,13 +81,13 @@ var productSaladAdmin = function () {
                       <td>${data.enegy_2} kcal</td>
                       <td>${data.price_2} đ</td>
                       <td>
-                          <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                          <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                               <i class="fas fa-cogs"></i>
                           </button>                       
-                          <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                          <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                               <i class="fas fa-trash"></i>
                           </button>
-                           <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                           <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
                               <i class="fas fa-dots"></i>
                           </button>
                       </td>
@@ -91,13 +112,13 @@ var productSaladAdmin = function () {
                     <td>${data.enegy_2} kcal</td>
                     <td>${data.price_2} đ</td>
                     <td>
-                        <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                        <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                             <i class="fas fa-cogs"></i>
                         </button>                       
-                        <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                        <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                             <i class="fas fa-trash"></i>
                         </button>
-                         <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                         <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
                             <i class="fas fa-dots"></i>
                         </button>
                     </td>
@@ -122,13 +143,13 @@ var productSaladAdmin = function () {
                   <td>${data.enegy_2} kcal</td>
                   <td>${data.price_2} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -155,13 +176,13 @@ var productFastFoodAdmin = function () {
                       <td>${data.enegy} kcal</td>
                       <td>${data.price} đ</td>
                       <td>
-                          <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                          <button onclick="updateProduct('food',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                               <i class="fas fa-cogs"></i>
                           </button>                       
-                          <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                          <button onclick="deleteProduct('food',${data.id})" class="btn ml-1 btn-outline-warning">
                               <i class="fas fa-trash"></i>
                           </button>
-                           <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                           <button onclick="detailProduct('food',${data.id})" class="btn ml-1 btn-outline-success">
                               <i class="fas fa-dots"></i>
                           </button>
                       </td>
@@ -189,13 +210,13 @@ var productDrinksAdmin = function () {
                   <td>${data.enegy_2} kcal</td>
                   <td>${data.price_2} đ</td>
                       <td>
-                          <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                          <button onclick="updateProduct('drink',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                               <i class="fas fa-cogs"></i>
                           </button>                       
-                          <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                          <button onclick="deleteProduct('drink',${data.id})" class="btn ml-1 btn-outline-warning">
                               <i class="fas fa-trash"></i>
                           </button>
-                           <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                           <button onclick="detailProduct('drink',${data.id})" class="btn ml-1 btn-outline-success">
                               <i class="fas fa-dots"></i>
                           </button>
                       </td>
@@ -217,13 +238,13 @@ var productDrinksAdmin = function () {
                 <td>${data.enegy_2} kcal</td>
                 <td>${data.price_2} đ</td>
                     <td>
-                        <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                        <button onclick="updateProduct('drink',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                             <i class="fas fa-cogs"></i>
                         </button>                       
-                        <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                        <button onclick="deleteProduct('drink',${data.id})" class="btn ml-1 btn-outline-warning">
                             <i class="fas fa-trash"></i>
                         </button>
-                         <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                         <button onclick="detailProduct('drink',${data.id})" class="btn ml-1 btn-outline-success">
                             <i class="fas fa-dots"></i>
                         </button>
                     </td>
@@ -246,13 +267,13 @@ var productDrinksAdmin = function () {
               <td>${data.enegy_2} kcal</td>
               <td>${data.price_2} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('drink',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('drink',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('drink',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -278,13 +299,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
                       <td>
-                          <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                          <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                               <i class="fas fa-cogs"></i>
                           </button>                       
-                          <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                          <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                               <i class="fas fa-trash"></i>
                           </button>
-                           <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                           <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                               <i class="fas fa-dots"></i>
                           </button>
                       </td>
@@ -304,13 +325,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
                     <td>
-                        <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                        <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                             <i class="fas fa-cogs"></i>
                         </button>                       
-                        <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                        <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                             <i class="fas fa-trash"></i>
                         </button>
-                         <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                         <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                             <i class="fas fa-dots"></i>
                         </button>
                     </td>
@@ -331,13 +352,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -358,13 +379,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -385,13 +406,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit} kcal</td>
               <td>${data.price} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -412,13 +433,13 @@ var productIngredientsAdmin = function () {
               <td>${data.unit} kcal</td>
               <td>${data.price} đ</td>
                   <td>
-                      <button onclick="updateProduct(${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                      <button onclick="updateProduct('ingredien',${data.id})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                           <i class="fas fa-cogs"></i>
                       </button>                       
-                      <button onclick="deleteProduct(${data.id})" class="btn ml-1 btn-outline-warning">
+                      <button onclick="deleteProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-warning">
                           <i class="fas fa-trash"></i>
                       </button>
-                       <button onclick="detailProduct(${data.id})" class="btn ml-1 btn-outline-success">
+                       <button onclick="detailProduct('ingredien',${data.id})" class="btn ml-1 btn-outline-success">
                           <i class="fas fa-dots"></i>
                       </button>
                   </td>
@@ -449,6 +470,8 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
+    formAddIngredient.style.display = "none";
+
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
       } else if (type === "fastFood") {
@@ -466,6 +489,8 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
+    formAddIngredient.style.display = "none";
+
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
       } else if (type === "fastFood") {
@@ -484,6 +509,8 @@ const showForm = (type) => {
       saladForm.style.display = "none";
       fastFoodForm.style.display = "none";
       drinkForm.style.display = "none";
+    formAddIngredient.style.display = "none";
+
       if (type === "salad") {
         product__salad.scrollIntoView({ behavior: "smooth" });
       } else if (type === "fastFood") {
@@ -571,10 +598,12 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
+      var id = getId('foods')
       opt = {
         url: apiFoods,
         method: "post",
         data: {
+          id : id,
           name: saladName,
           ingredient: ingredients,
           description: "",
@@ -615,10 +644,13 @@ var addNewProduct = function (type) {
     }
 
     if (isTrue) {
+      var id = getId('foods')
+
       opt = {
         url: apiFoods,
         method: "post",
         data: {
+          id : id+1,
           name: saladName,
           ingredient: "",
           description: description,
@@ -693,6 +725,7 @@ var addNewProduct = function (type) {
           url: apiDrinks,
           method: "post",
           data: {
+            id:getId('drinks'),
             name: drinkName,
             description: description,
             type: drinkType,
@@ -753,6 +786,7 @@ var addNewProduct = function (type) {
         url: apiIngredients,
         method: "post",
         data: {
+          id : getId('ingredients'),
           name: name,
           type: type,
           unit: unit,
@@ -835,7 +869,26 @@ const updateForm = () => {
   formContainer.innerHTML = formHTML;
 };
 // Xóa sản phẩm
-var deleteProduct = function (i) {};
+var deleteProduct = function (type,id) {
+  var apiFoods = "http://localhost:3000/foods";
+  var apiDrinks = "http://localhost:3000/drinks";
+  var apiIngredients = "http://localhost:3000/ingredients";
+  id = "`${id}`"
+  if (type === 'food') {
+    alert(id)
+    axios.delete(`http://localhost:3000/foods/${id}`)
+    .then(response => {
+      console.log('Deleted:', response.data);
+    })
+    .catch(error => {
+      console.error('There was an error deleting the item!', error);
+    });
+  }else if (type === 'drink'){
+    alert("")
+  }else{
+    alert("ingredient");
+  }
+};
 
 // Sửa sản phẩm
 var updateProduct = function (i) {};

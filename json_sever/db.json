@@ -437,6 +437,72 @@
       "enegy": "133",
       "price": "66.000",
       "img_url": "img.jpg"
+    },
+    {
+      "id": {},
+      "name": "123",
+      "ingredient": [
+        "123"
+      ],
+      "description": "",
+      "type": "basicSalad",
+      "enegy_1": "123",
+      "price_1": "123",
+      "enegy_2": "123",
+      "price_2": "123",
+      "img": "123"
+    },
+    {
+      "id": {},
+      "name": "123",
+      "ingredient": [
+        "123213"
+      ],
+      "description": "",
+      "type": "basicSalad",
+      "enegy_1": "123",
+      "price_1": "124",
+      "enegy_2": "123",
+      "price_2": "223",
+      "img": "123"
+    },
+    {
+      "id": {},
+      "name": "123",
+      "ingredient": [
+        "23"
+      ],
+      "description": "",
+      "type": "vipSalad",
+      "enegy_1": "23",
+      "price_1": "12",
+      "enegy_2": "12",
+      "price_2": "12",
+      "img": "22"
+    },
+    {
+      "id": {},
+      "name": "123",
+      "ingredient": [
+        "123"
+      ],
+      "description": "",
+      "type": "basicSalad",
+      "enegy_1": "123232",
+      "price_1": "2323",
+      "enegy_2": "23",
+      "price_2": "23",
+      "img": "123"
+    },
+    {
+      "id": "[object Promise]1",
+      "name": "123",
+      "ingredient": "",
+      "description": "23123",
+      "type": "fastFood",
+      "enegy": "123123",
+      "price": "123",
+      "img": "123"
     }
   ],
   "drinks": [
