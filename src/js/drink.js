@@ -1,97 +1,170 @@
-// 1. Navigation Scroll Effect
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('.nav-menu li a');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
+// get data
+var getListProductByType = (link, type) => {
+    return axios
+      .get(`http://localhost:3000/${link}?type=${type}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          return response.data;
+        } else {
+          console.error("Drink not found");
+          return [];
         }
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        return [];
+      });
+  };
+  
+  var renderDrinkJuice = function () {
+    getListProductByType("drinks", "juice").then((listproduct) => {
+      if (!listproduct || listproduct.length === 0) {
+        console.error("No juices available");
+        return;
+      }
+  
+      var htmlInJuice = listproduct.map((data) => {
+        return `<div class="container">
+                  <div class="left-section">
+                      <div class="box"></div>
+                      <img src="${data.img_url}" alt="${data.name}">
+                      <div class="price-options">
+                          <button class="size">Size: M - ${data.price_1} VND - ${data.enegy_1} Cal</button>
+                          <button class="size">Size: L - ${data.price_2} VND - ${data.enegy_2} Cal</button>
+                      </div>
+                  </div>
+                  <form class="right-section">
+                      <h2>${data.name}</h2>
+                      <p>Không Đá + 10.000 VND</p>
+                      <p><b>Ghi chú:</b></p>
+                      <input type="text" name="VD:">
+                      <div class="quantity-selection">
+                          <button>-</button>
+                          <input type="text" value="0">
+                          <button>+</button>
+                      </div>
+                      <button class="buy-button">MUA NGAY</button>
+                      <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
+                  </form>
+              </div>`;
+      }).join("");
+  
+      document.querySelector('.item').innerHTML = htmlInJuice;
+    }).catch((error) => {
+      console.error("Error processing product list:", error);
     });
-    
-    navLi.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href').includes(current)) {
-            a.classList.add('active');
+  }
+  
+  renderDrinkJuice();
+
+
+
+  var getListProductByType = (link, type) => {
+    return axios
+      .get(`http://localhost:3000/${link}?type=${type}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          return response.data;
+        } else {
+          console.error("Smoothie not found");
+          return [];
         }
-    });
-});
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        return [];
+      });
+};
 
-// 2. Product Quantity Control (Consolidated)
-const quantityButtons = document.querySelectorAll('.quantity button, .quantity-selection button');
-quantityButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        const input = event.target.parentElement.querySelector('input');
-        let currentValue = parseInt(input.value);
-        
-        if (event.target.innerText === '+') {
-            input.value = currentValue + 1;
-        } else if (event.target.innerText === '-' && currentValue > 1) {
-            input.value = currentValue - 1;
-        }
-    });
-});
-
-
-
-// 3. Add to Cart Functionality
-const addButtons = document.querySelectorAll('.add-button');
-addButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        const product = event.target.closest('.drink');
-        const productName = product.querySelector('h2').innerText;
-        const productPrice = product.querySelector('.price').innerText;
-        const quantity = product.querySelector('.quantity input').value;
-
-        // Instead of alert, consider updating cart UI
-        console.log(`Added to Cart: ${productName} x ${quantity} - ${productPrice}`);
-    });
-});
-
-// 4. Responsive Header (Toggle Mobile Menu)
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when a link is clicked
-navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// 5. Form Validation (For Example, Contact Form)
-const contactForm = document.querySelector('#contact-form');
-contactForm.addEventListener('submit', (event) => {
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    
-    if (name === '' || email === '') {
-        event.preventDefault();
-        alert('Please fill out all fields.');
-    } else if (!emailRegex.test(email)) {
-        event.preventDefault();
-        alert('Please enter a valid email address.');
+var renderDrinkSmoothie = function () {
+  getListProductByType("drinks", "smoothie").then((listproduct) => {
+    if (!listproduct) {
+      console.error("No smoothies available");
+      return;
     }
-});
 
-// 6. Smooth Scrolling
-document.querySelectorAll('.nav-menu a').forEach(anchor => {
-    anchor.addEventListener('click', function (event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
-        });
-    });
-});
+    var htmlInSmoothie = listproduct.map((data) => {
+        return `<div class="container">
+                <div class="left-section">
+                    <div class="box"></div>
+                    <img src="${data.img_url}" alt="${data.name}">
+                    <div class="price-options">
+                        <button class="size">Size: M - ${data.price_1} - ${data.enegy_1} Cal</button>
+                        <button class="size">Size: L - ${data.price_2} - ${data.enegy_2} Cal</button>
+                    </div>
+                </div>
+                <form class="right-section">
+                    <h2>${data.name}</h2>
+                    <p><b>Nguyên liệu:</b></p>
+                    <p>${data.ingredient}</p>
+                    <p><b>Ghi chú:</b></p>
+                    <input type="text" name="VD:">
+                    <div class="quantity-selection">
+                        <button>-</button>
+                        <input type="text" value="0">
+                        <button>+</button>
+                    </div>
+                    <button class="buy-button">MUA NGAY</button>
+                    <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
+                </form>
+            </div>`;
+    }).join("");
+
+    document.querySelector('.item2').innerHTML = htmlInSmoothie;
+  }).catch((error) => {
+    console.error("Error fetching product list:", error);
+  });
+}
+
+renderDrinkSmoothie();
+
+
+
+
+var getListProductByType = (link, type) => {
+    return axios
+      .get(`http://localhost:3000/${link}?type=${type}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          return response.data;
+        } else {
+          console.error("Coke not found");
+          return [];
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        return [];
+      });
+};
+
+var renderDrinkCoke = function () {
+  getListProductByType("drinks", "coke").then((listproduct) => {
+    if (!listproduct) {
+      console.error("No coke available");
+      return;
+    }
+
+    var htmlInCoke = listproduct.map((data) => {
+        return `<div class="drink">
+                <h2>${data.name}</h2>
+                <div id="box"></div>
+                <img src="${data.img_url}" alt="" width="230px" height="330px">
+                <button class="price">${data.price} VNĐ</button>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="text" value="0">
+                    <button>+</button>
+                </div>
+                <button class="buy-button">MUA NGAY</button>
+                <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
+            </div>`;
+    }).join("");
+
+    document.querySelector('.item3').innerHTML = htmlInCoke;
+  }).catch((error) => {
+    console.error("Error fetching product list:", error);
+  });
+}
+
+renderDrinkCoke();

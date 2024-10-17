@@ -1,7 +1,7 @@
 body {
     background-color: #FFF2AD;
     color: #004B00;
-    padding: 100px;
+
 }
 
 /* HEADER */
@@ -11,8 +11,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    /* width: 1920px; */
-    /* height: 125px; */
 }
 
 .logo img {
@@ -94,8 +92,6 @@ header {
 
 .container {
     display: flex;
-    /* width: 800px;
-    height: 450px; */
     justify-content: center;
 }
 

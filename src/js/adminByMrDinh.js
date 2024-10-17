@@ -249,9 +249,12 @@ var productFastFoodAdmin = function () {
 var productDrinksAdmin = function () {
   var htmlInDrinks;
   getListProductByType("drinks", "juice").then((listproduct) => {
+    
     // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
-    htmlInDrinks = listproduct
-      .map((data) => {
+    console.log(listproduct); 
+
+
+    var htmlInDrinks = listproduct.map((data) => {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
@@ -503,7 +506,6 @@ var productIngredientsAdmin = function () {
       htmlIningredients;
   });
 };
-
 const showForm = (type, idToUpdate) => {
   var span = document.querySelectorAll("#closeModal");
   var product__salad = document.querySelector(".product--salad");
