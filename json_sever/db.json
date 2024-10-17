@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": "367a",
+      "id": "1",
       "userName": "admin123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
@@ -9,27 +9,20 @@
       "role": "admin"
     },
     {
-      "id": "02ba",
-      "userName": "ad1223123123123",
-      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "userName": "xuannguyen",
+      "email": "hoangnguyendepgiai@gmail.com",
       "phoneNum": "0373989884",
-      "password": "ad123123"
+      "password": "ad123123",
+      "role": "user",
+      "id": "3"
     },
     {
-      "id": "9f53",
-      "userName": "nguyen123",
+      "id": "4",
+      "userName": "concobebe123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
       "password": "ad123123",
       "role": "user"
-    },
-    {
-      "userName": "baky123",
-      "email": "nguyen.tran26@student.passerellesnumeriques.org",
-      "phoneNum": "0373989884",
-      "password": "ba123123",
-      "role": "user",
-      "id": "6a5b"
     }
   ],
   "foods": [

@@ -109,32 +109,42 @@ var clearError = function () {
   });
 };
 
+var getIDUser = function(){
+  return axios.get("http://localhost:3000/accounts").then((res)=>
+    {return res.data.length + 1})
+}
+
 function createAccount() {
   var userName = document.querySelector(".userName").value;
   var email = document.querySelector(".email").value;
   var phoneNum = document.querySelector(".phoneNum").value;
   var password = document.querySelector(".password").value;
+  getIDUser().then((id)=>{
+    id = String(id)
+    opt = {
 
-  opt = {
-    url: "http://localhost:3000/accounts",
-    method: "post",
-    data: {
-      userName: userName,
-      email: email,
-      phoneNum: phoneNum,
-      password: password,
-      role: "user",
-    },
-  };
-  axios(opt)
-    .then(function (data_res) {
-      console.log(data_res);
-      if (data_res.status == 201) alert("Created successfully");
-      window.location.href = "../src/html/signUp.html";
-    })
-    .catch(function (ex) {
-      console.log(ex);
-    });
+      url: "http://localhost:3000/accounts",
+      method: "post",
+      data: {
+        id: id,
+        userName: userName,
+        email: email,
+        phoneNum: phoneNum,
+        password: password,
+        role: "user",
+      },
+    };
+    axios(opt)
+      .then(function (data_res) {
+        console.log(data_res);
+        if (data_res.status == 201) alert("Created successfully");
+        window.location.href = "../src/html/signUp.html";
+      })
+      .catch(function (ex) {
+        console.log(ex);
+      });
+  })
+  
 }
 
 function validateForm() {

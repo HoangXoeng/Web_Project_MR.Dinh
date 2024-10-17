@@ -17,11 +17,27 @@ var showSession = function(page) {
   } else if (page === 'bill') {
     billPage.style.display = "block";
   }
-}
+};
 
 var getListProductByType = (link, type) => {
   return axios
     .get(`http://localhost:3000/${link}?type=${type}`)
+    .then((response) => {
+      if (response.data.length > 0) {
+        return response.data;
+      } else {
+        console.error("User not found");
+        return null;
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching user:", error);
+    });
+};
+
+var getUser = () => {
+  return axios
+    .get(`http://localhost:3000/accounts`)
     .then((response) => {
       if (response.data.length > 0) {
         return response.data;
@@ -1014,7 +1030,7 @@ const updateForm = () => {
   // Insert the new form HTML
   formContainer.innerHTML = formHTML;
 };
-// Xóa sản phẩm
+
 var deleteProduct = function (type, id) {
   if (type === "food") {
     axios
@@ -1046,7 +1062,6 @@ var deleteProduct = function (type, id) {
   }
 };
 
-// Sửa sản phẩm
 var updateProduct = function (type, id) {
   if (type == "salad") {
     showForm(type, id);
@@ -1061,7 +1076,8 @@ var updateProduct = function (type, id) {
 
 var closeDetailForm = function() {
   document.querySelector(".detail__form").style.display = "none";
-}
+};
+
 var detailProduct = function (type, id) {
   id = String(id);
   if (type === "food") {
@@ -1329,30 +1345,86 @@ var detailProduct = function (type, id) {
 };
 
 var userAdmin = function () {
-  var listproduct = "";
-  for (var i in user) {
-    var data = JSON.parse(JSON.stringify(user[i]));
-    var listproduct = "<tr>";
-    listproduct += "<td>" + data.id + "</td>";
-    listproduct += "<td>" + data.username + "</td>";
-    // listproduct+='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';
-    listproduct += "<td>" + data.email + "</td>";
-    // listproduct1+='';
-    listproduct +=
-      '<td><button onclick="updateProduct()" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>;';
-
-    listproduct +=
-      '<button onclick="deleteProduct()" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>;';
-
-    listproduct += "</tr>";
-    document.getElementById("user-admin").innerHTML += listproduct;
-  }
-  // Save();
+  var listproduct;
+  getUser().then((listUser) => {
+    // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
+    listproduct = listUser
+      .map((data) => {
+        return `<tr>
+                        <td>${data.id}</td>
+                        <td>${data.userName}</td>
+                        <td>${data.email}</td>
+                        <td>${data.phoneNum}</td>
+                        <td>${data.password}</td>
+                        <td>${data.role}</td>
+                        <td>
+                            <button onclick="showFormUpdateUser(${String(data.id)})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                                <i class="fas fa-cogs"></i>
+                            </button>                       
+                            <button onclick="deleteUser(${String(data.id)})" class="btn ml-1 btn-outline-warning">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>`;
+      })
+      .join("");
+      document.querySelector('#userAdmin').innerHTML = listproduct;
+  });
 };
 
+var deleteUser = function(id) {
+  id = String(id); 
 
+  
+  axios.delete(`http://localhost:3000/accounts/${id}`)
+    .then((res) => {
+      console.log('User deleted successfully:', res);
+    })
+    .catch((error) => {
+      console.error('Error deleting user:', error);
+    });
+};
 
+var hideUserForm = function() {
+  var form = document.querySelector('.formUpdateUser')
+  form.style.display = 'none';
 
+};
+
+var showFormUpdateUser = function(id) {
+  var form = document.querySelector('.formUpdateUser')
+  var buttonUpdate = document.querySelector('.updateUser')
+  form.style.display = 'block';
+  buttonUpdate.setAttribute('onclick',`updateUser(${id})`)
+};
+
+var updateUser = function(id) {
+  id = String(id);  
+  var userName = document.querySelector('#userName').value;
+  var email = document.querySelector('#email').value;
+  var role = document.querySelector('#role').value;
+  var phoneNum = document.querySelector('#phoneNum').value;
+  var passWord = document.querySelector('#passWord').value;
+ const opt = {
+            url: (`http://localhost:3000/accounts/${id}`),
+            method: 'put',
+            data: {
+              userName: userName,
+              email: email,
+              phoneNum: phoneNum,
+              password: passWord,
+              role: role,
+            },
+          };
+          axios(opt)
+            .then(function (data_res) {
+              console.log(data_res);
+              if (data_res.status == 201) alert("Update successfully");
+            })
+            .catch(function (ex) {
+              console.log(ex);
+            });
+};
 
 
 productSaladAdmin();

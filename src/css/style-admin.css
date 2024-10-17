@@ -41,6 +41,17 @@ body{
     z-index: 11;
     display: none;
 }
+.formUpdateUser{
+    position: absolute;
+    padding: 20px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 11;
+    display: none;
+
+}
 .formDetail{
     position: absolute;
     padding: 20px 0;
@@ -49,7 +60,7 @@ body{
     transform: translate(-50%,-50%);
     background-color: white;
     z-index: 11;
-    /* display: none; */
+    display: none;
 }
 .formAddFastFood{
     position: absolute;
