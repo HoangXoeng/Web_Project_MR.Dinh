@@ -506,6 +506,7 @@ var productIngredientsAdmin = function () {
       htmlIningredients;
   });
 };
+
 const showForm = (type, idToUpdate) => {
   var span = document.querySelectorAll("#closeModal");
   var product__salad = document.querySelector(".product--salad");
