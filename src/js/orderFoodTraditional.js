@@ -43,6 +43,7 @@ var getListProductByType = (link, type) => {
               console.log("No products found");
               return;
             }
+            document.querySelector('.food').innerHTML = "";
       
             // Generate the HTML for the product list using map
             var htmlInDrinks = listproduct
@@ -96,11 +97,14 @@ var getListProductByType = (link, type) => {
           });
         }
         else if(type =='ingredient'){
+          document.querySelector('.food_items').innerHTML = "";
+            var text = " <div class='itemIngredient'>   <h1 class='title'>Các loại hạt</h1> <div class='content1'>" ;
+            // var finale
             var htmlInDrinks;
             getListProductByType("ingredients", "Cereal").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
+           
               htmlInDrinks = listproduct
-              htmlInDrinks += "<h1 class='title'>Ngũ cốc</h1>"
                 .map((data) => {
                   return `
             <div class="box">
@@ -121,7 +125,9 @@ var getListProductByType = (link, type) => {
                             `;
                 })
                 .join("");
-            });
+                text = text + htmlInDrinks  + "</div>  </div> </div>" 
+            }
+          );
             getListProductByType("ingredients", "Starch").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
               htmlInDrinks1 = listproduct
@@ -144,7 +150,8 @@ var getListProductByType = (link, type) => {
             </div>`;
                 })
                 .join("");
-              htmlInDrinks = htmlInDrinks + htmlInDrinks1;
+               
+              text = text +  " <div class='itemIngredient'><h1 class='title'>Tinh Bột</h1><div class='content1'>" + htmlInDrinks1 + "</div> </div>"
             });
             getListProductByType("ingredients", "cheese").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
@@ -168,7 +175,7 @@ var getListProductByType = (link, type) => {
             </div>`;
                 })
                 .join("");
-              htmlInDrinks = htmlInDrinks + htmlInDrinks2;
+              text = text +  " <div class='itemIngredient'><h1 class='title'>Phô Mai</h1><div class='content1'>" + htmlInDrinks2 + "</div> </div>"; 
             });
             getListProductByType("ingredients", "protein").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
@@ -192,7 +199,7 @@ var getListProductByType = (link, type) => {
             </div>`;
                 })
                 .join("");
-              htmlInDrinks = htmlInDrinks + htmlInDrinks3;
+              text = text +  " <div class='itemIngredient'><h1 class='title'>Protein</h1><div class='content1'>" + htmlInDrinks3 + "</div> </div>";
             });
             getListProductByType("ingredients", "vegestable").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
@@ -216,7 +223,7 @@ var getListProductByType = (link, type) => {
             </div>`;
                 })
                 .join("");
-              htmlInDrinks = htmlInDrinks + htmlInDrinks4;
+              text = text +  " <div class='itemIngredient'><h1 class='title'>Rau củ</h1><div class='content1'>" + htmlInDrinks4 + "</div> </div>";
             });
             getListProductByType("ingredients", "sauce").then((listproduct) => {
               // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
@@ -240,8 +247,8 @@ var getListProductByType = (link, type) => {
             </div>`;
                 })
                 .join("");
-              htmlInDrinks = htmlInDrinks + htmlInDrinks5;
-              document.querySelector('.food_items').innerHTML = htmlInDrinks;
+              text = text +  " <div class='itemIngredient'> <h1 class='title'>Nước Sốt</h1><div class='content1'>" + htmlInDrinks5 + "</div> </div>";
+              document.querySelector('.food').innerHTML = text;
             });
           };
       };

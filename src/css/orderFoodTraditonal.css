@@ -477,6 +477,10 @@ height: 300px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  object-fit: cover;
+  border-radius: 50%;
+  /* background-color: red; */
+  /* background-image: url('https://photos.google.com/photo/AF1QipMoaDn7oIVmD9piI7VhtMFw16VLLfKI3hy3jsSr'); */
 }
 .content{
   position: absolute;
@@ -488,6 +492,33 @@ height: 300px;
   z-index: 2;
   color: white;
 }
+
+
+.food{
+  /* width: 80%; */
+  display: grid;
+  
+}
+.itemIngredient{
+  width: 90%;
+  margin: auto;
+}
+.title{
+  text-align: center;
+  margin: 100px 0 50px ;
+  color: var(--secondColor);
+}
+.content1{
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
 .proInfo{
   border: 1px solid green;
   border-radius: 10px;
