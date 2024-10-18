@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+  }
+  :root {
+    --mainColor: #fff2ad;
+    --secondColor: #004b00;
+    --whiteColor: white;
+    --monteratText: "Montserrat", sans-serif;
+    --fredokaText: "Fredoka", sans-serif;
+  }
+  body {
+    background-color: var(--mainColor);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .app {
+    width: 100%;
+  }
+  /* ------------------header-------------------- */
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+  .logo img {
+    width: 99px;
+    height: 103px;
+  }
+  .logo {
+    padding: 0 30px 0 30px;
+    margin: 0 15px 0 30px;
+  }
+  .header-menu ul {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 61.5px;
+    padding: 15px;
+  }
+  .header-menu ul li a {
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    padding: 0 50px;
+  }
+  
+  .header-acc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 280px;
+    gap: 50px;
+    cursor: pointer;
+  }
+  
+  .header-acc div {
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    border-radius: 50px;
+    padding: 10px 25px;
+  }
+  .acc img {
+    width: 30px;
+    height: 30px;
+  }
+  .acc1 img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 9%;
+    border-radius: 4px;
+    display: none;
+  }
+  .user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+  }
+  .user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+  }
+
+
+
+
+/* body */
+
+/*  */
+.card-section {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 100px; 
+}
+.card {
+    border-radius: solid black 8px;
+    margin: 10px;
+    padding: 20px;
+    width: calc(33% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+
+    
+}
+.card_img{
+    width: 200px;
+    height: 200px;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'DT Phudu';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 39.6px;
+    letter-spacing: -0.015em;
+    text-align: center;
+
+}
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px; /* Padding cho nút */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    flex: 1; /* Các nút sẽ chiếm cùng một lượng không gian */
+    margin: 0 5px; /* Khoảng cách giữa các nút */
+    text-align: center; /* Căn giữa văn bản trong nút */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    height: 40px; /* Chiều cao cố định cho tất cả các nút */
+}
+.btn:hover {
+    background-color: #45a049;
+}
+
+
+.chat{
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    align-items: center;
+    margin-left: 92%;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+
+/* footer */
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    height: 198px;
+    background-color: var(--secondColor);
+    padding: 0 50px; /* Thêm padding hai bên */
+  }
+  
+  .footer-contact {
+    display: flex;
+  }
+  
+  .address,
+  .personal-contact {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 8px; */
+  }
+  
+  .address div,
+  .personal-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .address img,
+  .personal-contact img {
+    margin-right: 10px;
+  }
+  
+  .time,
+  .street,
+  .phone,
+  .email {
+    font-size: 15px;
+    padding: 10px;
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+  }
+  
+  .time img {
+    height: 40px;
+    padding-right: 15px;
+  }
+  
+  .street img {
+    text-align: center;
+    height: 40px;
+    padding-right: 30px;
+  }
+  
+  .phone img {
+    height: 40px;
+    padding-right: 25px;
+  }
+  
+  .email img {
+    height: 30px;
+    padding-right: 17px;
+  }
+  
+  .phone {
+    margin-top: 10px;
+  }
+  
+  .brand {
+    font-size: 75px;
+    font-family: var(--fredokaText);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 50px 0;
+    margin-right: 10px;
+  }
+  
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77px;
+    flex-grow: 1;
+  }
+  
+  .lemon1 {
+    position: absolute;
+    left: 0;
+  }
+  .lemon2 img {
+    width: 200px;
+    position: absolute;
+    left: 10px;
+    top: 300px;
+  }
+  .lemon3 img {
+    position: absolute;
+    left: 0;
+    width: 100px;
+  }
+  .lemon4 img {
+    position: absolute;
+    left: 800px;
+    width: 180px;
+  }
+  .lemon5 img {
+    position: absolute;
+    left: 10px;
+    width: 200px;
+    top: 100px;
+  }
+  .lemon6 img {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    top: 150px;
+    filter: grayscale(100%) brightness(0%);
+  }
+  
+  .potato1 img {
+    position: absolute;
+    width: 50px;
+    left: 400px;
+    top: 450px;
+  }
+  .potato2 img {
+    position: absolute;
+    width: 80px;
+    left: 450px;
+    top: 450px;
+  }
+  .lemonT1 {
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
+  }
+  
+  .messText{  
+    display: none;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    bottom: 0;
+    right: 10px;
+  } 
+  
+  .chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding-top: 13px;
+  }

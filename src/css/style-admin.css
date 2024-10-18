@@ -3,6 +3,7 @@ body{
 
     
 }
+
 .bottom{
     position: absolute;
     bottom: 0;
@@ -13,6 +14,11 @@ body{
     background: rgb(255, 255, 255);
     padding: 1rem;
     font-size: 140%;
+}
+.detailImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 .blackBack{
     position: fixed;
@@ -28,11 +34,62 @@ body{
 .formAddSalad{
     position: absolute;
     padding: 20px 0;
-    top: 7%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: white;
     z-index: 11;
+    display: none;
+}
+.formUpdateUser{
+    position: absolute;
+    padding: 20px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 11;
+    display: none;
+
+}
+.formDetail{
+    position: absolute;
+    padding: 20px 0;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 11;
+    display: none;
+}
+.formAddFastFood{
+    position: absolute;
+    padding: 20px 0;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
+    display: none;
+}
+.formAddDrink{
+    position: absolute;
+    padding: 20px 0;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
+    display: none;
+}
+.formAddIngredient{
+    position: absolute;
+    padding: 20px 0;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 12;
     display: none;
 }
 .close {

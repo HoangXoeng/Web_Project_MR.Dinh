@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": "367a",
+      "id": "1",
       "userName": "admin123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
@@ -9,27 +9,20 @@
       "role": "admin"
     },
     {
-      "id": "02ba",
-      "userName": "ad1223123123123",
-      "email": "nguyen.tran26@student.passerellesnumeriques.org",
+      "userName": "xuannguyen",
+      "email": "hoangnguyendepgiai@gmail.com",
       "phoneNum": "0373989884",
-      "password": "ad123123"
+      "password": "ad123123",
+      "role": "user",
+      "id": "3"
     },
     {
-      "id": "9f53",
-      "userName": "nguyen123",
+      "id": "4",
+      "userName": "concobebe123",
       "email": "nguyen.tran26@student.passerellesnumeriques.org",
       "phoneNum": "0373989884",
       "password": "ad123123",
       "role": "user"
-    },
-    {
-      "userName": "baky123",
-      "email": "nguyen.tran26@student.passerellesnumeriques.org",
-      "phoneNum": "0373989884",
-      "password": "ad123123123",
-      "role": "user",
-      "id": "6a5b"
     }
   ],
   "foods": [
@@ -52,7 +45,7 @@
       "price_1": "92.000",
       "enegy_2": "30",
       "price_2": "129.000",
-      "img_url": "salad_bo_tam_tieu.jpg"
+      "img_url": "https://i.imgur.com/CRiplR5.png"
     },
     {
       "id": "2",
@@ -116,7 +109,12 @@
     {
       "id": "5",
       "name": "Salad Gà Xé",
-      "ingredient": ["xà lách", "dưa leo", "cà chua bi", "Gà Xé"],
+      "ingredient": [
+        "xà lách",
+        "dưa leo",
+        "cà chua bi",
+        "Gà Xé"
+      ],
       "description": "",
       "type": "basicSalad",
       "enegy_1": "189",
@@ -432,6 +430,16 @@
       "enegy": "133",
       "price": "66.000",
       "img_url": "img.jpg"
+    },
+    {
+      "id": "26",
+      "name": "gagaga",
+      "ingredient": "",
+      "description": "123123",
+      "type": "fastFood",
+      "enegy": "123123123",
+      "price": "123",
+      "img": "123123"
     }
   ],
   "drinks": [
@@ -499,7 +507,7 @@
       "id": "7",
       "name": "Sinh Tố Cải Xoăn",
       "type": "smoothie",
-      "ingredient": "Chuối, Dứa, Xoài Kết hợp với Dừa Quế",
+      "description": "Chuối, Dứa, Xoài Kết hợp với Dừa Quế",
       "enegy_1": "119",
       "price_1": "52.000",
       "enegy_2": "152",
@@ -510,7 +518,7 @@
       "id": "8",
       "name": "Sinh Tố Bó Xôi Baby",
       "type": "smoothie",
-      "ingredient": "Chuối, Dứa, Xoài Kết hợp với Bó Xôi Baby",
+      "description": "Chuối, Dứa, Xoài Kết hợp với Bó Xôi Baby",
       "enegy_1": "119",
       "price_1": "65.000",
       "enegy_2": "152",
@@ -521,7 +529,7 @@
       "id": "9",
       "name": "Sinh Tố Dừa Quế",
       "type": "smoothie",
-      "ingredient": "Chuối, Dứa, Xoài Kết hợp với Dừa Quế",
+      "description": "Chuối, Dứa, Xoài Kết hợp với Dừa Quế",
       "enegy_1": "119",
       "price_1": "35.000",
       "enegy_2": "152",
@@ -532,7 +540,7 @@
       "id": "10",
       "name": "Sinh Tố Trà Xanh",
       "type": "smoothie",
-      "ingredient": " Chuối, Dứa, Xoài Kết hợp với Trà Xanh",
+      "description": " Chuối, Dứa, Xoài Kết hợp với Trà Xanh",
       "enegy_1": "119",
       "price_1": "35.000",
       "enegy_2": "152",
@@ -543,24 +551,24 @@
       "id": "11",
       "name": "Coca Light",
       "type": "coke",
-      "ingredient": "",
-      "price": "35.000",
+      "description": "",
+      "price_1": "35.000",
       "img_url": "img.jpg"
     },
     {
       "id": "12",
       "name": "Trà đào cam Sả",
       "type": "coke",
-      "ingredient": "",
-      "price": "45.000",
+      "description": "",
+      "price_1": "45.000",
       "img_url": "img.jpg"
     },
     {
       "id": "11",
       "name": "Nước Khoáng ",
       "type": "coke",
-      "ingredient": "",
-      "price": "10.000",
+      "description": "",
+      "price_1": "10.000",
       "img_url": "img.jpg"
     }
   ],
