@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WOWBOX SALAD</title>
     <link rel="stylesheet" href="src/css/main.css" />
-    <script
-      src="https://kit.fontawesome.com/4e7f123d15.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/4e7f123d15.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="app" >
-       
             <header class="header">
-      
                 <div class="logo">
-                    <img srcset="src/img/Logo.png 2x" alt="LOGO" />
+                    <img srcset="./src/img/img/Logo.png" alt="LOGO" />
                   </div>
                   <div class="header-menu">
                     <ul>
@@ -40,7 +35,7 @@
                   </div>
                   <div class="header-acc">
                     <div class="acc"><img srcset="src/img/cart1.png 2x" alt="" /></div>
-                    <div class="acc1" onclick="goToLoginPage()"><img srcset="src/img/user.png 2x" alt="" /></div>
+                    <div class="acc1" onclick="goToLoginPage()"><img srcset="src/img/userH2.png 2x" alt="" /></div>
                     
                   </div>
                   <div class="user--option">
@@ -67,25 +62,13 @@
                 Giàu dinh dưỡng. Thật tươi ngon.<br />
                 Hãy thử ngay hôm nay.
               </p>
-              <button>ĐẶT NGAY</button>
+              <button class="datNgay">ĐẶT NGAY</button>
             </div>
             <div class="chaoMungImg">
               <div class="hinhTronLon"></div>
               <div class="diaCom">
                 <img srcset="src/img/DiaCom.png 2x" alt="" />
               </div>
-            </div>
-            <div class="lemon1">
-              <img srcset="src/img/lemon.png 2x" alt="" />
-            </div>
-            <div class="lemon2">
-              <img srcset="src/img/lemon3.png 2x" alt="" />
-            </div>
-            <div class="lemon3">
-              <img srcset="src/img/lemon5.png 2x" alt="" />
-            </div>
-            <div class="lemon4">
-              <img srcset="src/img/lemon4.png 2x" alt="" />
             </div>
           </div>
   
@@ -116,10 +99,10 @@
           </div>
   
           <div class="mess">
-            <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>
+            <a onclick="toggleChat()"><img srcset="./src/img/mess.png 2x" alt=""></a>
             <div class="messText" id="hid" style="display: none;">
                 <header class="chat-header">
-                    <img srcset="src/img/Logo.png 2x">
+                    <img srcset="./src/img/img/Logo.png 2x">
                     <div>WOWBOX SALAD</div>
                 </header>
                 <div class="chat-container">
@@ -135,11 +118,6 @@
                 </footer>
             </div>
         </div>
-          <div class="lemon5">
-            <img srcset="src/img/lemon4.png 2x" alt="" />
-          </div>
-  
-  
         <div class="text">MÓN ĂN NỔI BẬT</div>
   
         <div class="monAnNoiBat">
@@ -194,19 +172,7 @@
         </div>
   
         <div class="allMenu">
-          <button>XEM TOÀN BỘ MENU</button>
-          <div class="lemon6">
-            <img srcset="src/img/lemon4.png 2x" alt="" />
-          </div>
-          <div class="lemon7">
-            <img srcset="src/img/lemon4.png 2x" alt="" />
-          </div>
-          <div class="lemon8">
-            <img srcset="src/img/lemon2.png 2x" alt="" />
-          </div>
-          <div class="lemon9">
-            <img srcset="src/img/lemon5.png 2x" alt="" />
-          </div>
+          <button class="datNgay">XEM TOÀN BỘ MENU</button>
         </div>
         <div class="textMenu">
           <p>
@@ -264,7 +230,7 @@
             </div>
             <div class="email">
               <img
-                srcset="src/img/FrameEmail.png 2x"
+                srcset="src/img/FrameEmail.png 2x" 
                 alt=""
               />hoang.doan26@gmail.com
             </div>
@@ -280,21 +246,26 @@
     </div>
     <script>
       function toggleChat() {
-      const chatBox = document.getElementById('hid');
-      if (chatBox.style.display === 'none' || chatBox.style.display === '') {
-          chatBox.style.display = 'block';
-      } else {
-          chatBox.style.display = 'none';
-      }
-  }
-  document.addEventListener('click', function(event) {
-      const chatBox = document.getElementById('hid');
-      const chatIcon = document.querySelector('.fa-message');
-      if (!chatBox.contains(event.target) && !chatIcon.contains(event.target)) {
-          chatBox.style.display = 'none';
-      }
-  });
+    const chatBox = document.getElementById('hid');
+    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+        chatBox.style.display = 'block';
+    } else {
+        chatBox.style.display = 'none';
+    }
+}
+
+// Ẩn chat box khi click ra ngoài
+document.addEventListener('click', function (event) {
+    const chatBox = document.getElementById('hid');
+    const messIcon = document.querySelector('.mess img');
+
+    // Nếu click bên ngoài chat box và không phải là icon
+    if (!chatBox.contains(event.target) && event.target !== messIcon) {
+        chatBox.style.display = 'none';
+    }
+});
+
   </script>
-    <script src="/src/js/main.js"></script>
+    <script src="src/js/main.js"></script>
   </body>
 </html>

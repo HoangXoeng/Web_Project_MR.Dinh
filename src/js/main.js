@@ -13,7 +13,7 @@ const goToLoginPage = () => {
         window.location.href = 'http://127.0.0.1:5500/src/html/login.html';
     }
 }
-
+ 
 const funyFunc = () => {
     document.querySelector('.user--option').style.display = 'none'; 
 }

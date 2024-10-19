@@ -12,6 +12,7 @@ a{
     --whiteColor:white;
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
+    --hoverColor: #94eb81;
 }
 body{
     background-color: var(--mainColor);
@@ -22,7 +23,18 @@ ul {
     padding: 0;
     margin: 0;
 }
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
 
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
 .app{
     width: 100%;
 }
@@ -79,7 +91,7 @@ ul {
     height: 30px;
 }
 .acc1 img{
-    width: 30px;
+    width: 20px;
     height: 30px;
 }
 
@@ -116,8 +128,8 @@ ul {
 }
 .chaoMungToi p{
     font-size: 18px;
-    font-family: var(--monteratText);
     margin-bottom: 30px;
+    font-family: var(--monteratText);
 }
 .chaoMungToi div{
     font-size: 70px;
@@ -518,7 +530,7 @@ ul {
     position: fixed;
     background-color: var(--secondColor);
     border-radius: 50%; 
-    padding: 20px;
+    padding: 20px; 
     right: 10px;
     bottom: 12px;
 }
@@ -528,64 +540,40 @@ ul {
     font-size: 35px;
 }
 
-.lemon1{
-    position: absolute;
-    top: 100px;
-    left: 0px;   
-}
-.lemon2 img{
-    position: absolute;
-    top: -40px;
-    right: 550px;
-    width: 250px;
-}
-.lemon3{
-    position: absolute;
-    top: 370px;
-    right: 750px
-}
-.lemon4 img{
-    position: absolute;
-    width: 200px;
-    top:40px;
-    left: 700px;
-}
-
-.lemon5 img {
-    position: absolute;
-    width: 100px;
-    filter: grayscale(100%) brightness(0%);
-    left: 100px;
-}
-
-.lemon6 img{
-    position: absolute;
-    left: 100px;
-    width: 100px;
-}
-.lemon7 img{
-    position: absolute;
-    filter: grayscale(100%) brightness(0%);
-    width: 100px;
-    left: 110px;
-}
-.lemon8 img{
-    position: absolute;
-    right: 60px;
-    bottom: -1400px;
-    width: 120px;
-}
-.lemon9 img{
-    position: absolute;
-    width: 90px;
-    left: 140px;
-    bottom: -135 0px;
-    filter: grayscale(0%) brightness(100%);
-}
-
 .buaAnLon{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: -100px;
 }
+
+/* ------hover----- */
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
+
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
+}
+
+.tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.mess:hover{
+    background-color: var(--hoverColor);
+    animation: bounce 0.5s
+}
+
+
+

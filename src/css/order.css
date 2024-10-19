@@ -12,11 +12,12 @@ a{
     --whiteColor:white;
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
+    --hoverColor: #94eb81;
 }
 body{
     background-color: var(--mainColor);
 }
-
+ 
 ul {
     list-style: none;
     padding: 0;
@@ -79,7 +80,7 @@ ul {
     height: 30px;
 }
 .acc1 img{
-    width: 30px;
+    width: 20px;
     height: 30px;
 }
 .user--option{
@@ -106,18 +107,17 @@ ul {
 main{
     padding-top: 54px;
 }
-main>h1{
+
+.datMon{
     text-align: center;
     color: var(--secondColor);
-    font-size: 48px;
+    font-size: 80px;
     padding-top: 70px;
-    font-weight: 700;
+    font-family: var(--fredokaText);
 }
-
 .menu{
     text-align: center;
     align-items: center;
-    /* justify-content: space-around; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -135,6 +135,9 @@ main>h1{
     margin-top: 50px;
     position: relative;
 }
+.menu-item h2{
+    font-family: var(--monteratText);
+}
 .menu-item > img {
     position: absolute;
     width: 350px;
@@ -144,7 +147,8 @@ main>h1{
     transform: translateX(-50%);
 }
 .menu-item2{
-    margin-top: 170px;
+    margin-top: 230px;
+    padding-bottom: 50px;
 }
 .menu-item>h2{
     font-size: 24px;
@@ -267,92 +271,81 @@ main>h1{
 }
 .messText{  
     display: none;
-    position: absolute;
+    position: fixed;
     width: 400px;
     height: 500px;
-    top: 100px;
-    right: 0;
-} 
-
-.chat-header{
+    bottom: 0;
+    right: 10px;
+  } 
+  
+  .chat-header{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7px;
     padding-top: 13px;
-}
-
-.chat-header::after {
-    content: "";
-    border-style: solid;
-    border-width: 0 25px 25px 25px; 
-    border-color: transparent transparent #469100 transparent; /* Chỉ có cạnh dưới có màu */
-    position: absolute;
-    bottom: 500px;
-    left: 338px;
-    width: 0;
-    height: 0;
-}
-
-
-.chat-header,.chat-container{
+  }
+  
+  
+  
+  .chat-header,.chat-container{
     background-color: #469100;
-}
-.chat-header img{
+  }
+  .chat-header img{
     width: 40px;
     height: 40px;
     background-color: var(--whiteColor);
     border-radius: 50%;
-}
-.chat-header div{
+  }
+  .chat-header div{
     font-size: 30px;
     font-family: var(--fredokaText);
     font-weight: bold;
     color: var(--whiteColor);
-}
-
-.chat-container{
+  }
+  
+  .chat-container{
     font-size: 10px;
     font-family: var(--monteratText);
     color: var(--whiteColor);
     padding: 35px 0 10px 40px;
-}
-.chat-container-hello{
+  }
+  .chat-container-hello{
     font-weight: bold;
-}
-
-.chat-body div{
+  }
+  
+  .chat-body div{
     margin: 30px;
     padding: 10px;
     background-color: gainsboro;
     border-radius: 20px;
     font-size: 10px;
     font-family: var(--monteratText);
-}
-
-.chat-body{
+  }
+  
+  .chat-body{
     padding:10px 10px 200px 10px;
     background-color: var(--whiteColor);
     border-bottom: 1px solid black;
-}
-
-.chat-footer{
+  } 
+  
+  .chat-footer{
     display: flex;
     align-items: center;
     background-color: var(--whiteColor);
     gap: 35px;
-}
-
-.chat-footer input{
+  }
+  
+  .chat-footer input{
     width: 300px;
     padding: 20px 20px;
     border: none;
     outline: none;
     font-size: 10px;
     font-family: var(--monteratText);
-}
-
-.chat-footer button{
+  }
+  
+  .chat-footer button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -361,81 +354,48 @@ main>h1{
     font-size: 10px;
     font-family: var(--monteratText);
     color:var(--whiteColor)
-}
-/* -----------chat---------- */
-.mess{
-    position: absolute;
+  }
+  /* -----------chat---------- */
+  .mess{
+    position: fixed;
     background-color: var(--secondColor);
-    border-radius: 50%;
+    border-radius: 50%; 
     padding: 20px;
-    right: 60px;
-    top: -80px
+    right: 10px;
+    bottom: 12px;
+  }
+  
+  .mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+  }
+
+  /* ------hover----- */
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
     
 }
 
-.mess a i{
-    color: var(--whiteColor);
-    font-size: 35px;
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
 }
 
-.lemon1{
-    position: absolute;
-    top: 100px;
-    left: 0px;   
-}
-.lemon2 img{
-    position: absolute;
-    top: -40px;
-    right: 550px;
-    width: 250px;
-}
-.lemon3{
-    position: absolute;
-    top: 370px;
-    right: 750px
-}
-.lemon4 img{
-    position: absolute;
-    width: 200px;
-    top:40px;
-    left: 700px;
+.datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
 }
 
-.lemon5 img {
-    position: absolute;
-    width: 100px;
-    filter: grayscale(100%) brightness(0%);
-    left: 100px;
+.tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
 }
 
-.lemon6 img{
-    position: absolute;
-    left: 100px;
-    width: 100px;
-}
-.lemon7 img{
-    position: absolute;
-    filter: grayscale(100%) brightness(0%);
-    width: 100px;
-    left: 110px;
-}
-.lemon8 img{
-    position: absolute;
-    right: 60px;
-    bottom: -1400px;
-    width: 120px;
-}
-.lemon9 img{
-    position: absolute;
-    width: 90px;
-    left: 140px;
-    bottom: -135 0px;
-    filter: grayscale(0%) brightness(100%);
+.mess:hover{
+    background-color: var(--hoverColor);
+    animation: bounce 0.5s
 }
 
-.buaAnLon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -100px;
-}
+
