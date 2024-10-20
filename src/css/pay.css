@@ -12,12 +12,9 @@ a{
     --whiteColor:white;
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
-    --hoverColor: #94eb81;
 }
-body{
-    background-color: var(--mainColor);
-}
- 
+
+
 ul {
     list-style: none;
     padding: 0;
@@ -27,17 +24,12 @@ ul {
 .app{
     width: 100%;
 }
-
-
 /* ------------------header-------------------- */
 .header{
-       
     width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--mainColor);
-    position: fixed;
-    z-index: 1;
 }
 .logo img{
     width: 99px;
@@ -65,8 +57,7 @@ ul {
     align-items:center;
     justify-content: center;
     margin-left: 280px;
-    gap: 50px;
-    cursor: pointer;
+    gap: 50px
 }
 
 .header-acc div {
@@ -83,119 +74,207 @@ ul {
     width: 20px;
     height: 30px;
 }
-.user--option{
-    background-color: var(--mainColor);
-    /* border: 1px solid var(--secondColor); */
-    position: absolute;
-    top: calc(100% + 5px);
-    right: 9%;
-    border-radius: 4px;
-    display: none;
-}
-.user--option--menu--item{
-    padding: 5px;
-    border: 1px solid var(--secondColor);
-    cursor: pointer;
-}
-.user--option--menu--item:hover{
-    background-color: var(--secondColor);
-    color: var(--whiteColor);
-    opacity: 0.7;
-}
-/* header end */
 
-main{
-    padding-top: 54px;
-}
 
-.datMon{
-    text-align: center;
-    color: var(--secondColor);
-    font-size: 80px;
-    padding-top: 70px;
+/* -------thanhToanDonHang----- */
+.thanhToanDonHang{
     font-family: var(--fredokaText);
-}
-.menu{
+    font-size: 80px;
+    color: var(--secondColor);
     text-align: center;
+    padding: 80px 0 40px 0;
+    background-color: var(--mainColor);
+}
+
+.tuyChonGiaoHang{
+    color: var(--secondColor);
+    font-family: var(--fredokaText);
+    font-size: 30px;
+    padding: 10px 200px;
+    background-color: var(--mainColor);
+    font-weight: bold;
+}
+
+
+
+/* ----------container1-------- */
+.container1{
+    display: flex;
     align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-}
-
-.box{
-    /* position: relative; */
-    display: inline-block;
-    width: 400px;
-    height: 250px;
-    background-color: var(--secondColor);
-    border-radius: 20px;
-}
-.menu-item{
-    margin-top: 50px;
+    padding-left: 200px;
+    position: relative;
+    background-color: var(--mainColor);
     position: relative;
 }
-.menu-item h2{
+
+.phuongThucPay{
+    display: flex;
+    align-items: center;
+    gap:100px
+}
+
+.giaoDen, .tuNhan{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 
+}
+.tieude{
+    font-size: 25px;
+    text-align: center;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--secondColor);
+}
+.gia{
+    font-size: 15px;
+    text-align: center;
     font-family: var(--monteratText);
 }
-.menu-item > img {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    top: -125px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.menu-item2{
-    margin-top: 230px;
-    padding-bottom: 50px;
-}
-.menu-item>h2{
-    font-size: 24px;
-    /* font-weight: 200px; */
+.tieudeDiaChi{
     color: var(--secondColor);
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-family: var(--fredokaText);
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 0
 }
-.menu-item>button{
-    padding: 10px 20px;
+.noiDung{
+    font-size: 15px;
+    font-family: var(--monteratText);
+    padding-bottom: 5px;
+}
+.form div{
+    font-size: 18px;
+    font-family: var(--monteratText);
+    padding: 2px 0;
+}
+.form input{
+    font-size: 15px;
+    font-family: var(--monteratText);
+    color: var(--secondColor);
+    padding: 8px;
+    width: 450px;
+    border-radius: 20px;
+    
+}
+.macDinh{
+    border-radius: 20px;
+}
+.macDinh div button{
+    background: var(--secondColor);
+    padding: 10px;
+}
+.submit{
+    font-family:  var(--monteratText);
+    font-size: 18px;
+    color: var(--whiteColor);
+    border-radius: 10px;
+    font-weight: bold;
+}
+.boxPay{
+    margin-left: 100px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.inDam{
+    font-family: var(--fredokaText);
+    font-size: 30px;
+    color: var(--secondColor);
+    font-weight: bold;
+    text-align: right;
+
+}
+.tongSoMon{
+    font-family: var(--fredokaText);
+    font-size: 30px;
+    color: var(--secondColor);
+    font-weight: bold;
+}
+.soLuong,.tongTien,.vanChuyen,.tongHoaDon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    gap: 100px
+}
+.tongTienTieuDe,.vanChuyenTieuDe,.tongHoaDonTieuDe{
+    font-family: var(--monteratText);
+    font-size: 18px
+}
+.thanhToan{
+    text-align: center;
+    border-radius: 20px;
+
+
+}
+.thanhToan button{
+    font-family: var(--fredokaText);
+    font-size: 30px;
     border-radius: 20px;
     background-color: var(--secondColor);
     color: var(--whiteColor);
+    padding: 0 10px 
+}
+.hoTro{
+    text-align: center;
+    padding-top: 15px;
+}
+.hoTro a{
     font-family: var(--monteratText);
-    font-weight: bold;
-    font-size: 20px;
-}
-.menu-item>button:hover{
-    cursor: pointer;
-    opacity: 80%;
+    color: var(--secondColor);
 }
 
+.quayVeGioHang{
+    text-align: center;
+    padding-top: 30px;
 
+}
+.quayVeGioHang button{
+    font-size: 30px;
+    color: var(--secondColor);
+    font-family: var(--fredokaText);
+    border-radius: 10px;
+    background-color: var(--whiteColor);
+}
 
+.container2{
+    padding: 20px 0 20px 200px;
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    color: var(--secondColor);
+    background-color: var(--mainColor);
+}
+.phuongThucThanhToan{
+    background-color: var(--mainColor);
+    font-size: 18px;
+    font-family: var(--monteratText);
+    color: var(--secondColor);
+    padding-left: 200px;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --------------footer-------------- */
+    
+}
+.phuongThucThanhToan input[type="radio"]{
+    width: 15px;
+    height: 15px;
+    accent-color: var(--secondColor);
+}
+.text_container3{
+    background-color: var(--mainColor);
+    padding: 0 0 50px 200px;
+    font-size: 18px;
+    font-family: var(--monteratText);
+}   
+/* ---------------footer--------------- */
 .footer {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    justify-content: space-between; /* Äáº·t cÃ¡c pháº§n Ä‘á»u ra hai bÃªn */
     height: 198px;
     background-color: var(--secondColor);
-    padding: 0 50px; /* Thêm padding hai bên */
+    padding: 0 50px; /* ThÃªm padding hai bÃªn */
 }
 
 .footer-contact {
@@ -269,6 +348,12 @@ main{
     gap: 77px;
     flex-grow: 1; 
 }
+
+
+
+
+
+
 .messText{  
     display: none;
     position: fixed;
@@ -276,76 +361,76 @@ main{
     height: 500px;
     bottom: 0;
     right: 10px;
-  } 
-  
-  .chat-header{
+} 
+
+.chat-header{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7px;
     padding-top: 13px;
-  }
-  
-  
-  
-  .chat-header,.chat-container{
+}
+
+
+
+.chat-header,.chat-container{
     background-color: #469100;
-  }
-  .chat-header img{
+}
+.chat-header img{
     width: 40px;
     height: 40px;
     background-color: var(--whiteColor);
     border-radius: 50%;
-  }
-  .chat-header div{
+}
+.chat-header div{
     font-size: 30px;
     font-family: var(--fredokaText);
     font-weight: bold;
     color: var(--whiteColor);
-  }
-  
-  .chat-container{
+}
+
+.chat-container{
     font-size: 10px;
     font-family: var(--monteratText);
     color: var(--whiteColor);
     padding: 35px 0 10px 40px;
-  }
-  .chat-container-hello{
+}
+.chat-container-hello{
     font-weight: bold;
-  }
-  
-  .chat-body div{
+}
+
+.chat-body div{
     margin: 30px;
     padding: 10px;
     background-color: gainsboro;
     border-radius: 20px;
     font-size: 10px;
     font-family: var(--monteratText);
-  }
-  
-  .chat-body{
+}
+
+.chat-body{
     padding:10px 10px 200px 10px;
     background-color: var(--whiteColor);
     border-bottom: 1px solid black;
-  } 
-  
-  .chat-footer{
+}
+
+.chat-footer{
     display: flex;
     align-items: center;
     background-color: var(--whiteColor);
     gap: 35px;
-  }
-  
-  .chat-footer input{
+}
+
+.chat-footer input{
     width: 300px;
     padding: 20px 20px;
     border: none;
     outline: none;
     font-size: 10px;
     font-family: var(--monteratText);
-  }
-  
-  .chat-footer button{
+}
+
+.chat-footer button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -354,48 +439,43 @@ main{
     font-size: 10px;
     font-family: var(--monteratText);
     color:var(--whiteColor)
-  }
-  /* -----------chat---------- */
-  .mess{
+}
+/* -----------chat---------- */
+.mess{
     position: fixed;
     background-color: var(--secondColor);
     border-radius: 50%; 
     padding: 20px;
     right: 10px;
     bottom: 12px;
-  }
-  
-  .mess a i{
+}
+
+.mess a i{
     color: var(--whiteColor);
     font-size: 35px;
-  }
-
-  /* ------hover----- */
-li:hover{
-    text-decoration: underline;
-    color: var(--hoverColor);
-}
-.acc:hover, .acc1:hover{
-    background-color: var(--hoverColor);
-    
 }
 
-.acc img:hover, .acc1 img:hover {
-    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+/* ---------blur------- */
+.error {
+    border-color: red;
 }
-
-.datNgay:hover{
-    background-color: var(--hoverColor);
-    color: var(--secondColor);
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
 }
-
-.tag img:hover{
-    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 300px;
 }
-
-.mess:hover{
-    background-color: var(--hoverColor);
-    animation: bounce 0.5s
+.macDinh {
+    margin-top: 20px;
 }
 
 
+.iconThanhToan img{
+    width: 400px;
+    position: absolute;
+    right: 450px
+}
