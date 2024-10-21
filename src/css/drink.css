@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;  
     box-sizing: border-box;
-  }
+  } 
   a {
     text-decoration: none;
   }
@@ -20,6 +20,7 @@ body {
     --whiteColor: white;
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
+    --hoverColor: #94eb81;
   }
   body {
     background-color: var(--mainColor);
@@ -122,9 +123,19 @@ main{
 }
 
 .hero > img{
-    width: 100%;
+    width: 1400px;
+    margin: 130px 0 50px 0;
 }
-
+.hero p{
+  text-align: center;
+  padding: 20px 150px;
+  font-family: var(--monteratText);
+}
+.hero div{
+  font-size: 45px;
+  font-family: var(--fredokaText);
+  font-weight: bold;
+}
 .item {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -172,24 +183,25 @@ h2{
     height: 313.28px; */
     margin-top: 130px;
 }
-
-h1{
-    font-size: 45px;
-    text-align: center;
+main h1{
+  text-align: center; 
+  font-size: 80px;
+  font-family: var(--fredokaText);
+  padding: 20px 0
+}
+.hero h1{
+  font-size: 60px;
+  font-family: var(--fredokaText);
 }
 
 .right-section {
     text-align: left;
     margin-left: 20px;
-    /* width: 400px;
-    height: 450px; */
     margin-bottom: 50px;
     margin-top: 20px;
 }
 
 .left-section img {
-    /* width: 320px;
-    height: 320px; */
     position: relative;
     margin-left: 25px;
 }
@@ -197,11 +209,10 @@ h1{
 
 .price-options {
     position: relative;
-    /* width: 315.95px;
-    height: 42.47px; */
     gap: 0px;
     margin-left: 25px;
     border-radius: 20px;
+  
 }
 
 .quantity-selection {
@@ -211,7 +222,7 @@ h1{
 .price-options {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .price-options label {
@@ -226,25 +237,45 @@ h1{
 }
 
 .size {
-    width: 315.95px;
-    height: 42.47px;
+    width: 250px;
+    height: 40px;
     border-radius: 20px;
     padding: 10px;
+    margin:0 10px  10px 40px;
+    font-family: var(--monteratText);
+}
+.right-section h2,
+.right-section div,
+.right-section p,
+.right-section button,
+.drink h2,
+.drink div,
+.drink button{
+  font-family: var(--monteratText);
 }
 
-.size button{
-    margin-bottom: 20px;
+.right-section h2{
+  padding-bottom: 10px;
+  
 }
-
 .right-section p {
     font-size: 15px;
+    padding-bottom: 10px;
+}
+.right-section input{
+  width: 200px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: none;
+}
+.right-section button ,.drink button{
+  border-radius: 20px;
 }
 .buy-button {
     background-color: #FFFF;
     color: #004B00;
     padding: 5px 10px;
-    border: none;
-    border-radius: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 16px;
@@ -372,10 +403,10 @@ h1{
 
 .buy-button,
 .add-button {
-    background-color: #1f7a1f;
+    background-color: var(--secondColor);
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: var(--whiteColor);
     padding: 10px;
     width: 100%;
     margin-bottom: 5px;
@@ -384,7 +415,8 @@ h1{
 
 .buy-button:hover,
 .add-button:hover {
-    background-color: #145214;
+    background-color: var(--hoverColor);
+    color:var(--secondColor);
 }
 
 
@@ -483,4 +515,30 @@ h1{
     justify-content: center;
     gap: 77px;
     flex-grow: 1;
+  }
+
+  li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+  }
+  .acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+  }
+  
+  .acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+  }
+  
+  .datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
+  }
+  
+  .tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+  }
+  
+  .mess:hover{
+    background-color: var(--hoverColor);
   }

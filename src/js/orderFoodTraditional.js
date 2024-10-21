@@ -4,7 +4,7 @@ var getListProductByType = (link, type) => {
       .then((response) => {
         if (response.data.length > 0) {
           return response.data;
-        } else {
+        } else { 
           console.error("User not found");
           return null;
         }
@@ -13,11 +13,7 @@ var getListProductByType = (link, type) => {
         console.error("Error fetching user:", error);
       });}
 
-
-
-
       var showSalad = function (type) {
-
         document.querySelectorAll('.linkSalad').forEach(function(element) {
           element.style.color = "green";
       });
@@ -52,7 +48,7 @@ var getListProductByType = (link, type) => {
                   <div>
                     <img class="salad_img" src="${data.img_url}" alt="tamtieu">
                     <div class="salad_name">
-                      <h3>${data.name}</h3>
+                      <h2>${data.name}</h2>
                     </div>
                     <div style="display: flex; margin-top: 100px;">
                       <div class="salad1">
@@ -77,7 +73,7 @@ var getListProductByType = (link, type) => {
                       </div>
                       <div class="note">
                         <h4>Ghi chú:</h4>
-                        <button class="button button-note">VD: ít muối</button>
+                        <input class="button button-note" placeholder="..."></input>
                       </div>
                     </div> 
                     <div class="button-action">

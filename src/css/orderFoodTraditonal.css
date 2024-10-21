@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} 
 a {
   text-decoration: none;
 }
@@ -12,6 +12,7 @@ a {
   --whiteColor: white;
   --monteratText: "Montserrat", sans-serif;
   --fredokaText: "Fredoka", sans-serif;
+  --hoverColor: #94eb81;
 }
 body {
   background-color: var(--mainColor);
@@ -77,7 +78,7 @@ ul {
   height: 30px;
 }
 .acc1 img {
-  width: 30px;
+  width: 20px;
   height: 30px;
 }
 .body{
@@ -102,18 +103,120 @@ ul {
   color: var(--whiteColor);
   opacity: 0.7;
 }
+.messText{  
+  display: none;
+  position: fixed;
+  width: 400px;
+  height: 500px;
+  bottom: 0;
+  right: 10px;
+} 
+
+.chat-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding-top: 13px;
+}
+
+
+
+.chat-header,.chat-container{
+  background-color: #469100;
+}
+.chat-header img{
+  width: 40px;
+  height: 40px;
+  background-color: var(--whiteColor);
+  border-radius: 50%;
+}
+.chat-header div{
+  font-size: 30px;
+  font-family: var(--fredokaText);
+  font-weight: bold;
+  color: var(--whiteColor);
+}
+
+.chat-container{
+  font-size: 10px;
+  font-family: var(--monteratText);
+  color: var(--whiteColor);
+  padding: 35px 0 10px 40px;
+}
+.chat-container-hello{
+  font-weight: bold;
+}
+
+.chat-body div{
+  margin: 30px;
+  padding: 10px;
+  background-color: gainsboro;
+  border-radius: 20px;
+  font-size: 10px;
+  font-family: var(--monteratText);
+}
+
+.chat-body{
+  padding:10px 10px 200px 10px;
+  background-color: var(--whiteColor);
+  border-bottom: 1px solid black;
+} 
+
+.chat-footer{
+  display: flex;
+  align-items: center;
+  background-color: var(--whiteColor);
+  gap: 35px;
+}
+
+.chat-footer input{
+  width: 300px;
+  padding: 20px 20px;
+  border: none;
+  outline: none;
+  font-size: 10px;
+  font-family: var(--monteratText);
+}
+
+.chat-footer button{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--secondColor);
+  font-size: 10px;
+  font-family: var(--monteratText);
+  color:var(--whiteColor)
+}
+/* -----------chat---------- */
+.mess{
+  position: fixed;
+  background-color: var(--secondColor);
+  border-radius: 50%; 
+  padding: 20px;
+  right: 10px;
+  bottom: 12px;
+  z-index: 1000;
+}
+
+.mess a i{
+  color: var(--whiteColor);
+  font-size: 35px;
+}
+
 
 .nav-menu {
   list-style-type: none;
   display: flex;
   background-color: #004b00;
   border-radius: 50px;
-  padding: 15px 40px;
-  margin-right: 600px;
+
+
 }
 
 .nav-menu li {
-  margin: 0 25px;
+
 }
 
 .nav-link {
@@ -122,7 +225,7 @@ ul {
   font-size: 24px;
   color: white;
   font-weight: 400;
-}
+} 
 
 .nav-link:hover {
   color: #78d878;
@@ -131,32 +234,38 @@ ul {
 .icon {
   display: flex;
   gap: 70px;
-  margin-right: 150px;
+
 }
 
 .icon img {
   width: 85px;
   height: 72px;
-  margin-right: 1%;
+
 }
 
 /* body */
-.food_block1 {
-  margin-top: 20px;
-}
+
 .dia_tren {
-  width: 85%;
-  height: 500px;
-  margin-left: 100px;
+  width: 1400px;
+  margin: 100px 0 0 60px;
   object-fit: contain;
   border: none;
   display: flex;
+ ;
 }
 .food_menu {
   margin-top: 20px;
 }
 
-h2 {
+.ss{
+  font-family: var(--monteratText);
+  padding-left: 150px;
+  font-size: 60px;
+  color: var(--secondColor);
+  font-weight: bold;
+}
+
+/* h2 {
   font-family: "DT Phudu";
   font-size: 70px;
   font-weight: 700;
@@ -166,7 +275,7 @@ h2 {
   color: #004b00;
   width: 70%;
   margin-left: 200px;
-}
+} */
 
 .chat {
   margin-right: 120px;
@@ -199,21 +308,22 @@ h2 {
   border: 1px solid #004b00; /* Đường viền xanh */
   border-radius: 10px;
   padding: 5px;
-  width: 68%;
-  margin-left: 250px;
+  width: 1300px;
+  margin-left: 120px;
 }
 .salad_type a {
   flex: 1;
-  font-size: 20px;
-  color: #004b00;
+  font-size: 15px;
+  color: var(--secondColor);
   padding: 10px;
   text-decoration: none;
   transition: background-color 0.3s;
-  font-family: "DT Phudu";
+  font-family: var(--fredokaText);
   font-size: 30px;
-  font-weight: 500;
-  line-height: 59.4px;
+  font-weight:bold;
+  line-height: 59.4px;  
   text-align: center;
+  width: 200px;
 }
 
 .salad_type a:hover {
@@ -224,7 +334,7 @@ h2 {
 }
 .latcam {
   width: 15%;
-  margin-left: 10px;
+
 }
 .dia_duoi {
   position: relative;
@@ -233,15 +343,11 @@ h2 {
   transform: translateX(-50%);
 }
 
-h3 {
-  font-family: "DT Phudu";
-  font-size: 20px;
-}
-
 .food_items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   margin-top: 100px;
+  margin: 100px 0 100px 0;
 }
 .footer-icons a img {
   width: 60px;
@@ -253,18 +359,18 @@ h3 {
   height: 400px;
   display: flex;
   justify-self: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .salad_img {
   /* bottom: 10px; */
   position: absolute;
-  width: 250px;
-  height: 250px;
-  margin-left: 30px;
+  width: 300px;
+  height: 300px;
+  margin-left: 50px;
 }
 .mb_1 {
   display: block;
-  margin-top: 180px;
+  margin-top: 230px;
 }
 .salad_name {
   position: absolute;
@@ -272,10 +378,15 @@ h3 {
   margin-left: 320px;
   color: #004b00;
 }
+.salad_name h2{
+  margin: 20px 0 0 30px;
+  font-family: var(--monteratText);
+  width: 250px;
+}
 .salad1 {
   background-color: #004b00;
-  width: 310px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
   justify-content: center;
   border-radius: 20px;
 }
@@ -285,42 +396,52 @@ h3 {
 .salad_parents {
   display: flex;
   justify-content: center;
+
 }
 .salad_price {
-  width: 150px;
-  height: 30x;
+  width: 200px;
+  height: 40x;
   border-radius: 20px;
   background: #ffffff;
   display: flex;
   margin-bottom: 10px;
   gap: 10px;
   justify-content: center;
+  font-family: var(--monteratText);
 }
 .button-action {
   margin-top: 15px;
   display: flex;
   gap: 10px;
 }
+
 .button-action .button {
-  width: 150px;
-  height: 30px;
+  width: 195px;
+  height: 40px;
   border-radius: 20px;
   text-align: center;
-  border: 2px solid #188018;
+  border: 1px solid #188018;
 }
 .button-action .button-add-item {
   background: #004b00;
   color: #ffffff;
-  font-family: "DT Phudu";
+  font-family: var(--monteratText);
   font-size: 15px;
-
   text-align: center;
 }
 .button-action .button-buy-item {
   background: #ffffff;
   color: #188018;
-  font-family: "DT Phudu";
+  font-family: var(--monteratText);
   font-size: 15px;
+}
+.button-add-item:hover{
+  background-color: var(--hoverColor);
+  color: var(--secondColor)
+}
+.button-buy-item:hover{
+  background-color: var(--hoverColor);
+  color: var(--whiteColor);
 }
 .button-action .button h6 {
   margin-top: 8px;
@@ -331,22 +452,30 @@ h3 {
   background: white;
   border-radius: 20px;
   border-color: red;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  text-align: center;
   border: 2px solid #188018;
+  font-family: var(--monteratText);
+  padding: 10px
 }
-.note {
+.item h4{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.note{
   position: absolute;
-  margin-left: 328px;
+  margin-left: 408px;
   margin-top: 200px;
+  font-family: var(--monteratText);
+}
+.note input{
+  font-family: var(--monteratText);
 }
 .note .button {
   width: 150px;
   height: 28px;
   border-radius: 10px;
-
-  border: 2px solid #188018;
+  padding: 10px;
+  border: 1px solid #188018;
+  outline: none;
 }
 .cam2 {
   width: 400px;
@@ -541,4 +670,29 @@ height: 300px;
   padding-top: 15px;
   color: #004b00;
   font-weight: 600;
+}
+li:hover{
+  text-decoration: underline;
+  color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+  background-color: var(--hoverColor);
+  
+}
+
+.acc img:hover, .acc1 img:hover {
+  filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.datNgay:hover{
+  background-color: var(--hoverColor);
+  color: var(--secondColor);
+}
+
+.tag img:hover{
+  filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.mess:hover{
+  background-color: var(--hoverColor);
 }

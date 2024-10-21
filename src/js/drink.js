@@ -13,7 +13,7 @@ var getListProductByType = (link, type) => {
       .catch((error) => {
         console.error("Error fetching products:", error);
         return [];
-      });
+      }); 
   };
   
   var renderDrinkJuice = function () {
@@ -37,7 +37,7 @@ var getListProductByType = (link, type) => {
                       <h2>${data.name}</h2>
                       <p>Không Đá + 10.000 VND</p>
                       <p><b>Ghi chú:</b></p>
-                      <input type="text" name="VD:">
+                      <input type="text" name="VD:" placeholder="...">
                       <div class="quantity-selection">
                           <button>-</button>
                           <input type="text" value="0">
@@ -98,7 +98,7 @@ var renderDrinkSmoothie = function () {
                     <p><b>Nguyên liệu:</b></p>
                     <p>${data.ingredient}</p>
                     <p><b>Ghi chú:</b></p>
-                    <input type="text" name="VD:">
+                    <input type="text" name="VD:" placeholder="...">
                     <div class="quantity-selection">
                         <button>-</button>
                         <input type="text" value="0">

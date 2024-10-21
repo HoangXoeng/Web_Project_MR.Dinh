@@ -28,7 +28,7 @@
   "foods": [
     {
       "id": "1",
-      "name": "Salad bò tẩm tiêu",
+      "name": "Salad Bò Tẩm Tiêu",
       "ingredient": [
         "Xà lách trộn",
         "Ớt chuông",
@@ -49,7 +49,7 @@
     },
     {
       "id": "2",
-      "name": "Salad Phô Mai feta",
+      "name": "Salad Phô Mai Feta",
       "ingredient": [
         "Xà lách trộn",
         "Ớt chuông",
@@ -70,7 +70,7 @@
     },
     {
       "id": "3",
-      "name": "salad ức gà áp chảo",
+      "name": "Salad Ức Gà Áp Chảo",
       "ingredient": [
         "Xà lách Romaine",
         "Bánh mì giòn",
