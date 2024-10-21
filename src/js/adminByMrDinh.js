@@ -1,8 +1,7 @@
-
-var showSession = function(page) {
-  var productPage = document.querySelector('.product__session');
-  var userPage = document.querySelector('.user__session');
-  var billPage = document.querySelector('.bill__session');
+var showSession = function (page) {
+  var productPage = document.querySelector(".product__session");
+  var userPage = document.querySelector(".user__session");
+  var billPage = document.querySelector(".bill__session");
 
   // Ẩn tất cả các trang
   productPage.style.display = "none";
@@ -10,11 +9,11 @@ var showSession = function(page) {
   billPage.style.display = "none";
 
   // Hiện trang tương ứng
-  if (page === 'product') {
+  if (page === "product") {
     productPage.style.display = "block";
-  } else if (page === 'user') {
+  } else if (page === "user") {
     userPage.style.display = "block";
-  } else if (page === 'bill') {
+  } else if (page === "bill") {
     billPage.style.display = "block";
   }
 };
@@ -249,12 +248,11 @@ var productFastFoodAdmin = function () {
 var productDrinksAdmin = function () {
   var htmlInDrinks;
   getListProductByType("drinks", "juice").then((listproduct) => {
-    
     // Sử dụng map để tạo ra các hàng (rows) HTML cho sản phẩm
-    console.log(listproduct); 
+    console.log(listproduct);
 
-
-    var htmlInDrinks = listproduct.map((data) => {
+    var htmlInDrinks = listproduct
+      .map((data) => {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
@@ -603,7 +601,7 @@ const showForm = (type, idToUpdate) => {
       }
     };
   });
-
+  //  ád
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       modal.style.display = "none";
@@ -1077,7 +1075,7 @@ var updateProduct = function (type, id) {
   }
 };
 
-var closeDetailForm = function() {
+var closeDetailForm = function () {
   document.querySelector(".detail__form").style.display = "none";
 };
 
@@ -1144,10 +1142,11 @@ var detailProduct = function (type, id) {
 
           document.querySelector(".detail__form").innerHTML = htmlDetails;
           document.querySelector(".detail__form").style.display = "block";
-          document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+          document
+            .querySelector(".detail__form")
+            .scrollIntoView({ behavior: "smooth" });
 
           // Thêm sự kiện cho nút Edit
-
         } else {
           console.error("Product not found");
         }
@@ -1155,8 +1154,8 @@ var detailProduct = function (type, id) {
       .catch((error) => {
         console.error("Error fetching product details:", error);
       });
-  }else if (type =='fastFood'){
-     getProductById("foods", id)
+  } else if (type == "fastFood") {
+    getProductById("foods", id)
       .then((data) => {
         if (data) {
           // Kiểm tra xem dữ liệu có hợp lệ không
@@ -1205,10 +1204,11 @@ var detailProduct = function (type, id) {
 
           document.querySelector(".detail__form").innerHTML = htmlDetails;
           document.querySelector(".detail__form").style.display = "block";
-          document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+          document
+            .querySelector(".detail__form")
+            .scrollIntoView({ behavior: "smooth" });
 
           // Thêm sự kiện cho nút Edit
-
         } else {
           console.error("Product not found");
         }
@@ -1216,13 +1216,12 @@ var detailProduct = function (type, id) {
       .catch((error) => {
         console.error("Error fetching product details:", error);
       });
-
-  }else if (type =='drink'){
+  } else if (type == "drink") {
     getProductById("drinks", id)
-    .then((data) => {
-      if (data) {
-        // Kiểm tra xem dữ liệu có hợp lệ không
-        const htmlDetails = `
+      .then((data) => {
+        if (data) {
+          // Kiểm tra xem dữ liệu có hợp lệ không
+          const htmlDetails = `
       
   <div class="formDetail"  style="width: 45%;">
       <div class="container mt-5">
@@ -1272,25 +1271,26 @@ var detailProduct = function (type, id) {
   </div>
       `;
 
-        document.querySelector(".detail__form").innerHTML = htmlDetails;
-        document.querySelector(".detail__form").style.display = "block";
-        document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+          document.querySelector(".detail__form").innerHTML = htmlDetails;
+          document.querySelector(".detail__form").style.display = "block";
+          document
+            .querySelector(".detail__form")
+            .scrollIntoView({ behavior: "smooth" });
 
-        // Thêm sự kiện cho nút Edit
-
-      } else {
-        console.error("Product not found");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching product details:", error);
-    });
-  }else{
+          // Thêm sự kiện cho nút Edit
+        } else {
+          console.error("Product not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
+  } else {
     getProductById("ingredients", id)
-    .then((data) => {
-      if (data) {
-        // Kiểm tra xem dữ liệu có hợp lệ không
-        const htmlDetails = `
+      .then((data) => {
+        if (data) {
+          // Kiểm tra xem dữ liệu có hợp lệ không
+          const htmlDetails = `
       
   <div class="formDetail"  style="width: 45%;">
       <div class="container mt-5">
@@ -1330,21 +1330,21 @@ var detailProduct = function (type, id) {
   </div>
       `;
 
-        document.querySelector(".detail__form").innerHTML = htmlDetails;
-        document.querySelector(".detail__form").style.display = "block";
-        document.querySelector(".detail__form").scrollIntoView({ behavior: "smooth" });
+          document.querySelector(".detail__form").innerHTML = htmlDetails;
+          document.querySelector(".detail__form").style.display = "block";
+          document
+            .querySelector(".detail__form")
+            .scrollIntoView({ behavior: "smooth" });
 
-        // Thêm sự kiện cho nút Edit
-
-      } else {
-        console.error("Product not found");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching product details:", error);
-    });
+          // Thêm sự kiện cho nút Edit
+        } else {
+          console.error("Product not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
   }
-
 };
 
 var userAdmin = function () {
@@ -1361,74 +1361,76 @@ var userAdmin = function () {
                         <td>${data.password}</td>
                         <td>${data.role}</td>
                         <td>
-                            <button onclick="showFormUpdateUser(${String(data.id)})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
+                            <button onclick="showFormUpdateUser(${String(
+                              data.id
+                            )})" class="btn btn-outline-danger" data-toggle="modal" data-target="#updateProduct">
                                 <i class="fas fa-cogs"></i>
                             </button>                       
-                            <button onclick="deleteUser(${String(data.id)})" class="btn ml-1 btn-outline-warning">
+                            <button onclick="deleteUser(${String(
+                              data.id
+                            )})" class="btn ml-1 btn-outline-warning">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
                     </tr>`;
       })
       .join("");
-      document.querySelector('#userAdmin').innerHTML = listproduct;
+    document.querySelector("#userAdmin").innerHTML = listproduct;
   });
 };
 
-var deleteUser = function(id) {
-  id = String(id); 
+var deleteUser = function (id) {
+  id = String(id);
 
-  
-  axios.delete(`http://localhost:3000/accounts/${id}`)
+  axios
+    .delete(`http://localhost:3000/accounts/${id}`)
     .then((res) => {
-      console.log('User deleted successfully:', res);
+      console.log("User deleted successfully:", res);
     })
     .catch((error) => {
-      console.error('Error deleting user:', error);
+      console.error("Error deleting user:", error);
     });
 };
 
-var hideUserForm = function() {
-  var form = document.querySelector('.formUpdateUser')
-  form.style.display = 'none';
-
+var hideUserForm = function () {
+  var form = document.querySelector(".formUpdateUser");
+  form.style.display = "none";
 };
 
-var showFormUpdateUser = function(id) {
-  var form = document.querySelector('.formUpdateUser')
-  var buttonUpdate = document.querySelector('.updateUser')
-  form.style.display = 'block';
-  buttonUpdate.setAttribute('onclick',`updateUser(${id})`)
+var showFormUpdateUser = function (id) {
+  var form = document.querySelector(".formUpdateUser");
+  var buttonUpdate = document.querySelector(".updateUser");
+  form.style.display = "block";
+  buttonUpdate.setAttribute("onclick", `updateUser(${id})`);
 };
 
-var updateUser = function(id) {
-  id = String(id);  
-  var userName = document.querySelector('#userName').value;
-  var email = document.querySelector('#email').value;
-  var role = document.querySelector('#role').value;
-  var phoneNum = document.querySelector('#phoneNum').value;
-  var passWord = document.querySelector('#passWord').value;
- const opt = {
-            url: (`http://localhost:3000/accounts/${id}`),
-            method: 'put',
-            data: {
-              userName: userName,
-              email: email,
-              phoneNum: phoneNum,
-              password: passWord,
-              role: role,
-            },
-          };
-          axios(opt)
-            .then(function (data_res) {
-              console.log(data_res);
-              if (data_res.status == 201) alert("Update successfully");
-            })
-            .catch(function (ex) {
-              console.log(ex);
-            });
+var updateUser = function (id) {
+  id = String(id);
+  var userName = document.querySelector("#userName").value;
+  var email = document.querySelector("#email").value;
+  var role = document.querySelector("#role").value;
+  var phoneNum = document.querySelector("#phoneNum").value;
+  var passWord = document.querySelector("#passWord").value;
+  const opt = {
+    url: `http://localhost:3000/accounts/${id}`,
+    method: "put",
+    data: {
+      userName: userName,
+      email: email,
+      phoneNum: phoneNum,
+      password: passWord,
+      role: role,
+    },
+  };
+  axios(opt)
+    .then(function (data_res) {
+      console.log(data_res);
+      if (data_res.status == 201) alert("Update successfully");
+    })
+    .catch(function (ex) {
+      console.log(ex);
+    });
 };
-
 
 productSaladAdmin();
 productFastFoodAdmin();
