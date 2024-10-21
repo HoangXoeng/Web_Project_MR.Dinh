@@ -118,14 +118,14 @@ ul {
     border-radius: 20px;
     padding: 10px 
 }
-.tieude{
+.tieude,.tieude1{
     font-size: 25px;
     text-align: center;
     font-family: var(--fredokaText);
     font-weight: bold;
     color: var(--secondColor);
 }
-.gia{
+.gia,.gia1{
     font-size: 15px;
     text-align: center;
     font-family: var(--monteratText);

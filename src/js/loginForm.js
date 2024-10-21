@@ -267,7 +267,7 @@ function signIn() {
         if (role === "admin") {
           window.location.href = "http://127.0.0.1:5500/src/html/admin.html";
         } else {
-          console.log("Invalid role");
+          // console.log("Invalid role");
           window.location.href = "/index.html"; 
         }
 

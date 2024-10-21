@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="shipMethod('atHome')">
     <div class="app">
         <header class="header">
             <div class="logo">
@@ -46,70 +46,79 @@
         <div class="container1">
             <div class="thongTin">
                 <div class="phuongThucPay">
-                    <div class="giaoDen">
-                        <div class="tieude">GIAO ĐẾN ĐỊA CHỈ</div>
-                        <div class="gia">Phí: 10.000 VND</div>
+                    <div class="giaoDen" onclick="shipMethod('atHome')">
+                        <div class="tieude1">GIAO ĐẾN ĐỊA CHỈ</div>
+                        <div class="gia1">Phí: 10.000 VND</div>
                     </div>
-                    <div class="tuNhan">
+                    <div class="tuNhan" onclick="shipMethod('atCafe')"">
                         <div class="tieude">NHẬN TẠI CỬA HÀNG</div>
                         <div class="gia">Miễn phí</div>
                     </div>
                 </div>
-                <div class="dienDiaChi">
-                    <div class="tieudeDiaChi">ĐIỀN ĐỊA CHỈ: </div>
-                    <div class="noiDung" >Vui lòng kiểm tra địa chỉ giao hàng của bạn.
-                        <br>   Địa chỉ không chính xác có thể khiến đơn hàng bị hủy hoặc chậm trễ.</div>
+                <div class="atHome">
+                    <div class="dienDiaChi">
+                        <div class="tieudeDiaChi">ĐIỀN ĐỊA CHỈ: </div>
+                        <div class="noiDung" >Vui lòng kiểm tra địa chỉ giao hàng của bạn.
+                            <br>   Địa chỉ không chính xác có thể khiến đơn hàng bị hủy hoặc chậm trễ.</div>
+                    </div>
+                    <div class="form" id="shippingForm">
+                        <div>
+                            <div>Họ và tên: </div>
+                            <input type="text" id="name" placeholder="VD: Nguyễn Văn A">
+                            <span class="error-message" id="nameError">Vui lòng nhập họ và tên.</span>
+                        </div>
+                        <div>
+                            <div>Địa chỉ: </div>
+                            <input type="text" id="address" placeholder="VD: Số 7, Bến Nghé">
+                            <span class="error-message" id="addressError">Vui lòng nhập địa chỉ.</span>
+                        </div>
+                        <div>
+                            <div>Quận, Huyện: </div>
+                            <input type="text" id="district" placeholder="VD: Quận 1">
+                            <span class="error-message" id="districtError">Vui lòng nhập quận, huyện.</span>
+                        </div>
+                        <div>
+                            <div>Thành phố: </div>
+                            <input type="text" id="city" placeholder="VD: TP. Hồ Chí Minh">
+                            <span class="error-message" id="cityError">Vui lòng nhập thành phố.</span>
+                        </div>
+                        <div>
+                            <div>Số điện thoại</div>
+                            <input type="text" id="phone" placeholder="Nhập số điện thoại nhận hàng của bạn">
+                            <span class="error-message" id="phoneError">Vui lòng nhập số điện thoại hợp lệ.</span>
+                        </div>
+                        <div class="macDinh">
+                            <div><button class="submit"type="button">Submit</button></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form" id="shippingForm">
-                    <div>
-                        <div>Họ và tên: </div>
-                        <input type="text" id="name" placeholder="VD: Nguyễn Văn A">
-                        <span class="error-message" id="nameError">Vui lòng nhập họ và tên.</span>
-                    </div>
-                    <div>
-                        <div>Địa chỉ: </div>
-                        <input type="text" id="address" placeholder="VD: Số 7, Bến Nghé">
-                        <span class="error-message" id="addressError">Vui lòng nhập địa chỉ.</span>
-                    </div>
-                    <div>
-                        <div>Quận, Huyện: </div>
-                        <input type="text" id="district" placeholder="VD: Quận 1">
-                        <span class="error-message" id="districtError">Vui lòng nhập quận, huyện.</span>
-                    </div>
-                    <div>
-                        <div>Thành phố: </div>
-                        <input type="text" id="city" placeholder="VD: TP. Hồ Chí Minh">
-                        <span class="error-message" id="cityError">Vui lòng nhập thành phố.</span>
-                    </div>
-                    <div>
-                        <div>Số điện thoại</div>
-                        <input type="text" id="phone" placeholder="Nhập số điện thoại nhận hàng của bạn">
-                        <span class="error-message" id="phoneError">Vui lòng nhập số điện thoại hợp lệ.</span>
-                    </div>
-                    <div class="macDinh">
-                        <div><button class="submit"type="submit">Submit</button></div>
-                    </div>
+                <div class="atCafe">
+                    <br>
+                    <br>
+                    <br>
+                    Địa chỉ cửa hàng gần nhất ở: 26 Phan Bội Châu.
                 </div>
-            </div>
+            </div>    
+                
             <div class="iconThanhToan"><img srcset="../img/thanhtoanAll.png 2x" alt=""></div>
             <div class="boxPay">
                 <div class="soLuong">
                     <div class="tongSoMon">TỔNG SỐ MÓN</div>
-                    <div class="inDam">2 MÓN</div>
+                    <div class="inDam">1 MÓN</div>
                 </div>
                 <div class="tongTien">
                     <div class="tongTienTieuDe">Tổng tiền: </div>
-                    <div class="inDam">221.000 VND</div>
+                    <div class="inDam tongTienThanhToan"></div>
                 </div>
                 <div class="vanChuyen">
                     <div class="vanChuyenTieuDe">Phí vận chuyển: </div>
-                    <div class="inDam">10.000 VND</div>
+                    <div class="inDam phiShip"></div>
                 </div>
                 <div class="tongHoaDon">
                     <div class="tongHoaDonTieuDe">Tổng hóa đơn: </div>
-                    <div class="inDam">231.000 VND</div>
+                    <div class="inDam tongTienPhaiTra"></div>
                 </div>
-                <div class="thanhToan"><button>THANH TOÁN</button></div>
+                <div class="thanhToan"><button onclick="paymentRequest()">THANH TOÁN</button></div>
                 <div class="hoTro"><a href="">Hỗ trợ thanh toán</a></div>
                 <div class="quayVeGioHang"><button>QUAY VỀ GIỎ HÀNG</button></div>
             </div>
@@ -169,6 +178,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script src="../js/pay.js"></script>
 </body>
 </html>

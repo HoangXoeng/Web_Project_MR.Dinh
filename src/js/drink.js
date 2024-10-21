@@ -1,4 +1,9 @@
 // get data
+
+var buyNowDrink=function(id) {
+  console.log('vai o')
+  window.location.href = "http://127.0.0.1:5500/src/html/pay.html?drinkId=" + id;
+}
 var getListProductByType = (link, type) => {
     return axios
       .get(`http://localhost:3000/${link}?type=${type}`)
@@ -37,13 +42,13 @@ var getListProductByType = (link, type) => {
                       <h2>${data.name}</h2>
                       <p>Không Đá + 10.000 VND</p>
                       <p><b>Ghi chú:</b></p>
-                      <input type="text" name="VD:">
+                      <input type="text">
                       <div class="quantity-selection">
                           <button>-</button>
                           <input type="text" value="0">
                           <button>+</button>
                       </div>
-                      <button class="buy-button">MUA NGAY</button>
+                      <button class="buy-button"onclick="buyNowDrink(${data.id})"type="button">MUA NGAY</button>
                       <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
                   </form>
               </div>`;
@@ -98,13 +103,15 @@ var renderDrinkSmoothie = function () {
                     <p><b>Nguyên liệu:</b></p>
                     <p>${data.ingredient}</p>
                     <p><b>Ghi chú:</b></p>
-                    <input type="text" name="VD:">
+                    <input type="text">
                     <div class="quantity-selection">
                         <button>-</button>
                         <input type="text" value="0">
                         <button>+</button>
                     </div>
-                    <button class="buy-button">MUA NGAY</button>
+
+                      <button class="buy-button"onclick="buyNowDrink(${data.id})"type="button">MUA NGAY</button>
+
                     <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
                 </form>
             </div>`;
@@ -156,7 +163,8 @@ var renderDrinkCoke = function () {
                     <input type="text" value="0">
                     <button>+</button>
                 </div>
-                <button class="buy-button">MUA NGAY</button>
+                      <button class="buy-button"onclick="buyNowDrink(${data.id})"type="button">MUA NGAY</button>
+
                 <button class="add-button">THÊM VÀO GIỎ HÀNG</button>
             </div>`;
     }).join("");
@@ -166,5 +174,4 @@ var renderDrinkCoke = function () {
     console.error("Error fetching product list:", error);
   });
 }
-
 renderDrinkCoke();

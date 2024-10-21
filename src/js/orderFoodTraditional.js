@@ -82,7 +82,7 @@ var getListProductByType = (link, type) => {
                     </div> 
                     <div class="button-action">
                       <button class="button button-add-item">THÊM VÀO GIỎ HÀNG</button>
-                      <button class="button button-buy-item">MUA NGAY</button>
+                      <button class="button button-buy-item"onclick="buyNow(${data.id})">MUA NGAY</button>
                     </div>     
                   </div>
                 </div>`;
@@ -252,4 +252,7 @@ var getListProductByType = (link, type) => {
             });
           };
       };
+      var buyNow = function(id) {
+        window.location.href = "http://127.0.0.1:5500/src/html/pay.html?product_id=" + id;
+    }
       showSalad('basicSalad')

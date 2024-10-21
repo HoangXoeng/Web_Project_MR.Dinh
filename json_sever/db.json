@@ -862,9 +862,36 @@
       "img_url": "https://imagizer.imageshack.com/img923/8521/6FQQwg.png"
     }
   ],
-  "orders":[
-    
+  "orders": [
+    {
+      "id": "0",
+      "userName": "xuannguyen",
+      "productName": "Salad Phô Mai feta",
+      "totalPrice": "89000 VND",
+      "paymentMethod": "cash",
+      "shippingPrice": 0,
+      "shippingAddress": {
+        "name": "",
+        "address": "",
+        "district": "",
+        "city": "",
+        "phone": ""
+      }
+    },
+    {
+      "id": "2",
+      "userName": "xuannguyen",
+      "productName": "Salad Phô Mai feta",
+      "totalPrice": "89000 VND",
+      "paymentMethod": "cash",
+      "shippingPrice": 0,
+      "shippingAddress": {
+        "name": "",
+        "address": "",
+        "district": "",
+        "city": "",
+        "phone": ""
+      }
+    }
   ]
-
-  
 }
