@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --mainColor:  #FFF2AD;
+    --secondColor: #004B00;
+    --whiteColor:white;
+    --monteratText: "Montserrat", sans-serif;
+    --fredokaText: "Fredoka", sans-serif;
+    --hoverColor: #94eb81;
+}
+body{
+    background-color: var(--mainColor);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
+
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+.app{
+    width: 100%;
+}
+.body{
+    padding-top: 54px;
+}
+/* ------------------header-------------------- */
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--mainColor);
+    position: fixed;
+    z-index: 1;
+}
+.logo img{
+    width: 99px;
+    height: 103px;
+}
+.logo{
+    padding:0 30px 0 30px; 
+    margin: 0 15px 0 30px;
+}
+.header-menu ul {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 61.5px;
+    padding: 15px;
+}
+.header-menu ul li a{
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+    padding: 0 50px
+}
+
+.header-acc {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-left: 280px;
+    gap: 50px;
+    cursor: pointer;
+}
+
+.header-acc div {
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    border-radius: 50px;
+    padding:10px 25px
+}
+.acc img{
+    width: 30px;
+    height: 30px;
+}
+.acc1 img{
+    width: 20px;
+    height: 30px;
+}
+
+.user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 9%;
+    border-radius: 4px;
+    display: none;
+}
+.user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+}
+.user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+.mess{
+    position: fixed;
+    background-color: var(--secondColor);
+    border-radius: 50%; 
+    padding: 20px; 
+    right: 10px;
+    bottom: 12px;
+}
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+.buaAnLon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100px;
+}
+
+/* ------hover----- */
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
+
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
+}
+
+.tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.mess:hover{
+    background-color: var(--hoverColor);
+    animation: bounce 0.5s
+}
+
+
+
+.chat-header,.chat-container{
+    background-color: #469100;
+}
+.chat-header img{
+    width: 40px;
+    height: 40px;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+}
+.chat-header div{
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+.chat-container{
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color: var(--whiteColor);
+    padding: 35px 0 10px 40px;
+}
+.chat-container-hello{
+    font-weight: bold;
+}
+
+.chat-body div{
+    margin: 30px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-body{
+    padding:10px 10px 200px 10px;
+    background-color: var(--whiteColor);
+    border-bottom: 1px solid black;
+}
+
+.chat-footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteColor);
+    gap: 35px;
+}
+
+.chat-footer input{
+    width: 300px;
+    padding: 20px 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-footer button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondColor);
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color:var(--whiteColor)
+}
+
+.messText{  
+    display: none;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    bottom: 0;
+    right: 10px;
+} 
+
+.chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding-top: 13px;
+}
+
+.content_body{
+    padding-top: 56px;
+}
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đặt các phần đều ra hai bên */
+    height: 198px;
+    background-color: var(--secondColor);
+    padding: 0 50px; /* Thêm padding hai bên */
+}
+
+.footer-contact {
+    display: flex;
+}
+
+.address, .personal-contact {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 8px; */
+}
+
+.address div, .personal-contact div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address img, .personal-contact img {
+    margin-right: 10px;
+}
+
+.time, .street, .phone, .email {
+    font-size: 15px;
+    padding: 10px;
+    color: var(--whiteColor);
+    font-family: var(--monteratText);
+}
+
+.time img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.street img {
+    text-align: center;
+    height: 40px;
+    padding-right: 30px;
+}
+
+.phone img {
+    height: 40px;
+    padding-right: 25px;
+}
+
+.email img {
+    height: 30px;
+    padding-right: 17px;
+}
+
+.phone {
+    margin-top: 10px;
+}
+
+.brand {
+    font-size: 75px;
+    font-family: var(--fredokaText);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 50px 0 ;
+    margin-right: 10px;
+}
+
+.col-12{
+    max-width: 90%;
+    margin: auto;
+}
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77px;
+    flex-grow: 1; 
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+/* content */
+.title{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--secondColor);
+}
+.content_session{
+    display: flex;
+}
+.list--prodcuts{
+    width: 65%;
+    /* background-color: #469100; */
+    height: 70vh;
+    overflow-y: auto;
+    margin-bottom: 60px;
+}
+
+.payment--session{
+
+    background-color: whitesmoke;
+    width: 27%;
+    overflow-y: auto;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    border: 1px solid var(--secondColor);
+}
+.product--item{
+    display: flex;
+}
+.product--item--img--box{
+    width: 220px;
+    background-color: var(--secondColor);
+    height: 100px;
+    /* z-index: 20;  */
+    position:relative;
+    border-radius: 20px;
+    margin-top: 90px;
+}
+.product--item--img--img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:-90px;
+}
+.product--item--des{
+    margin-top: 50px;
+    color: var(--secondColor);
+    height: 100%;
+    margin-left: 20px;
+}
+.product--item--name{
+    font-size: 30px;
+}
+.product--item--price{
+    font-size: 24px;
+    margin-top: 20px;
+}
+.total--money{
+    margin-left: 20px;
+}
+.addsession{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.money--title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+.money--total{
+    text-align: center;
+    font-size: 20px;
+}
+.quantity-btn{
+    width: 30px;
+    border-radius: 20px;
+    border: 1px solid #004B00;
+    color: #004B00;
+    background-color: white;
+    font-size: 15px;
+}
+.list--product-list > li {
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    padding: 10px;
+}
+.detele--btn{
+    margin-left: 30px;
+    color: var(--whiteColor);
+    background-color: #004B00;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    align-self: center;
+    border-radius: 20px;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.payment--session{
+    padding: 30px;
+}
+.total--product{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.total--price--payment{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.ship--price{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.vat--notifi{
+    margin-top: 20px;
+}
+
+.total--money--pay{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+.btn--payment--box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+.btn--payment{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: var(--secondColor);
+    border-radius: 20px;
+    font-size: 20px;
+}

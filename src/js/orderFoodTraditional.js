@@ -116,7 +116,7 @@ var getListProductByType = (link, type) => {
                 </div>
                 <div class="fun"></div>
                 <div class="addsession">
-                    <button class="quantity-btn decrease-btn">-</button>
+                <button class="quantity-btn decrease-btn">-</button>
                 <span class="quantity-display">0</span>
                 <button class="quantity-btn increase-btn">+</button>
                 </div>
