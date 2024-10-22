@@ -141,11 +141,13 @@ li:hover{
     align-items: center;
     margin-left: -100px;
 }
-
+.list--product-list,.product--item{
+    text-decoration: none;
+}
 /* ------hover----- */
 li:hover{
-    text-decoration: underline;
-    color: var(--hoverColor);
+    text-decoration: none;
+    color: black; 
 }
 .acc:hover, .acc1:hover{
     background-color: var(--hoverColor);
@@ -504,4 +506,16 @@ input[type="checkbox"] {
     background-color: var(--secondColor);
     border-radius: 20px;
     font-size: 20px;
+}
+
+.delete--btn--box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.delete--btn{
+    margin-left: 100px;
+    width: 100px;
+    height: 30px;
 }

@@ -787,8 +787,8 @@ var addNewProduct = function (type, idToUpdate) {
               ingredient: "",
               description: description,
               type: "fastFood",
-              enegy: energy,
-              price: price,
+              enegy_1: energy,
+              price_1: price,
               img: img,
             },
           };

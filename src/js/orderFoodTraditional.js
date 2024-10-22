@@ -269,30 +269,40 @@ var addToCart = function(id){
   if (b == 'green'){
     var cartData = localStorage.getItem("cart");
     var cart = cartData ? JSON.parse(cartData) : [];
+    var existingItem = cart.find(item => item.id == id && item.user === user && item.type =='foods' && item.price == 2);
+    if (existingItem) {
+      existingItem.quantity += 1; // Nếu đã có trong giỏ hàng, tăng số lượng
+    }else {
     var newItem = {
       type:'foods',
       user : user,
       id: id,
       price: 2,
-      quantily:1
+      quantity:1
     };
     cart.push(newItem);
+  }
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   else{
     var cartData = localStorage.getItem("cart");
     var cart = cartData ? JSON.parse(cartData) : [];
+    var existingItem = cart.find(item => item.id == id && item.user === user && item.type =='foods' && item.price == 1);
+    if (existingItem) {
+      existingItem.quantity += 1; // Nếu đã có trong giỏ hàng, tăng số lượng
+    }else {
     var newItem = {
       type:'foods',
       user : user,
       id: id,
       price: 1,
-      quantily:1
+      quantity:1
     };
     cart.push(newItem);
+  }
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   console.log(JSON.parse(localStorage.getItem("cart")))
 }
-// localStorage.removeItem("cart");
+localStorage.removeItem("cart");
       showSalad('basicSalad')

@@ -397,8 +397,8 @@
       "ingredient": "",
       "description": "Ngọt dịu, thoang thoảng mùi khói, dính trên đầu ngón tay, ngon đến miếng cuối cùng.Dùng kèm:Sốt BBQ",
       "type": "fastFood",
-      "enegy": "663",
-      "price": "65.000",
+      "enegy_1": "663",
+      "price_1": "65.000",
       "img_url": "https://imagizer.imageshack.com/img922/6048/ZDvkxq.png"
     },
     {
@@ -407,8 +407,8 @@
       "ingredient": "",
       "description": "Bên trong lớp vỏ vàng ruộm là nhân phô mai Mozzarella nóng chảy, thơm mềm, không thể bỏ qua.",
       "type": "fastFood",
-      "enegy": "301",
-      "price": "55.000",
+      "enegy_1": "301",
+      "price_1": "55.000",
       "img_url": "https://imagizer.imageshack.com/img923/9476/2xYAXs.png"
     },
     {
@@ -417,8 +417,8 @@
       "ingredient": "",
       "description": "Khoai tây lắc cajun giòn cay, dùng kèm với tương cà.Nguyên Liệu: khoai tây,Bột cajun",
       "type": "fastFood",
-      "enegy": "133",
-      "price": "48.000",
+      "enegy_1": "133",
+      "price_1": "48.000",
       "img_url": "https://imagizer.imageshack.com/img924/1957/6DLm1O.png"
     },
     {
@@ -427,8 +427,8 @@
       "ingredient": "",
       "description": "Ngọt dịu, thoang thoảng mùi khói, dính trên đầu ngón tay, ngon đến miếng cuối cùng.",
       "type": "fastFood",
-      "enegy": "133",
-      "price": "66.000",
+      "enegy_1": "133",
+      "price_1": "66.000",
       "img_url": "https://imagizer.imageshack.com/img923/786/wT8QxC.png"
     }
   ],
