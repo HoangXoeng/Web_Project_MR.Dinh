@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pay-vip.css">
+    <script src="https://kit.fontawesome.com/4e7f123d15.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body onload="shipMethod('atHome')">
+    <div class="app">
+        <header class="header">
+            <div class="logo">
+                <img srcset="../img/img/Logo.png 2x" alt="LOGO">
+            </div>
+            <div class="header-menu">
+                <ul>
+                    <li>
+                        <a href="#">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#">Về chúng tôi</a>
+                    </li>
+                    <li>
+                        <a href="#">Đặt món</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-acc">
+                <div class="acc"><img srcset="../img/cart1.png 2x" alt=""></div>
+                <div class="acc1"><img srcset="../img/UserH2.png 2x" alt=""></div>
+            </div>
+        </header>
+
+        <div class="thanhToanDonHang">THANH TOÁN ĐƠN HÀNG</div>
+        <div class="tuyChonGiaoHang">1. Tùy chọn giao hàng: </div>
+        
+
+        <div class="container1">
+            <div class="thongTin">
+                <div class="phuongThucPay">
+                    <div class="giaoDen" onclick="shipMethod('atHome')">
+                        <div class="tieude1">GIAO ĐẾN ĐỊA CHỈ</div>
+                        <div class="gia1">Phí: 10.000 VND</div>
+                    </div>
+                    <div class="tuNhan" onclick="shipMethod('atCafe')"">
+                        <div class="tieude">NHẬN TẠI CỬA HÀNG</div>
+                        <div class="gia">Miễn phí</div>
+                    </div>
+                </div>
+                <div class="atHome">
+                    <div class="dienDiaChi">
+                        <div class="tieudeDiaChi">ĐIỀN ĐỊA CHỈ: </div>
+                        <div class="noiDung" >Vui lòng kiểm tra địa chỉ giao hàng của bạn.
+                            <br>   Địa chỉ không chính xác có thể khiến đơn hàng bị hủy hoặc chậm trễ.</div>
+                    </div>
+                    <div class="form" id="shippingForm">
+                        <div>
+                            <div>Họ và tên: </div>
+                            <input type="text" id="name" placeholder="VD: Nguyễn Văn A">
+                            <span class="error-message" id="nameError">Vui lòng nhập họ và tên.</span>
+                        </div>
+                        <div>
+                            <div>Địa chỉ: </div>
+                            <input type="text" id="address" placeholder="VD: Số 7, Bến Nghé">
+                            <span class="error-message" id="addressError">Vui lòng nhập địa chỉ.</span>
+                        </div>
+                        <div>
+                            <div>Quận, Huyện: </div>
+                            <input type="text" id="district" placeholder="VD: Quận 1">
+                            <span class="error-message" id="districtError">Vui lòng nhập quận, huyện.</span>
+                        </div>
+                        <div>
+                            <div>Thành phố: </div>
+                            <input type="text" id="city" placeholder="VD: TP. Hồ Chí Minh">
+                            <span class="error-message" id="cityError">Vui lòng nhập thành phố.</span>
+                        </div>
+                        <div>
+                            <div>Số điện thoại</div>
+                            <input type="text" id="phone" placeholder="Nhập số điện thoại nhận hàng của bạn">
+                            <span class="error-message" id="phoneError">Vui lòng nhập số điện thoại hợp lệ.</span>
+                        </div>
+                        <div class="macDinh">
+                            <div><button class="submit"type="button">Submit</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="atCafe">
+                    <br>
+                    <br>
+                    <br>
+                    Địa chỉ cửa hàng gần nhất ở: 26 Phan Bội Châu.
+                </div>
+            </div>    
+                
+            <div class="iconThanhToan"><img srcset="../img/thanhtoanAll.png 2x" alt=""></div>
+            <div class="boxPay">
+                <div class="soLuong">
+                    <div class="tongSoMon">TỔNG SỐ MÓN</div>
+                    <div class="inDam">1 MÓN</div>
+                </div>
+                <div class="tongTien">
+                    <div class="tongTienTieuDe">Tổng tiền: </div>
+                    <div class="inDam tongTienThanhToan"></div>
+                </div>
+                <div class="vanChuyen">
+                    <div class="vanChuyenTieuDe">Phí vận chuyển: </div>
+                    <div class="inDam phiShip"></div>
+                </div>
+                <div class="tongHoaDon">
+                    <div class="tongHoaDonTieuDe">Tổng hóa đơn: </div>
+                    <div class="inDam tongTienPhaiTra"></div>
+                </div>
+                <div class="thanhToan"><button onclick="paymentRequest()">THANH TOÁN</button></div>
+                <div class="hoTro"><a href="">Hỗ trợ thanh toán</a></div>
+                <div class="quayVeGioHang"><button>QUAY VỀ GIỎ HÀNG</button></div>
+            </div>
+            <div class="mess">
+                <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>
+                <div class="messText" id="hid" style="display: none;">
+                    <header class="chat-header">
+                        <img srcset="src/img/Logo.png 2x">
+                        <div>WOWBOX SALAD</div>
+                    </header>
+                    <div class="chat-container">
+                        <div class="chat-container-hello">WOWBOX XIN CHÀO!</div>
+                        <div>Rất vui khi được hỗ trợ bạn</div>
+                    </div>
+                    <div class="chat-body">
+                        <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn?</div>
+                    </div>
+                    <footer class="chat-footer">
+                        <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
+                        <button>GỬI</button>
+                    </footer>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="container2">2. CHỌN PHƯƠNG THỨC THANH TOÁN</div>
+
+        <div class="phuongThucThanhToan">
+            <input type="radio" id="paymentMethod1" name="paymentMethod" value="cash">
+            <label for="paymentMethod1">Thanh toán khi nhận hàng</label><br>
+
+            <input type="radio" id="paymentMethod2" name="paymentMethod" value="transfer">
+            <label for="paymentMethod2">Chuyển khoản ngân hàng</label>
+        </div>
+
+        <div class="container2">3. XÁC NHẬN THANH TOÁN: </div>
+
+        <div class="text_container3">Sau khi kiểm tra các thông tin bạn vui lòng nhấn nút THANH TOÁN để hoàn tất quá trình mua hàng. </div>
+
+        <footer class="footer">
+            <div class="footer-contact">
+                <div class="address">
+                    <div class="time"><img srcset="../img/Frame.png 2x" alt="">Thứ Hai - Chủ Nhật <br> 8:30 - 20:45 </div>
+                    <div class="phone"><img srcset="../img/FramePhone.png 2x" alt="">0399199324</div>
+                </div>
+                <div class="personal-contact">
+                    <div class="street"><img srcset="../img/FrameAdress.png 2x" alt="">99 Tô Hiến thành <br> Phước Mỹ, Sơn Trà <br> TP.Đà Nẵng</div>
+                    <div class="email"><img srcset="../img/FrameEmail.png 2x" alt="">hoang.doan26@gmail.com</div>
+                </div>
+            </div>
+            <div class="brand">WOW BOX</div>
+            <div class="social">
+                <div class="frame"><img srcset="../img/logoFB.png 2x" alt=""></div>
+                <div class="frame"><img srcset="../img/logoLZ.png 2x" alt=""></div>
+                <div class="frame"><img srcset="../img/logoFd.png 2x" alt=""></div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="../js/pay-vip.js"></script>
+</body>
+</html>

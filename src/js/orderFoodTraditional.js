@@ -4,7 +4,7 @@ var getListProductByType = (link, type) => {
       .then((response) => {
         if (response.data.length > 0) {
           return response.data;
-        } else {
+        } else { 
           console.error("User not found");
           return null;
         }
@@ -13,11 +13,7 @@ var getListProductByType = (link, type) => {
         console.error("Error fetching user:", error);
       });}
 
-
-
-
       var showSalad = function (type) {
-
         document.querySelectorAll('.linkSalad').forEach(function(element) {
           element.style.color = "green";
       });
@@ -52,17 +48,17 @@ var getListProductByType = (link, type) => {
                   <div>
                     <img class="salad_img" src="${data.img_url}" alt="tamtieu">
                     <div class="salad_name">
-                      <h3>${data.name}</h3>
+                      <h2>${data.name}</h2>
                     </div>
                     <div style="display: flex; margin-top: 100px;">
                       <div class="salad1">
                         <div class="salad_parents">
                           <div class="mb_1">
-                            <div class="salad_price">    
+                            <div class="salad_price salad-price1-${data.id}" onclick="price1(${data.id})">    
                               <span class="price-vnd">${data.price_1}d</span>
                               <span>- ${data.enegy_1} Cal</span>
                             </div>
-                            <div class="salad_price">      
+                            <div class="salad_price salad-price2-${data.id}" onclick="price2(${data.id})">      
                               <span class="price-vnd">${data.price_2}d</span>
                               <span> - ${data.enegy_2} Cal</span>
                             </div>
@@ -77,11 +73,11 @@ var getListProductByType = (link, type) => {
                       </div>
                       <div class="note">
                         <h4>Ghi chú:</h4>
-                        <button class="button button-note">VD: ít muối</button>
+                        <input class="button button-note" placeholder="..."></input>
                       </div>
                     </div> 
                     <div class="button-action">
-                      <button class="button button-add-item">THÊM VÀO GIỎ HÀNG</button>
+                      <button class="button button-add-item" onclick="addToCart(${data.id})">THÊM VÀO GIỎ HÀNG</button>
                       <button class="button button-buy-item"onclick="buyNow(${data.id})">MUA NGAY</button>
                     </div>     
                   </div>
@@ -255,4 +251,48 @@ var getListProductByType = (link, type) => {
       var buyNow = function(id) {
         window.location.href = "http://127.0.0.1:5500/src/html/pay.html?product_id=" + id;
     }
+
+
+
+var price1 = function(id){
+  document.querySelector(`.salad-price1-${id}`).style.backgroundColor = 'green';
+  document.querySelector(`.salad-price2-${id}`).style.backgroundColor = 'white';
+}
+var price2 = function(id){
+  document.querySelector(`.salad-price1-${id}`).style.backgroundColor = 'white';
+  document.querySelector(`.salad-price2-${id}`).style.backgroundColor = 'green';
+}
+var addToCart = function(id){
+  var user = localStorage.getItem("userName");
+  var a =  document.querySelector(`.salad-price1-${id}`).style.backgroundColor;
+  var b  = document.querySelector(`.salad-price2-${id}`).style.backgroundColor;
+  if (b == 'green'){
+    var cartData = localStorage.getItem("cart");
+    var cart = cartData ? JSON.parse(cartData) : [];
+    var newItem = {
+      type:'foods',
+      user : user,
+      id: id,
+      price: 2,
+      quantily:1
+    };
+    cart.push(newItem);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  else{
+    var cartData = localStorage.getItem("cart");
+    var cart = cartData ? JSON.parse(cartData) : [];
+    var newItem = {
+      type:'foods',
+      user : user,
+      id: id,
+      price: 1,
+      quantily:1
+    };
+    cart.push(newItem);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  console.log(JSON.parse(localStorage.getItem("cart")))
+}
+// localStorage.removeItem("cart");
       showSalad('basicSalad')

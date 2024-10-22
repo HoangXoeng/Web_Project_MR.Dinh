@@ -28,7 +28,7 @@
   "foods": [
     {
       "id": "1",
-      "name": "Salad bò tẩm tiêu",
+      "name": "Salad Bò Tẩm Tiêu",
       "ingredient": [
         "Xà lách trộn",
         "Ớt chuông",
@@ -49,7 +49,7 @@
     },
     {
       "id": "2",
-      "name": "Salad Phô Mai feta",
+      "name": "Salad Phô Mai Feta",
       "ingredient": [
         "Xà lách trộn",
         "Ớt chuông",
@@ -70,7 +70,7 @@
     },
     {
       "id": "3",
-      "name": "salad ức gà áp chảo",
+      "name": "Salad Ức Gà Áp Chảo",
       "ingredient": [
         "Xà lách Romaine",
         "Bánh mì giòn",
@@ -430,16 +430,6 @@
       "enegy": "133",
       "price": "66.000",
       "img_url": "https://imagizer.imageshack.com/img923/786/wT8QxC.png"
-    },
-    {
-      "id": "26",
-      "name": "gagaga",
-      "ingredient": "",
-      "description": "123123",
-      "type": "fastFood",
-      "enegy": "123123123",
-      "price": "123",
-      "img": "https://imagizer.imageshack.com/img923/786/wT8QxC.png"
     }
   ],
   "drinks": [
@@ -564,7 +554,7 @@
       "img_url": "https://imagizer.imageshack.com/img922/1606/CxIF9n.png"
     },
     {
-      "id": "11",
+      "id": "13",
       "name": "Nước Khoáng ",
       "type": "coke",
       "description": "",
@@ -790,7 +780,7 @@
       "img_url": "https://imagizer.imageshack.com/img924/9995/EumPtE.png"
     },
     {
-      "id": "21",
+      "id": "25",
       "name": "ớt chuông",
       "unit": "100 gr",
       "type": "vegestable",
@@ -799,7 +789,7 @@
       "img_url": "https://imagizer.imageshack.com/img923/6884/IIfAat.png"
     },
     {
-      "id": "21",
+      "id": "26",
       "name": "cà rốt",
       "unit": "100 gr",
       "type": "vegestable",
@@ -808,7 +798,7 @@
       "img_url": "https://imagizer.imageshack.com/img923/6465/ZbercY.png"
     },
     {
-      "id": "22",
+      "id": "27",
       "name": "dầu giấm ý",
       "unit": "100 gr",
       "type": "sauce",
@@ -817,7 +807,7 @@
       "img_url": "https://imagizer.imageshack.com/img922/2469/yCPZFO.png"
     },
     {
-      "id": "23",
+      "id": "28",
       "name": "ranch",
       "unit": "100 gr",
       "type": "sauce",
@@ -826,7 +816,7 @@
       "img_url": "https://imagizer.imageshack.com/img922/8818/eZ3t7t.png"
     },
     {
-      "id": "23",
+      "id": "29",
       "name": "french",
       "unit": "100 gr",
       "type": "sauce",
@@ -835,7 +825,7 @@
       "img_url": "https://imagizer.imageshack.com/img923/6015/QmZ8R3.png"
     },
     {
-      "id": "24",
+      "id": "30",
       "name": "mù tạt wasabi",
       "unit": "100 gr",
       "type": "sauce",
@@ -844,7 +834,7 @@
       "img_url": "https://imagizer.imageshack.com/img923/6587/lY8WsC.png"
     },
     {
-      "id": "25",
+      "id": "31",
       "name": "sốt mè",
       "unit": "100 gr",
       "type": "sauce",
@@ -853,7 +843,7 @@
       "img_url": "https://imagizer.imageshack.com/img922/2308/O6vFQv.png"
     },
     {
-      "id": "26",
+      "id": "32",
       "name": "ngò chanh",
       "unit": "100 gr",
       "type": "sauce",
@@ -891,6 +881,36 @@
         "district": "",
         "city": "",
         "phone": ""
+      }
+    },
+    {
+      "id": "3",
+      "userName": "xuannguyen",
+      "productName": "Cánh Gà BBQ",
+      "totalPrice": "65000 VND",
+      "paymentMethod": "cash",
+      "shippingPrice": 0,
+      "shippingAddress": {
+        "name": "",
+        "address": "",
+        "district": "",
+        "city": "",
+        "phone": ""
+      }
+    },
+    {
+      "id": "4",
+      "userName": "xuannguyen",
+      "productName": "Cánh Gà BBQ",
+      "totalPrice": "75000 VND",
+      "paymentMethod": "cash",
+      "shippingPrice": 10000,
+      "shippingAddress": {
+        "name": "tran xuan nguyen",
+        "address": "so 3 ben nghe",
+        "district": "hen gio linh",
+        "city": "tp ho chi minh",
+        "phone": "0373989884"
       }
     }
   ]

@@ -87,6 +87,7 @@ document.getElementById('shippingForm').addEventListener('submit', function (eve
 var urlParams = new URLSearchParams(window.location.search);
 var productId = urlParams.get('product_id');
 var drinkId = urlParams.get('drinkId');
+var extraFoodId = urlParams.get('extraFoodId');
 var shipMethodValue = 10000;
 var productName;
 var shipMethod = function(place){
@@ -120,7 +121,7 @@ var shipMethod = function(place){
         }
         if (drinkId){
             drinkId=String(drinkId)
-            getListProductByType('foods',drinkId).then((data) => {
+            getListProductByType('drinks',drinkId).then((data) => {
                 productName = data.name
                 console.log(drinkId)
                 console.log(data.name)
@@ -130,6 +131,19 @@ var shipMethod = function(place){
         
         
                 // Tính tổng tiền phải trả (gồm giá sản phẩm + phí ship)
+                let totalPrice = price + shipMethodValue;
+                console.log(shipMethodValue);
+                document.querySelector('.tongTienPhaiTra').innerHTML = totalPrice + " VND"
+            })
+        }
+        if (extraFoodId){
+            extraFoodId=String(extraFoodId)
+            getListProductByType('foods',extraFoodId).then((data) => {
+                productName = data.name
+                console.log(extraFoodId)
+                console.log(data.name)
+                let price = Number(data.price) * 1000;
+                document.querySelector('.tongTienThanhToan').innerHTML = price + " VND"
                 let totalPrice = price + shipMethodValue;
                 console.log(shipMethodValue);
                 document.querySelector('.tongTienPhaiTra').innerHTML = totalPrice + " VND"
@@ -167,7 +181,7 @@ var shipMethod = function(place){
         }
         if (drinkId){
             drinkId=String(drinkId)
-            getListProductByType('foods',drinkId).then((data) => {
+            getListProductByType('drinks',drinkId).then((data) => {
                 productName = data.name
                 console.log(drinkId)
                 console.log(data.name)
@@ -177,6 +191,19 @@ var shipMethod = function(place){
         
         
                 // Tính tổng tiền phải trả (gồm giá sản phẩm + phí ship)
+                let totalPrice = price + shipMethodValue;
+                console.log(shipMethodValue);
+                document.querySelector('.tongTienPhaiTra').innerHTML = totalPrice + " VND"
+            })
+        }
+        if (extraFoodId){
+            extraFoodId=String(extraFoodId)
+            getListProductByType('foods',extraFoodId).then((data) => {
+                productName = data.name
+                console.log(extraFoodId)
+                console.log(data.name)
+                let price = Number(data.price) * 1000;
+                document.querySelector('.tongTienThanhToan').innerHTML = price + " VND"
                 let totalPrice = price + shipMethodValue;
                 console.log(shipMethodValue);
                 document.querySelector('.tongTienPhaiTra').innerHTML = totalPrice + " VND"
@@ -249,15 +276,14 @@ var getId = (link) => {
     }
 
     
-    // Giả định getId trả về Promise
     getId('orders').then((id) => {
         id - String(id)
         let order = {
             id: id,  // Sử dụng giá trị từ getId
             userName: localStorage.getItem("userName"),
-            productName: productName,  // Bạn cần đảm bảo productName được định nghĩa
+            productName: productName, 
             totalPrice: document.querySelector('.tongTienPhaiTra').innerHTML,
-            paymentMethod: paymentMethod.value,  // Giá trị của phương thức thanh toán
+            paymentMethod: paymentMethod.value, 
             shippingPrice: method,
             shippingAddress: {
                 name: name,
@@ -272,6 +298,7 @@ var getId = (link) => {
         .then(response => {
             console.log(response);
             alert('Đặt hàng thành công');
+            window.location.href = 'http://127.0.0.1:5500/src/html/SuccessPayment.html'
         })
         .catch(error => {
             console.error("Đặt hàng thất bại:", error);

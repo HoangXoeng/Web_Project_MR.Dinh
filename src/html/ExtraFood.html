@@ -4,77 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExtraFood</title>
+    <title>Món ăn thêm</title>
     <link rel="stylesheet" href="../css/ExtraFood.css">
+    <script src="https://kit.fontawesome.com/4e7f123d15.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <div class="app">
+        <header class="header">
             <div class="logo">
-                <img src="/Web_Project_MR.Dinh/src/img/logo.png" alt="Wowbox logo">
+                <img srcset="../img/img/Logo.png 2x" alt="LOGO">
             </div>
-            <div class="menu">
+            <div class="header-menu">
                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Đặt món</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li>
+                        <a href="/../index.html">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#">Về chúng tôi</a>
+                    </li>
+                    <li>
+                        <a href="order.html">Đặt món</a>
+                    </li>
+                    <li>
+                        <a href="blogs.html">Blog</a>
+                    </li>
                 </ul>
             </div>
-            <div class="icons">
-                <a href="#"><img src="/Web_Project_MR.Dinh/src/img/cart.png" alt="Cart"></a>
-                <a href="#"><img src="/Web_Project_MR.Dinh/src/img/User.png" alt="User"></a>
+
+            <div class="header-acc">
+                <div class="acc"><img srcset="../img/cart1.png 2x" alt=""></div>
+                <div class="acc1" onclick="goToLoginPage()"><img srcset="../img/userH2.png 2x" alt="" /></div>
+            </div>
+            <div class="user--option">
+                <ul class="user--option--menu">
+                  <li class="user--option--menu--item" onclick="userInformation()">Thông tin tài khoản</li>
+                  <li class="user--option--menu--item" onclick="logOut()">Đăng xuất</li>
+                </ul>
             </div>
         </header>
-        <div class="content">
-            <img src="/Web_Project_MR.Dinh/src/img/img/extraFood_img.png" alt="extraFood">
-            <a href="#"><img src="/Web_Project_MR.Dinh/src/img/massage.png" alt=""></a>
-            <div class="First-content">
-                <h1>THỰC ĐƠN ĐÃ SẴN SÀNG CHO BẠN!</h1>
-                <p>Từ những món salad truyền thống đến fusion. Từ sinh tố xanh đơn giản đến vi diệu. Và những món ăn kèm để share với bạn
-                bè. Bếp trưởng của WowBox đã nghiên cứu và chọn ra những công thức kết hợp nguyên liệu salad, nước sốt dressing, nước
-                uống bổ dưỡng, ngon lành để phục vụ bạn</p>
-                <h2>MÓN ĂN THÊM</h2>
-            </div>
-            <div class="Second-content">
-                <!-- <h2>MÓN ĂN THÊM</h2> -->
-                <div class="main-content">
-
-
-                    
-
-                    
-        
-                  
-        
-
-                 
-                   
+        <div class="mess">
+            <a onclick="toggleChat()"><img srcset="../img/mess.png 2x" alt=""></a>
+            <div class="messText" id="hid" style="display: none;">
+                <header class="chat-header">
+                    <img srcset="../img/img/Logo.png 2x">
+                    <div>WOWBOX SALAD</div>
+                </header>
+                <div class="chat-container">
+                    <div class="chat-container-hello">WOWBOX XIN CHÀO!</div>
+                    <div>Rất vui khi được hỗ trợ bạn</div>
                 </div>
+                <div class="chat-body">
+                    <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn?</div>
+                </div>
+                <footer class="chat-footer">
+                    <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
+                    <button>GỬI</button>
+                </footer>
             </div>
         </div>
-        <footer>
-            <div class="footer-info">
-                <p><img src="/Web_Project_MR.Dinh/src/img/Watch.png" alt="">Thứ Hai - Chủ Nhật 8:30 - 20:45</p>
-                <p><img src="/Web_Project_MR.Dinh/src/img/Address.png" alt="">99 Tô Hiến Thành, Phước Mỹ, Sơn Trà, TP. Đà Nẵng</p>
-                <p><img src="/Web_Project_MR.Dinh/src/img/Phone.png" alt="">0399 199 324</p>
-                <p><img src="/Web_Project_MR.Dinh/src/img/Email.png" alt="">hoangtrang.wowbox@gmail.com</p>
+        <div class="container">
+            <div class="extraFoodImg"><img srcset="../img/extraFoodImg.png 2x" alt=""></div>
+            <div class="tieuDe1">THỰC ĐƠN SẴN SÀNG DÀNH CHO BẠN</div>
+            <div class="tieuDe2">Từ những món salad truyền thống đến fusion. Từ sinh tố xanh đơn giản đến vi diệu. Và những món ăn kèm để share với bạn bè. Bếp trưởng của WowBox đã nghiên cứu và chọn ra những công thức kết hợp nguyên liệu salad, nước sốt dressing, nước uống bổ dưỡng, ngon lành để phục vụ bạn.</div>
+            <div class="tieuDe3">MÓN ĂN THÊM</div>
+        </div>
+        <div class="content">
+            <div class="main-content">
             </div>
-            <div class="wowbox">
-                <p>Wowbox</p>
+        </div>
+        <footer class="footer">
+            <div class="footer-contact">
+                <div class="address">
+                    <div class="time"><img srcset="../img/Frame.png 2x" alt="">Thứ Hai - Chủ Nhật <br> 8:30 - 20:45 </div>
+                    <div class="phone"><img srcset="../img/FramePhone.png 2x" alt="">0399199324</div>
+                </div>
+                <div class="personal-contact">
+                    <div class="street"><img srcset="../img/FrameAdress.png 2x" alt="">99 Tô Hiến thành <br> Phước Mỹ, Sơn Trà <br> TP.Đà Nẵng</div>
+                    <div class="email"><img srcset="../img/FrameEmail.png 2x" alt="">hoang.doan26@gmail.com</div>
+                </div>
+            
             </div>
-
-            <div class="footer-social">
-                <a href="#"><img src="/Web_Project_MR.Dinh/src/img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="/Web_Project_MR.Dinh/src/img/lozi.png" alt="Lozy"></a>
-                <a href="#"><img src="/Web_Project_MR.Dinh/src/img/foody.png" alt="Foody"></a>
+            <div class="brand">WOW BOX</div>
+            <div class="social">
+                <div class="frame"><img srcset="../img/logoFB.png 2x" alt=""></div>
+                <div class="frame"><img srcset="../img/logoLZ.png 2x" alt=""></div>
+                <div class="frame"><img srcset="../img/logoFd.png 2x" alt=""></div>
             </div>
         </footer>
     </div>
 
 <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 <script src="../js/extraFood.js"></script>
+<script>
+    function toggleChat() {
+  const chatBox = document.getElementById('hid');
+  if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+      chatBox.style.display = 'block';
+  } else {
+      chatBox.style.display = 'none';
+  }
+}
+
+// Ẩn chat box khi click ra ngoài
+document.addEventListener('click', function (event) {
+  const chatBox = document.getElementById('hid');
+  const messIcon = document.querySelector('.mess img');
+
+  // Nếu click bên ngoài chat box và không phải là icon
+  if (!chatBox.contains(event.target) && event.target !== messIcon) {
+      chatBox.style.display = 'none';
+  }
+});
+
+</script>
 </body>
 
 </html>
