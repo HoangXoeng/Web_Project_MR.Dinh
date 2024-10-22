@@ -182,12 +182,10 @@
       }
   }
   
-  // Ẩn chat box khi click ra ngoài
   document.addEventListener('click', function (event) {
       const chatBox = document.getElementById('hid');
       const messIcon = document.querySelector('.mess img');
   
-      // Nếu click bên ngoài chat box và không phải là icon
       if (!chatBox.contains(event.target) && event.target !== messIcon) {
           chatBox.style.display = 'none';
       }

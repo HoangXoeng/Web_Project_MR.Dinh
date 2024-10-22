@@ -41,6 +41,26 @@
             </ul>
         </div>
     </header> 
+    <div class="mess">
+        <a onclick="toggleChat()"><img srcset="../img/mess.png 2x" alt=""></a>
+        <div class="messText" id="hid" style="display: none;">
+            <header class="chat-header">
+                <img srcset="../img/img/Logo.png 2x" alt="LOGO">
+                <div>WOWBOX SALAD</div>
+            </header>
+            <div class="chat-container">
+                <div class="chat-container-hello">WOWBOX XIN CHÀO!</div>
+                <div>Rất vui khi được hỗ trợ bạn</div>
+            </div>
+            <div class="chat-body">
+                <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn?</div>
+            </div>
+            <footer class="chat-footer">
+                <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
+                <button>GỬI</button>
+            </footer>
+        </div>
+    </div>
     
     <main>
         <section class="hero">
@@ -89,5 +109,28 @@
     </footer>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>	
     <script src="../js/drink.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        function toggleChat() {
+      const chatBox = document.getElementById('hid');
+      if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+          chatBox.style.display = 'block';
+      } else {
+          chatBox.style.display = 'none';
+      }
+  }
+  
+  // Ẩn chat box khi click ra ngoài
+  document.addEventListener('click', function (event) {
+      const chatBox = document.getElementById('hid');
+      const messIcon = document.querySelector('.mess img');
+  
+      // Nếu click bên ngoài chat box và không phải là icon
+      if (!chatBox.contains(event.target) && event.target !== messIcon) {
+          chatBox.style.display = 'none';
+      }
+  });
+  
+    </script>
 </body>
 </html> 

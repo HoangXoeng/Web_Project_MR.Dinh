@@ -290,65 +290,17 @@ ul {
   flex-grow: 1;
 }
 
-.lemon1 {
-  position: absolute;
-  left: 0;
-}
-.lemon2 img {
-  width: 200px;
-  position: absolute;
-  left: 10px;
-  top: 300px;
-}
-.lemon3 img {
-  position: absolute;
-  left: 0;
-  width: 100px;
-}
-.lemon4 img {
-  position: absolute;
-  left: 800px;
-  width: 180px;
-}
-.lemon5 img {
-  position: absolute;
-  left: 10px;
-  width: 200px;
-  top: 100px;
-}
-.lemon6 img {
-  position: absolute;
-  left: 0px;
-  width: 200px;
-  top: 150px;
-  filter: grayscale(100%) brightness(0%);
-}
 
-.potato1 img {
-  position: absolute;
-  width: 50px;
-  left: 400px;
-  top: 450px;
-}
-.potato2 img {
-  position: absolute;
-  width: 80px;
-  left: 450px;
-  top: 450px;
-}
-.lemonT1 {
-  position: absolute;
-  left: 50px;
-  bottom: 20px;
-}
 
 .messText{  
   display: none;
   position: fixed;
   width: 400px;
   height: 500px;
-  bottom: 0;
+  bottom: -230px;
   right: 10px;
+  flex-direction: column;
+  height: 100%;
 } 
 
 .chat-header{
@@ -394,19 +346,33 @@ ul {
   border-radius: 20px;
   font-size: 10px;
   font-family: var(--monteratText);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.chat-body div.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .chat-body{
   padding:10px 10px 200px 10px;
   background-color: var(--whiteColor);
   border-bottom: 1px solid black;
-} 
+  flex-grow: 1;
+  overflow-y: auto; /* Kích hoạt cuộn dọc khi có nhiều tin nhắn */
+  max-height: 300px; /* Đặt chiều cao cố định cho chat body */
+}
 
 .chat-footer{
   display: flex;
   align-items: center;
   background-color: var(--whiteColor);
   gap: 35px;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
 
 .chat-footer input{
@@ -433,9 +399,10 @@ ul {
   position: fixed;
   background-color: var(--secondColor);
   border-radius: 50%; 
-  padding: 20px;
+  padding: 20px; 
   right: 10px;
   bottom: 12px;
+  z-index: 1000;
 }
 
 .mess a i{
