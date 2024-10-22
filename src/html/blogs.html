@@ -1,142 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogs</title>
-    <link rel="stylesheet" href="../css/blogs.css">
-    <script src="https://kit.fontawesome.com/4e7f123d15.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/blogs.css" />
+    <script
+      src="https://kit.fontawesome.com/4e7f123d15.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-      
-            <div class="logo">
-                <img srcset="../img/img/Logo.png 2x" alt="LOGO" />
-              </div>
-              <div class="header-menu">
-                <ul>
-                  <li>
-                    <a href="/../index.html">Trang chủ</a>
-                  </li> 
-                  <li>
-                    <a href="aboutUs.html">Về chúng tôi</a>
-                  </li>
-                  <li>
-                    <a href="order.html">Đặt món</a>
-                  </li>
-                  <li>
-                    <a href="#">Blog</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="header-acc">
-                <div class="acc"><img srcset="../img/cart1.png 2x" alt="" /></div>
-                <div class="acc1" onclick="goToLoginPage()"><img srcset="../img/userH2.png 2x" alt="" /></div>
-                
-              </div>
-              <div class="user--option">
-                  <ul class="user--option--menu">
-                    <li class="user--option--menu--item" onclick="userInformation()">Thông tin tài khoản</li>
-                    <li class="user--option--menu--item" onclick="logOut()">Đăng xuất</li>
-                  </ul>
-              </div>
-      </header>
- 
-        <div class="card-section">
-            <div class="card">
-                <img class="card_img" src="../img/card1_phong.png" alt="Salad Image 1">
-                <div class="title">Những lợi ích <br>bất ngờ của Salad</div>
-                <a href="https://mjardinsalad.com/loi-ich-bat-ngo-cua-salad-doi-voi-suc-khoe" class="btn">Bấm để xem</a>
-            </div>
-            <div class="card">
-                <img  class="card_img" src="../img/card2_phong.png" alt="Salad Image 2">
-                <div class="title">Chế độ ăn thực dưỡng <br> là gì?</div>
-                <a href="https://www.vinmec.com/vie/bai-viet/che-do-thuc-duong-la-gi-vi" class="btn">Bấm để xem</a>
-            </div>
-            <div class="card">  
-                <img  class="card_img" src="../img/card3_phong.png" alt="Salad Image 3">
-                <div class="title">Dinh dưỡng từ <br> các loại đậu</div>
-                <a href="https://thucduongfucoidan.com/gia-tri-dinh-duong-cua-cac-loai-dau-do" class="btn">Bấm để xem</a>
-            </div>
-            <div class="card">
-                <img  class="card_img" src="../img/card4_phong.png" alt="Salad Image 4">
-                <div class="title">Những loại trái cây tốt<br> cho bạn</div>
-                <a href="https://www.vinmec.com/vie/bai-viet/25-sieu-trai-cay-ban-nen-bo-sung-vao-che-do-an-uong-cua-minh-vi" class="btn">Bấm để xem</a>
-            </div>
-            <div class="card">
-                <img  class="card_img" src="../img/card5_phong.png" alt="Salad Image 5">
-                <div class="title">Làm gì để tăng cường <br> hormone hạnh phúc?</div>
-                <a href="https://www.vinmec.com/vie/bai-viet/hormones-hanh-phuc-la-gi-va-lam-nao-de-tang-cuong-vi" class="btn">Bấm để xem</a>
-            </div>
+      <header class="header">
+        <div class="logo">
+          <img srcset="../img/img/Logo.png 2x" alt="LOGO" />
         </div>
-    
-        <div class="mess">
-          <a onclick="toggleChat()"><img srcset="../img/mess.png 2x" alt=""></a>
-          <div class="messText" id="hid" style="display: none;">
-              <header class="chat-header">
-                  <img srcset="../img/img/Logo.png 2x">
-                  <div>WOWBOX SALAD</div>
-              </header>
-              <div class="chat-container">
-                  <div class="chat-container-hello">WOWBOX XIN CHÀO!</div>
-                  <div>Rất vui khi được hỗ trợ bạn</div>
-              </div>
-              <div class="chat-body">
-                  <div>Chào mừng bạn đến với WOWBOX SALAD. <br> Chúng tôi có thể giúp gì cho bạn?</div>
-              </div>
-              <footer class="chat-footer">
-                  <input type="text" placeholder="Gõ vào đây và nhấn 'enter' để chat">
-                  <button>GỬI</button>
-              </footer>
-          </div>
-      </div>
-             
-        <footer class="footer">
-            <div class="footer-contact">
-                <div class="address">
-                    <div class="time"><img srcset="../img/Frame.png 2x" alt="">Thứ Hai - Chủ Nhật <br> 8:30 - 20:45 </div>
-                    <div class="phone"><img srcset="../img/FramePhone.png 2x" alt="">0399199324</div>
-                </div>
-                <div class="personal-contact">
-                    <div class="street"><img srcset="../img/FrameAdress.png 2x" alt="">99 Tô Hiến thành <br> Phước Mỹ, Sơn Trà <br> TP.Đà Nẵng</div>
-                    <div class="email"><img srcset="../img/FrameEmail.png 2x" alt="">hoang.doan26@gmail.com</div>
-                </div>
+        <div class="header-menu">
+          <ul>
+            <li>
+              <a href="/../index.html">Trang chủ</a>
+            </li>
+            <li>
+              <a href="aboutUs.html">Về chúng tôi</a>
+            </li>
+            <li>
+              <a href="order.html">Đặt món</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header-acc">
+            <div class="acc" onclick="window.location.href='http://127.0.0.1:5500/src/html/cart.html'"><img srcset="src/img/cart1.png 2x" alt="" /></div>
             
+            <div class="acc1" onclick="goToLoginPage()"><img srcset="../img/userH2.png 2x" alt="" /></div>
+        </div>
+        <div class="user--option">
+            <ul class="user--option--menu">
+              <li class="user--option--menu--item" onclick="userInformation()">Thông tin tài khoản</li>
+              <li class="user--option--menu--item" onclick="logOut()">Đăng xuất</li>
+            </ul>
+        </div>
+      </header>
+
+      <div class="card-section">
+        <div class="card">
+          <img
+            class="card_img"
+            src="../img/card1_phong.png"
+            alt="Salad Image 1"
+          />
+          <div class="title">Những lợi ích <br />bất ngờ của Salad</div>
+          <a
+            href="https://mjardinsalad.com/loi-ich-bat-ngo-cua-salad-doi-voi-suc-khoe"
+            class="btn"
+            >Bấm để xem</a
+          >
+        </div>
+        <div class="card">
+          <img
+            class="card_img"
+            src="../img/card2_phong.png"
+            alt="Salad Image 2"
+          />
+          <div class="title">
+            Chế độ ăn thực dưỡng <br />
+            là gì?
+          </div>
+          <a
+            href="https://www.vinmec.com/vie/bai-viet/che-do-thuc-duong-la-gi-vi"
+            class="btn"
+            >Bấm để xem</a
+          >
+        </div>
+        <div class="card">
+          <img
+            class="card_img"
+            src="../img/card3_phong.png"
+            alt="Salad Image 3"
+          />
+          <div class="title">
+            Dinh dưỡng từ <br />
+            các loại đậu
+          </div>
+          <a
+            href="https://thucduongfucoidan.com/gia-tri-dinh-duong-cua-cac-loai-dau-do"
+            class="btn"
+            >Bấm để xem</a
+          >
+        </div>
+        <div class="card">
+          <img
+            class="card_img"
+            src="../img/card4_phong.png"
+            alt="Salad Image 4"
+          />
+          <div class="title">
+            Những loại trái cây tốt<br />
+            cho bạn
+          </div>
+          <a
+            href="https://www.vinmec.com/vie/bai-viet/25-sieu-trai-cay-ban-nen-bo-sung-vao-che-do-an-uong-cua-minh-vi"
+            class="btn"
+            >Bấm để xem</a
+          >
+        </div>
+        <div class="card">
+          <img
+            class="card_img"
+            src="../img/card5_phong.png"
+            alt="Salad Image 5"
+          />
+          <div class="title">
+            Làm gì để tăng cường <br />
+            hormone hạnh phúc?
+          </div>
+          <a
+            href="https://www.vinmec.com/vie/bai-viet/hormones-hanh-phuc-la-gi-va-lam-nao-de-tang-cuong-vi"
+            class="btn"
+            >Bấm để xem</a
+          >
+        </div>
+      </div>
+
+      <div class="mess">
+        <a onclick="toggleChat()"><img srcset="../img/mess.png 2x" alt="" /></a>
+        <div class="messText" id="hid" style="display: none">
+          <header class="chat-header">
+            <img srcset="../img/img/Logo.png 2x" />
+            <div>WOWBOX SALAD</div>
+          </header>
+          <div class="chat-container">
+            <div class="chat-container-hello">WOWBOX XIN CHÀO!</div>
+            <div>Rất vui khi được hỗ trợ bạn</div>
+          </div>
+          <div class="chat-body">
+            <div>
+              Chào mừng bạn đến với WOWBOX SALAD. <br />
+              Chúng tôi có thể giúp gì cho bạn?
             </div>
-            <div class="brand">WOW BOX</div>
-            <div class="social">
-                <div class="frame"><img srcset="../img/logoFB.png 2x" alt=""></div>
-                <div class="frame"><img srcset="../img/logoLZ.png 2x" alt=""></div>
-                <div class="frame"><img srcset="../img/logoFd.png 2x" alt=""></div>
+          </div>
+          <footer class="chat-footer">
+            <input
+              type="text"
+              placeholder="Gõ vào đây và nhấn 'enter' để chat"
+            />
+            <button>GỬI</button>
+          </footer>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-contact">
+          <div class="address">
+            <div class="time">
+              <img srcset="../img/Frame.png 2x" alt="" />Thứ Hai - Chủ Nhật
+              <br />
+              8:30 - 20:45
             </div>
-        </footer>
-       
+            <div class="phone">
+              <img srcset="../img/FramePhone.png 2x" alt="" />0399199324
+            </div>
+          </div>
+          <div class="personal-contact">
+            <div class="street">
+              <img srcset="../img/FrameAdress.png 2x" alt="" />99 Tô Hiến thành
+              <br />
+              Phước Mỹ, Sơn Trà <br />
+              TP.Đà Nẵng
+            </div>
+            <div class="email">
+              <img
+                srcset="../img/FrameEmail.png 2x"
+                alt=""
+              />hoang.doan26@gmail.com
+            </div>
+          </div>
+        </div>
+        <div class="brand">WOW BOX</div>
+        <div class="social">
+          <div class="frame"><img srcset="../img/logoFB.png 2x" alt="" /></div>
+          <div class="frame"><img srcset="../img/logoLZ.png 2x" alt="" /></div>
+          <div class="frame"><img srcset="../img/logoFd.png 2x" alt="" /></div>
+        </div>
+      </footer>
     </div>
     <script>
       function toggleChat() {
-    const chatBox = document.getElementById('hid');
-    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
-        chatBox.style.display = 'block';
-    } else {
-        chatBox.style.display = 'none';
+        const chatBox = document.getElementById("hid");
+        if (chatBox.style.display === "none" || chatBox.style.display === "") {
+          chatBox.style.display = "block";
+        } else {
+          chatBox.style.display = "none";
+        }
+      }
+
+      // Ẩn chat box khi click ra ngoài
+      document.addEventListener("click", function (event) {
+        const chatBox = document.getElementById("hid");
+        const messIcon = document.querySelector(".mess img");
+
+        // Nếu click bên ngoài chat box và không phải là icon
+        if (!chatBox.contains(event.target) && event.target !== messIcon) {
+          chatBox.style.display = "none";
+        }
+      });
+    </script>
+    <script>
+        const goToLoginPage = () => {
+    var isLogin = localStorage.getItem('isLogin');
+    console.log('isLogin', isLogin);
+    if(isLogin == 'true') {
+        if(document.querySelector('.user--option').style.display == 'block' ){
+            document.querySelector('.user--option').style.display = 'none';
+        }
+        else{
+            document.querySelector('.user--option').style.display = 'block'; 
+        }
+    }else if (isLogin == 'false'){
+        alert('log in')
+        window.location.href = 'http://127.0.0.1:5500/src/html/login.html';
     }
 }
+const funyFunc = () => {
+    document.querySelector('.user--option').style.display = 'none'; 
+}
 
-// Ẩn chat box khi click ra ngoài
-document.addEventListener('click', function (event) {
-    const chatBox = document.getElementById('hid');
-    const messIcon = document.querySelector('.mess img');
+const logOut = () => {
+    localStorage.setItem("isLogin", 'false');
+    localStorage.setItem("role", "null");
+    localStorage.removeItem("userName");
+    location.reload();
+}
 
-    // Nếu click bên ngoài chat box và không phải là icon
-    if (!chatBox.contains(event.target) && event.target !== messIcon) {
-        chatBox.style.display = 'none';
+const userInformation = () => {
+    document.querySelector('.user--option').style.display = 'none';
+    var role = localStorage.getItem('role');
+    if (role =='user'){
+    window.location.href = 'http://127.0.0.1:5500/src/html/userInformation.html';
     }
-});
-
-  </script>
-</body>
-</html> 
+    else if (role == 'admin'){
+        window.location.href = 'http://127.0.0.1:5500/src/html/admin.html'
+    }
+}
+    </script>
+  </body>
+</html>

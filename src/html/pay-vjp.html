@@ -20,22 +20,29 @@
             <div class="header-menu">
                 <ul>
                     <li>
-                        <a href="#">Trang chủ</a>
+                        <a href="/index.html">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="#">Về chúng tôi</a>
+                        <a href="./aboutUs.html">Về chúng tôi</a>
                     </li>
                     <li>
-                        <a href="#">Đặt món</a>
+                        <a href="./order.html">Đặt món</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="./blogs.html">Blog</a>
                     </li>
                 </ul>
             </div>
             <div class="header-acc">
-                <div class="acc"><img srcset="../img/cart1.png 2x" alt=""></div>
-                <div class="acc1"><img srcset="../img/UserH2.png 2x" alt=""></div>
+                <div class="acc" onclick="window.location.href='http://127.0.0.1:5500/src/html/cart.html'"><img srcset="src/img/cart1.png 2x" alt="" /></div>
+                
+                <div class="acc1" onclick="goToLoginPage()"><img srcset="../img/userH2.png 2x" alt="" /></div>
+            </div>
+            <div class="user--option">
+                <ul class="user--option--menu">
+                  <li class="user--option--menu--item" onclick="userInformation()">Thông tin tài khoản</li>
+                  <li class="user--option--menu--item" onclick="logOut()">Đăng xuất</li>
+                </ul>
             </div>
         </header>
 
@@ -104,7 +111,7 @@
             <div class="boxPay">
                 <div class="soLuong">
                     <div class="tongSoMon">TỔNG SỐ MÓN</div>
-                    <div class="inDam">1 MÓN</div>
+                    <div class="inDam totalProduct"></div>
                 </div>
                 <div class="tongTien">
                     <div class="tongTienTieuDe">Tổng tiền: </div>
@@ -120,7 +127,7 @@
                 </div>
                 <div class="thanhToan"><button onclick="paymentRequest()">THANH TOÁN</button></div>
                 <div class="hoTro"><a href="">Hỗ trợ thanh toán</a></div>
-                <div class="quayVeGioHang"><button>QUAY VỀ GIỎ HÀNG</button></div>
+                <div class="quayVeGioHang"onclick="window.location.href='http://127.0.0.1:5500/src/html/cart.html'"><button>QUAY VỀ GIỎ HÀNG</button></div>
             </div>
             <div class="mess">
                 <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>

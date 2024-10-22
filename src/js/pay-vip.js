@@ -90,6 +90,9 @@ var drinkId = urlParams.get('drinkId');
 var extraFoodId = urlParams.get('extraFoodId');
 var shipMethodValue = 10000;
 var productName;
+var inforData = localStorage.getItem("payInfor");
+var infor = JSON.parse(inforData);
+console.log(infor)
 var shipMethod = function(place){
     if (place == 'atHome'){
         shipMethodValue = 10000;
@@ -101,7 +104,11 @@ var shipMethod = function(place){
         document.querySelector('.tuNhan').style.backgroundColor = '';
         document.querySelector('.atHome').style.display = 'block';
         document.querySelector('.atCafe').style.display = 'none';
-        document.querySelector('.phiShip').innerHTML = '10.000 VND'       
+        document.querySelector('.phiShip').innerHTML = '10.000 VND'  
+        document.querySelector('.totalProduct').innerHTML =   infor.total ;  
+        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice ;
+        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice + 10000 ;
+             
     }else{
         shipMethodValue = 0;
         document.querySelector('.giaoDen').style.backgroundColor = '';
@@ -113,5 +120,117 @@ var shipMethod = function(place){
         document.querySelector('.atHome').style.display = 'none';
         document.querySelector('.atCafe').style.display = 'block';
         document.querySelector('.phiShip').innerHTML = '0VND'
+        document.querySelector('.totalProduct').innerHTML =   infor.total ;
+        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice ;
+        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice ;
+
+
 }
 }
+var getId = (link) => {
+    return axios
+      .get(`http://localhost:3000/${link}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          //  console.log(response.data.length);
+          //  console.log(typeof response.data.length);
+  
+          return String(response.data.length + 1);
+        } else {
+          console.error("No data found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        return null;
+      });
+  };
+var paymentRequest = function(){
+    var method = shipMethodValue;     
+    var name = document.getElementById("name").value;
+    var address = document.getElementById("address").value;
+    var district = document.getElementById("district").value;
+    var city = document.getElementById("city").value;
+    var phone = document.getElementById("phone").value;
+    var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+    if (!paymentMethod) {
+        alert("Vui lòng chọn phương thức thanh toán.");
+        return;
+    }
+    if (method > 0){
+        if (!name || !address || !district || !city || !phone) {
+            alert("Vui lòng điền đầy đủ thông tin giao hàng.");
+            return;
+        }
+    }
+
+    getId('orders').then((id) => {
+        var inforData = localStorage.getItem("payInfor");
+        var infor = JSON.parse(inforData);
+        id - String(id)
+        let order = {
+            id: id,  // Sử dụng giá trị từ getId
+            userName: localStorage.getItem("userName"),
+            productName: productName, 
+            totalPrice: document.querySelector('.tongTienPhaiTra').innerHTML,
+            paymentMethod: paymentMethod.value,
+            shippingPrice: method,
+            infor:infor,
+            shippingAddress: {
+                name: name,
+                address: address,
+                district: district,
+                city: city,
+                phone: phone
+            }
+        };
+
+        axios.post('http://localhost:3000/orders', order)
+        .then(response => {
+            console.log(response);
+            window.location.href = 'http://127.0.0.1:5500/src/html/SuccessPayment.html'
+        })
+        .catch(error => {
+            console.error("Đặt hàng thất bại:", error);
+            alert('Đặt hàng thất bại');
+        });
+    });
+};
+
+
+const goToLoginPage = () => {
+    var isLogin = localStorage.getItem('isLogin');
+    console.log('isLogin', isLogin);
+    if(isLogin == 'true') {
+        if(document.querySelector('.user--option').style.display == 'block' ){
+            document.querySelector('.user--option').style.display = 'none';
+        }
+        else{
+            document.querySelector('.user--option').style.display = 'block'; 
+        }
+    }else{
+        alert('log in')
+        window.location.href = 'http://127.0.0.1:5500/src/html/login.html';
+    }
+  }
+  const funyFunc = () => {
+    document.querySelector('.user--option').style.display = 'none'; 
+  }
+  
+  const logOut = () => {
+    localStorage.setItem("isLogin", 'false');
+    localStorage.setItem("role", "null");
+    localStorage.removeItem("userName");
+    location.reload();
+  }
+  
+  const userInformation = () => {
+    document.querySelector('.user--option').style.display = 'none';
+    var role = localStorage.getItem('role');
+    if (role =='user'){
+    window.location.href = 'http://127.0.0.1:5500/src/html/userInformation.html';
+    }
+    else if (role == 'admin'){
+        window.location.href = 'http://127.0.0.1:5500/src/html/admin.html'
+    }
+  }

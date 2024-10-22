@@ -912,6 +912,41 @@
         "city": "tp ho chi minh",
         "phone": "0373989884"
       }
+    },
+    {
+      "id": "5",
+      "userName": "xuannguyen",
+      "totalPrice": "214000",
+      "paymentMethod": "cash",
+      "shippingPrice": 0,
+      "infor": {
+        "total": 2,
+        "user": "xuannguyen",
+        "totalPrice": 214000,
+        "infor": [
+          {
+            "type": "drinks",
+            "user": "xuannguyen",
+            "id": 1,
+            "price": 1,
+            "quantity": 2
+          },
+          {
+            "type": "drinks",
+            "user": "xuannguyen",
+            "id": 2,
+            "price": 1,
+            "quantity": 2
+          }
+        ]
+      },
+      "shippingAddress": {
+        "name": "",
+        "address": "",
+        "district": "",
+        "city": "",
+        "phone": ""
+      }
     }
   ]
 }

@@ -252,7 +252,7 @@ ul {
     font-family: var(--monteratText);
     color: var(--secondColor);
     padding-left: 200px;
-
+    z-index: 10;
     
 }
 .phuongThucThanhToan input[type="radio"]{
@@ -477,5 +477,26 @@ input {
 .iconThanhToan img{
     width: 400px;
     position: absolute;
-    right: 450px
+    right: 0px
+
 }
+.user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(12% + 2px);
+    right: 4%;
+    border-radius: 4px;
+    display: none;
+    z-index: 199;
+  }
+  .user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+  }
+  .user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+  }

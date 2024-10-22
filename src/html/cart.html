@@ -18,16 +18,32 @@
             </div>
             <div class="header-menu">
                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Đặt món</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li>
+                        <a href="/index.html">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="./aboutUs.html">Về chúng tôi</a>
+                    </li>
+                    <li>
+                        <a href="./order.html">Đặt món</a>
+                    </li>
+                    <li>
+                        <a href="./blogs.html">Blog</a>
+                    </li>
                 </ul>
             </div>
             <div class="header-acc">
-                <div class="acc"><img srcset="../img/cart.png 2x" alt="cart"></div>
-                <div class="acc1"><img srcset="../img/user.png 2x" alt="user"></div>
+                <div class="acc" onclick="window.location.href='http://127.0.0.1:5500/src/html/cart.html'"><img srcset="src/img/cart1.png 2x" alt="" /></div>
+                
+                <div class="acc1" onclick="goToLoginPage()"><img srcset="../img/userH2.png 2x" alt="" /></div>
             </div>
+            <div class="user--option">
+                <ul class="user--option--menu">
+                  <li class="user--option--menu--item" onclick="userInformation()">Thông tin tài khoản</li>
+                  <li class="user--option--menu--item" onclick="logOut()">Đăng xuất</li>
+                </ul>
+            </div>
+          </header>
             <div class="mess">
                 <a onclick="toggleChat()"><i class="fa-solid fa-message"></i></a>
                 <div class="messText" id="hid" style="display: none;">
@@ -87,25 +103,21 @@
             <div class="payment--session">
                 <div class="total--product">
                     <div class="total--product--title">TỔNG SỐ MÓN</div>
-                    <div class="total--product--number">2 MÓN</div>
+                    <div class="total--product--number"></div>
                 </div>
                 <div class="total--price--payment">
                     <div class="total--price--title">Tổng tiền</div>
-                    <div class="total--price--number">232.000 vnd</div>
-                </div>
-                <div class="ship--price">
-                    <div class="ship--price--title">Phí vận chuyển</div>
-                    <div class="ship--price--number">10000 vnd</div>
+                    <div class="total--price--number"></div>
                 </div>
                 <div class="vat--notifi">
                     Đã bao gồm thuế VAT
                 </div>
                 <div class="total--money--pay">
                     <div class="total--money--pay--total">Tổng hóa đơn</div>
-                    <div class="total--money--pay--number">332.000 vnd</div>
+                    <div class="total--money--pay--number"></div>
                 </div>
                 <div class="btn--payment--box">
-                    <button class="btn--payment">THANH TOÁN</button>
+                    <button class="btn--payment" onclick="goToPayy()">THANH TOÁN</button>
                 </div>
                 
             </div>
@@ -162,7 +174,6 @@
 
     </script>
 <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>												
-
-    <script src="../js/cart.js"></script>
+<script src="../js/cart.js"></script>
 </body>
 </html>

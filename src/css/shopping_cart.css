@@ -121,7 +121,25 @@ body {
     color: #004B00;
     min-height: 100vh;
 }
-
+.user--option{
+    background-color: var(--mainColor);
+    /* border: 1px solid var(--secondColor); */
+    position: absolute;
+    top: calc(10% + 10px);
+    right: 9%;
+    border-radius: 4px;
+    display: none;
+}
+.user--option--menu--item{
+    padding: 5px;
+    border: 1px solid var(--secondColor);
+    cursor: pointer;
+}
+.user--option--menu--item:hover{
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    opacity: 0.7;
+}
 
  .main-content{
     margin-top: 200px;
