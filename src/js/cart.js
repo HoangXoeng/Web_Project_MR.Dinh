@@ -19,10 +19,8 @@ var getListProductByType = (type, id) => {
 var renderCartItem = function () {
   var isLogin = localStorage.getItem("isLogin");
   var cartData = localStorage.getItem("cart");
-
-  // console.log(isLogin)
-  if (!cartData || cartData == null  || isLogin != 'true' ) {
-    window.location.href = "http://127.0.0.1:5500/src/html/shopping_cart.html";
+  if (!cartData || cartData == null  || isLogin != 'true' || cartData.length == 0) {
+    window.location.href = 'http://127.0.0.1:5500/src/html/shopping_cart.html';
   } else {
     var user = localStorage.getItem("userName");
     var cart = JSON.parse(cartData);
