@@ -23,6 +23,14 @@
       "phoneNum": "0373989884",
       "password": "ad123123",
       "role": "user"
+    },
+    {
+      "id": "4",
+      "userName": "minhhoang1212",
+      "email": "minhhoang121225@gmail.com",
+      "phoneNum": "0399199324",
+      "password": "minhhoang1212",
+      "role": "user"
     }
   ],
   "foods": [

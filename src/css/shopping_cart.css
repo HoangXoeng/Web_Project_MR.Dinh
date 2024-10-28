@@ -9,7 +9,7 @@ a{
 :root{
     --mainColor:  #FFF2AD;
     --secondColor: #004B00;
-    --whiteColor:white;
+    --whiteColor:white;  
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
 }
@@ -160,8 +160,7 @@ body {
 
 button {
     background-color: #004B00;
-    color: #fff;
-    padding: 15px 30px;
+    color: #fff;    
     font-size: 30px;
     border-radius: 5px;
     cursor: pointer;
@@ -170,16 +169,126 @@ button {
     font-family: var(--monteratText);
 }
 
-.message {
-    position: absolute;
-    bottom: 20px;
-    right: 70px;
+/* ----chat--- */
+.messText{  
+    display: none;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    bottom: -230px;
+    right: 10px;
+    flex-direction: column;
+    height: 100%;
+    z-index: 1000;
+} 
+
+.chat-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding-top: 13px;
 }
 
-.message img {
-    width: 85px;
-    height: 85px;
+
+
+.chat-header,.chat-container{
+    background-color: #469100;
 }
+.chat-header img{
+    width: 40px;
+    height: 40px;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+}
+.chat-header div{
+    font-size: 30px;
+    font-family: var(--fredokaText);
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+.chat-container{
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color: var(--whiteColor);
+    padding: 35px 0 10px 40px;
+}
+.chat-container-hello{
+    font-weight: bold;
+}
+
+.chat-body div{
+    margin: 30px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    font-size: 10px;
+    font-family: var(--monteratText);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.chat-body div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chat-body{
+    padding:10px 10px 200px 10px;
+    background-color: var(--whiteColor);
+    border-bottom: 1px solid black;
+    flex-grow: 1;
+    overflow-y: auto; /* Kích hoạt cuộn dọc khi có nhiều tin nhắn */
+    max-height: 300px; /* Đặt chiều cao cố định cho chat body */
+}
+
+.chat-footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteColor);
+    gap: 35px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-footer input{
+    width: 300px;
+    padding: 20px 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    font-family: var(--monteratText);
+}
+
+.chat-footer button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondColor);
+    font-size: 10px;
+    font-family: var(--monteratText);
+    color:var(--whiteColor)
+}
+.mess{
+    position: fixed;
+    background-color: var(--secondColor);
+    border-radius: 50%; 
+    padding: 20px; 
+    right: 10px;
+    bottom: 12px;
+    z-index: 1000;
+}
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+
 
 .footer {
     width: 100%;
@@ -267,4 +376,31 @@ button {
     font-size: 75px;
     font-weight: bold;
     text-align: center;
+}
+
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
+
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
+}
+
+.tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.mess:hover{
+    background-color: var(--hoverColor);
+    animation: bounce 0.5s
 }

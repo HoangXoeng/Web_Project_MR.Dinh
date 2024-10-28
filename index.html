@@ -62,7 +62,7 @@
                 Giàu dinh dưỡng. Thật tươi ngon.<br />
                 Hãy thử ngay hôm nay.
               </p>
-              <button class="datNgay">ĐẶT NGAY</button>
+              <button class="datNgay"><a href="src/html/order.html">ĐẶT NGAY</a></button>
             </div>
             <div class="chaoMungImg">
               <div class="hinhTronLon"></div>
@@ -125,15 +125,15 @@
             <img class="anhDoAn" srcset="src/img/foodOutstanding.png 2x" alt="" />
             <div class="box">
               <div class="nameDoAn">
-                LOVELY KATE <br />
-                GÀ ƯỚP QUẾ
+                SALAD <br />
+                PHÔ MAI FETA
               </div>
               <div class="under">
                 <div class="buttonPrice">
                   <div><button>116.000d - 579 Cal</button></div>
                   <div><button>157.000d - 792 Cal</button></div>
                 </div>
-                <div class="tag"><img srcset="src/img/add.png 2x" alt="" /></div>
+                <div class="tag"><a href="src/html/orderFoodTraditional.html"><img srcset="src/img/add.png 2x" alt="" /></a></div>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@
                   <div><button>92.000d - 232 Cal</button></div>
                   <div><button>129.000d - 435 Cal</button></div>
                 </div>
-                <div class="tag"><img srcset="src/img/add.png 2x" alt="" /></div>
+                <div class="tag"><a href="src/html/orderFoodTraditional.html"><img srcset="src/img/add.png 2x" alt="" /></a></div>
               </div>
             </div>
           </div>
@@ -165,14 +165,14 @@
                   <div><button>99.000d - 225 Cal</button></div>
                   <div><button>141.000d - 311 Cal</button></div>
                 </div>
-                <div class="tag"><img srcset="src/img/add.png 2x" alt="" /></div>
+                <div class="tag"><a href="src/html/orderFoodTraditional.html"><img srcset="src/img/add.png 2x" alt="" /></a></div>
               </div>
             </div>
           </div>
         </div>
   
         <div class="allMenu">
-          <button class="datNgay">XEM TOÀN BỘ MENU</button>
+          <button class="datNgay"><a href="src/html/order.html">XEM TOÀN BỘ MENU</a></button>
         </div>
         <div class="textMenu">
           <p>
@@ -244,28 +244,6 @@
         </div>
       </footer>
     </div>
-    <script>
-      function toggleChat() {
-    const chatBox = document.getElementById('hid');
-    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
-        chatBox.style.display = 'block';
-    } else {
-        chatBox.style.display = 'none';
-    }
-}
-
-// Ẩn chat box khi click ra ngoài
-document.addEventListener('click', function (event) {
-    const chatBox = document.getElementById('hid');
-    const messIcon = document.querySelector('.mess img');
-
-    // Nếu click bên ngoài chat box và không phải là icon
-    if (!chatBox.contains(event.target) && event.target !== messIcon) {
-        chatBox.style.display = 'none';
-    }
-});
-
-  </script>
     <script src="src/js/main.js"></script>
   </body>
 </html>

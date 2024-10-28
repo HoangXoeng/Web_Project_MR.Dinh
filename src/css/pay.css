@@ -12,6 +12,7 @@ a{
     --whiteColor:white;
     --monteratText: "Montserrat", sans-serif;
     --fredokaText: "Fredoka", sans-serif;
+    --hoverColor: #94eb81;
 }
 
 
@@ -374,13 +375,17 @@ ul {
 
 
 
+
+/* -----------chat---------- */
 .messText{  
     display: none;
     position: fixed;
     width: 400px;
     height: 500px;
-    bottom: 0;
+    bottom: -230px;
     right: 10px;
+    flex-direction: column;
+    height: 100%;
 } 
 
 .chat-header{
@@ -426,12 +431,24 @@ ul {
     border-radius: 20px;
     font-size: 10px;
     font-family: var(--monteratText);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.chat-body div.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .chat-body{
     padding:10px 10px 200px 10px;
     background-color: var(--whiteColor);
     border-bottom: 1px solid black;
+    flex-grow: 1;
+    overflow-y: auto; /* Kích hoạt cuộn dọc khi có nhiều tin nhắn */
+    max-height: 300px; /* Đặt chiều cao cố định cho chat body */
 }
 
 .chat-footer{
@@ -439,6 +456,8 @@ ul {
     align-items: center;
     background-color: var(--whiteColor);
     gap: 35px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .chat-footer input{
@@ -460,14 +479,14 @@ ul {
     font-family: var(--monteratText);
     color:var(--whiteColor)
 }
-/* -----------chat---------- */
 .mess{
     position: fixed;
     background-color: var(--secondColor);
     border-radius: 50%; 
-    padding: 20px;
+    padding: 20px; 
     right: 10px;
     bottom: 12px;
+    z-index: 1000;
 }
 
 .mess a i{
@@ -498,4 +517,32 @@ input {
     width: 400px;
     position: absolute;
     right: 450px
+}
+
+
+li:hover{
+    text-decoration: underline;
+    color: var(--hoverColor);
+}
+.acc:hover, .acc1:hover{
+    background-color: var(--hoverColor);
+    
+}
+
+.acc img:hover, .acc1 img:hover {
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.datNgay:hover{
+    background-color: var(--hoverColor);
+    color: var(--secondColor);
+}
+
+.tag img:hover{
+    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
+}
+
+.mess:hover{
+    background-color: var(--hoverColor);
+    animation: bounce 0.5s
 }

@@ -193,27 +193,7 @@
         </div>
       </footer>
     </div>
-    <script>
-      function toggleChat() {
-        const chatBox = document.getElementById("hid");
-        if (chatBox.style.display === "none" || chatBox.style.display === "") {
-          chatBox.style.display = "block";
-        } else {
-          chatBox.style.display = "none";
-        }
-      }
-
-      // Ẩn chat box khi click ra ngoài
-      document.addEventListener("click", function (event) {
-        const chatBox = document.getElementById("hid");
-        const messIcon = document.querySelector(".mess img");
-
-        // Nếu click bên ngoài chat box và không phải là icon
-        if (!chatBox.contains(event.target) && event.target !== messIcon) {
-          chatBox.style.display = "none";
-        }
-      });
-    </script>
+    <script src="../js/main.js"></script>
     <script>
         const goToLoginPage = () => {
     var isLogin = localStorage.getItem('isLogin');
