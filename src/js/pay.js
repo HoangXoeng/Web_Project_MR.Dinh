@@ -74,6 +74,8 @@ var drinkId = urlParams.get('drinkId');
 var extraFoodId = urlParams.get('extraFoodId');
 var shipMethodValue = 10000;
 var productName;
+
+
 var shipMethod = function(place){
     if (place == 'atHome'){
         shipMethodValue = 10000;
