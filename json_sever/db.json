@@ -947,6 +947,41 @@
         "city": "",
         "phone": ""
       }
+    },
+    {
+      "id": "6",
+      "userName": "minhhoang1212",
+      "totalPrice": "855000",
+      "paymentMethod": "cash",
+      "shippingPrice": 10000,
+      "infor": {
+        "total": 2,
+        "user": "minhhoang1212",
+        "totalPrice": 845000,
+        "infor": [
+          {
+            "type": "foods",
+            "user": "minhhoang1212",
+            "id": 1,
+            "price": 1,
+            "quantity": 5
+          },
+          {
+            "type": "drinks",
+            "user": "minhhoang1212",
+            "id": 1,
+            "price": 1,
+            "quantity": 7
+          }
+        ]
+      },
+      "shippingAddress": {
+        "name": "Nguyễn Hữu Thiện",
+        "address": "101 Lê Hữu Trác",
+        "district": "sdasd",
+        "city": "asdsad",
+        "phone": "0399199324"
+      }
     }
   ]
 }
