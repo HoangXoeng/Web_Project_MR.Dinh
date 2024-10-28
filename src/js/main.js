@@ -8,7 +8,7 @@ const goToLoginPage = () => {
         else{
             document.querySelector('.user--option').style.display = 'block'; 
         }
-    }else if (isLogin == 'false'){
+    }else{
         alert('log in')
         window.location.href = 'http://127.0.0.1:5500/src/html/login.html';
     }

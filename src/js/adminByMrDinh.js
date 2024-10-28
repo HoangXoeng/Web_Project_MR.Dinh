@@ -96,7 +96,7 @@ var productSaladAdmin = function () {
         return `<tr>
                         <td>${data.id}</td>
                         <td>${data.name}</td>
-                        <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                        <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                         <td>${data.type}</td>
                         <td>${data.enegy_1} kcal</td>
                         <td>${data.price_1} đ</td>
@@ -125,7 +125,7 @@ var productSaladAdmin = function () {
         return `<tr>
                       <td>${data.id}</td>
                       <td>${data.name}</td>
-                      <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                      <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                       <td>${data.type}</td>
                       <td>${data.enegy_1} kcal</td>
                       <td>${data.price_1} đ</td>
@@ -156,7 +156,7 @@ var productSaladAdmin = function () {
         return `<tr>
                     <td>${data.id}</td>
                     <td>${data.name}</td>
-                    <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                    <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                     <td>${data.type}</td>
                     <td>${data.enegy_1} kcal</td>
                     <td>${data.price_1} đ</td>
@@ -187,7 +187,7 @@ var productSaladAdmin = function () {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
-                  <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                  <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                   <td>${data.type}</td>
                   <td>${data.enegy_1} kcal</td>
                   <td>${data.price_1} đ</td>
@@ -222,7 +222,7 @@ var productFastFoodAdmin = function () {
         return `<tr>
                       <td>${data.id}</td>
                       <td>${data.name}</td>
-                      <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                      <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                       <td>${data.type}</td>
                       <td>${data.enegy} kcal</td>
                       <td>${data.price} đ</td>
@@ -256,7 +256,7 @@ var productDrinksAdmin = function () {
         return `<tr>
                   <td>${data.id}</td>
                   <td>${data.name}</td>
-                  <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                  <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                   <td>${data.type}</td>
                   <td>${data.enegy_1} kcal</td>
                   <td>${data.price_1} đ</td>
@@ -284,7 +284,7 @@ var productDrinksAdmin = function () {
         return `<tr>
                 <td>${data.id}</td>
                 <td>${data.name}</td>
-                <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+                <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
                 <td>${data.type}</td>
                 <td>${data.enegy_1} kcal</td>
                 <td>${data.price_1} đ</td>
@@ -313,7 +313,7 @@ var productDrinksAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.enegy_1} kcal</td>
               <td>${data.price} đ</td>
@@ -347,7 +347,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -373,7 +373,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -400,7 +400,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -427,7 +427,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit}</td>
               <td>${data.price} đ</td>
@@ -454,7 +454,7 @@ var productIngredientsAdmin = function () {
         return `<tr>
               <td>${data.id}</td>
               <td>${data.name}</td>
-              <td><img src="${data.img}" alt="error update" style="width: 50px;"></td>
+              <td><img src="${data.img_url}" alt="error update" style="width: 50px;"></td>
               <td>${data.type}</td>
               <td>${data.unit} kcal</td>
               <td>${data.price} đ</td>
@@ -1100,7 +1100,7 @@ var detailProduct = function (type, id) {
                 </div>
                 <div class="form-group">
                     <label for="productImg">Img</label>
-                <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+                <div class="detailImg" >   <img src="${data.img_url_url}" alt=""> </div>
                 </div>
                 <div class="form-group">
                     <label for="productType">Type</label>
@@ -1173,7 +1173,7 @@ var detailProduct = function (type, id) {
                 </div>
                 <div class="form-group">
                     <label for="productImg">Img</label>
-                <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+                <div class="detailImg" >   <img src="${data.img_url_url}" alt=""> </div>
                 </div>
                 <div class="form-group">
                     <label for="productType">Type</label>
@@ -1235,7 +1235,7 @@ var detailProduct = function (type, id) {
               </div>
               <div class="form-group">
                   <label for="productImg">Img</label>
-              <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+              <div class="detailImg" >   <img src="${data.img_url_url}" alt=""> </div>
               </div>
               <div class="form-group">
                   <label for="productType">Type</label>
@@ -1304,7 +1304,7 @@ var detailProduct = function (type, id) {
               </div>
               <div class="form-group">
                   <label for="productImg">Img</label>
-              <div class="detailImg" >   <img src="${data.img_url}" alt=""> </div>
+              <div class="detailImg" >   <img src="${data.img_url_url}" alt=""> </div>
               </div>
               <div class="form-group">
                   <label for="productType">Type</label>
