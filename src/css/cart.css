@@ -16,6 +16,7 @@ a{
 }
 body{
     background-color: var(--mainColor);
+    font-family: var(--monteratText);
 }
 
 ul {
@@ -115,61 +116,24 @@ li:hover{
     opacity: 0.7;
 }
 
-
-
-
-
-
-
-.mess{
+/* ----chat---- */
+.messText{  
+    display: none;
     position: fixed;
-    background-color: var(--secondColor);
-    border-radius: 50%; 
-    padding: 20px; 
+    width: 400px;
+    height: 500px;
+    bottom: -230px;
     right: 10px;
-    bottom: 12px;
-}
+    flex-direction: column;
+    height: 100%;
+} 
 
-.mess a i{
-    color: var(--whiteColor);
-    font-size: 35px;
-}
-
-.buaAnLon{
+.chat-header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -100px;
-}
-.list--product-list,.product--item{
-    text-decoration: none;
-}
-/* ------hover----- */
-li:hover{
-    text-decoration: none;
-    color: black; 
-}
-.acc:hover, .acc1:hover{
-    background-color: var(--hoverColor);
-    
-}
-
-.acc img:hover, .acc1 img:hover {
-    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
-}
-
-.datNgay:hover{
-    background-color: var(--hoverColor);
-    color: var(--secondColor);
-}
-
-.tag img:hover{
-    filter: sepia(100%) hue-rotate(85deg) saturate(600%) brightness(50%);
-}
-
-.mess:hover{
-    background-color: var(--hoverColor);
-    animation: bounce 0.5s
+    gap: 7px;
+    padding-top: 13px;
 }
 
 
@@ -207,12 +171,24 @@ li:hover{
     border-radius: 20px;
     font-size: 10px;
     font-family: var(--monteratText);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.chat-body div.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .chat-body{
     padding:10px 10px 200px 10px;
     background-color: var(--whiteColor);
     border-bottom: 1px solid black;
+    flex-grow: 1;
+    overflow-y: auto; /* Kích hoạt cuộn dọc khi có nhiều tin nhắn */
+    max-height: 300px; /* Đặt chiều cao cố định cho chat body */
 }
 
 .chat-footer{
@@ -220,6 +196,8 @@ li:hover{
     align-items: center;
     background-color: var(--whiteColor);
     gap: 35px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .chat-footer input{
@@ -241,23 +219,24 @@ li:hover{
     font-family: var(--monteratText);
     color:var(--whiteColor)
 }
-
-.messText{  
-    display: none;
+.mess{
     position: fixed;
-    width: 400px;
-    height: 500px;
-    bottom: 0;
+    background-color: var(--secondColor);
+    border-radius: 50%; 
+    padding: 20px; 
     right: 10px;
-} 
-
-.chat-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-    padding-top: 13px;
+    bottom: 12px;
+    z-index: 1000;
 }
+
+.mess a i{
+    color: var(--whiteColor);
+    font-size: 35px;
+}
+
+
+
+
 
 .content_body{
     padding-top: 70px;

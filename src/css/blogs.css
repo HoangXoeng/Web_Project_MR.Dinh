@@ -263,109 +263,123 @@
     flex-grow: 1;
   }
   
-  .messText{  
-    display: none;
-    position: fixed;
-    width: 400px;
-    height: 500px;
-    bottom: 0;
-    right: 10px;
+
+/* -----------chat---------- */
+.messText{  
+  display: none;
+  position: fixed;
+  width: 400px;
+  height: 500px;
+  bottom: -230px;
+  right: 10px;
+  flex-direction: column;
+  height: 100%;
 } 
 
 .chat-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-    padding-top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding-top: 13px;
 }
 
 
 
 .chat-header,.chat-container{
-    background-color: #469100;
+  background-color: #469100;
 }
 .chat-header img{
-    width: 40px;
-    height: 40px;
-    background-color: var(--whiteColor);
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--whiteColor);
+  border-radius: 50%;
 }
 .chat-header div{
-    font-size: 30px;
-    font-family: var(--fredokaText);
-    font-weight: bold;
-    color: var(--whiteColor);
+  font-size: 30px;
+  font-family: var(--fredokaText);
+  font-weight: bold;
+  color: var(--whiteColor);
 }
 
 .chat-container{
-    font-size: 10px;
-    font-family: var(--monteratText);
-    color: var(--whiteColor);
-    padding: 35px 0 10px 40px;
+  font-size: 10px;
+  font-family: var(--monteratText);
+  color: var(--whiteColor);
+  padding: 35px 0 10px 40px;
 }
 .chat-container-hello{
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .chat-body div{
-    margin: 30px;
-    padding: 10px;
-    background-color: gainsboro;
-    border-radius: 20px;
-    font-size: 10px;
-    font-family: var(--monteratText);
+  margin: 30px;
+  padding: 10px;
+  background-color: gainsboro;
+  border-radius: 20px;
+  font-size: 10px;
+  font-family: var(--monteratText);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.chat-body div.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .chat-body{
-    padding:10px 10px 200px 10px;
-    background-color: var(--whiteColor);
-    border-bottom: 1px solid black;
+  padding:10px 10px 200px 10px;
+  background-color: var(--whiteColor);
+  border-bottom: 1px solid black;
+  flex-grow: 1;
+  overflow-y: auto; /* Kích hoạt cuộn dọc khi có nhiều tin nhắn */
+  max-height: 300px; /* Đặt chiều cao cố định cho chat body */
 }
 
 .chat-footer{
-    display: flex;
-    align-items: center;
-    background-color: var(--whiteColor);
-    gap: 35px;
+  display: flex;
+  align-items: center;
+  background-color: var(--whiteColor);
+  gap: 35px;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
 
 .chat-footer input{
-    width: 300px;
-    padding: 20px 20px;
-    border: none;
-    outline: none;
-    font-size: 10px;
-    font-family: var(--monteratText);
+  width: 300px;
+  padding: 20px 20px;
+  border: none;
+  outline: none;
+  font-size: 10px;
+  font-family: var(--monteratText);
 }
 
 .chat-footer button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--secondColor);
-    font-size: 10px;
-    font-family: var(--monteratText);
-    color:var(--whiteColor)
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--secondColor);
+  font-size: 10px;
+  font-family: var(--monteratText);
+  color:var(--whiteColor)
 }
-/* -----------chat---------- */
 .mess{
-    position: fixed;
-    background-color: var(--secondColor);
-    border-radius: 50%; 
-    padding: 20px; 
-    right: 10px;
-    bottom: 12px;
+  position: fixed;
+  background-color: var(--secondColor);
+  border-radius: 50%; 
+  padding: 20px; 
+  right: 10px;
+  bottom: 12px;
+  z-index: 1000;
 }
 
 .mess a i{
-    color: var(--whiteColor);
-    font-size: 35px;
-}
-
-.title{
-  font-family: var(--monteratText);
+  color: var(--whiteColor);
+  font-size: 35px;
 }
 
 /* ------hover----- */

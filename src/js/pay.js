@@ -1,19 +1,3 @@
-function toggleChat() {
-    const chatBox = document.getElementById('hid');
-    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
-        chatBox.style.display = 'block';
-    } else {
-        chatBox.style.display = 'none';
-    }
-}
-document.addEventListener('click', function(event) {
-    const chatBox = document.getElementById('hid');
-    const chatIcon = document.querySelector('.fa-message');
-    if (!chatBox.contains(event.target) && !chatIcon.contains(event.target)) {
-        chatBox.style.display = 'none';
-    }
-});
-
 function validateField(input, errorMessageId) {
     if (input.value.trim() === '') {
         input.classList.add('error');

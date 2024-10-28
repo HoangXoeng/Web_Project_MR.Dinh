@@ -10,3 +10,138 @@
 .modal{
     background-color: black;
 }
+
+/* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+}
+
+/* Navbar */
+.sb-topnav {
+    background-color: #343a40;
+}
+
+.sb-topnav .navbar-brand {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+/* Sidenav */
+.sb-sidenav {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.sb-sidenav .nav-link {
+    color: #fff;
+    margin: 10px 0;
+}
+
+.sb-sidenav .sb-sidenav-menu-heading {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+/* Layout Content */
+#layoutSidenav_content {
+    padding: 20px;
+}
+
+/* Title and Product Info */
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product h5 {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.product p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+/* Button */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Change Password Form */
+.changePassForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    display: none; /* Hidden by default */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Close Button */
+.close {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    float: right;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
+}
