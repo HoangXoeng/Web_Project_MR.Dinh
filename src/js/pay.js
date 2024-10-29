@@ -128,7 +128,7 @@ var shipMethod = function(place){
                 productName = data.name
                 console.log(extraFoodId)
                 console.log(data.name)
-                let price = Number(data.price) * 1000;
+                let price = Number(data.price_1) * 1000;
                 document.querySelector('.tongTienThanhToan').innerHTML = price + " VND"
                 let totalPrice = price + shipMethodValue;
                 console.log(shipMethodValue);
@@ -283,7 +283,6 @@ var getId = (link) => {
         axios.post('http://localhost:3000/orders', order)
         .then(response => {
             console.log(response);
-            alert('Đặt hàng thành công');
             window.location.href = 'http://127.0.0.1:5500/src/html/SuccessPayment.html'
         })
         .catch(error => {

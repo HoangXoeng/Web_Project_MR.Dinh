@@ -106,8 +106,8 @@ var shipMethod = function(place){
         document.querySelector('.atCafe').style.display = 'none';
         document.querySelector('.phiShip').innerHTML = '10.000 VND'  
         document.querySelector('.totalProduct').innerHTML =   infor.total ;  
-        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice ;
-        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice + 10000 ;
+        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice + " VND";
+        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice + 10000 + " VND";
              
     }else{
         shipMethodValue = 0;
@@ -119,10 +119,10 @@ var shipMethod = function(place){
         document.querySelector('.gia1').style.color = '';
         document.querySelector('.atHome').style.display = 'none';
         document.querySelector('.atCafe').style.display = 'block';
-        document.querySelector('.phiShip').innerHTML = '0VND'
+        document.querySelector('.phiShip').innerHTML = '0 VND'
         document.querySelector('.totalProduct').innerHTML =   infor.total ;
-        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice ;
-        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice ;
+        document.querySelector('.tongTienThanhToan').innerHTML =   infor.totalPrice + " VND";
+        document.querySelector('.tongTienPhaiTra').innerHTML =   infor.totalPrice+ " VND" ;
 
 
 }
